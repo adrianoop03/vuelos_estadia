@@ -2,7 +2,7 @@ from atexit import register
 import token
 from unicodedata import category
 
-from flask import Flask
+from flask import Flask, render_template
 from config.config import DATABASE_CONNECTION_URI
 
 from models.db import db
@@ -37,10 +37,17 @@ db.init_app(app)
 def hello_world():
     return 'Hello, World!'
 
+@app.route('/api/hello')
+def hello_api():
+    
+    return render_template("login.html")
+
 with app.app_context():
     from models.user import User
     # db.drop_all()
     db.create_all()
+    
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
