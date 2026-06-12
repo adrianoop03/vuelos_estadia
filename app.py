@@ -1,25 +1,20 @@
+from atexit import register
 import token
 from unicodedata import category
 
 from flask import Flask
 from config.config import DATABASE_CONNECTION_URI
-from routes.client_route import client
-from routes.vehicle_route import vehicle
-from routes.location_route import location
-from routes.register_route import register
-from routes.category_routes import category
 
 from models.db import db
 from sqlalchemy.exc import OperationalError
 from sqlalchemy_utils import database_exists, create_database
 from flask_mail import Mail
-app = Flask(__name__)
 
-app.register_blueprint(client)
-app.register_blueprint(vehicle)
-app.register_blueprint(location)
-app.register_blueprint(register)
-app.register_blueprint(category)
+from models.user import User
+from routes.user_route import user
+
+app = Flask(__name__)
+app.register_blueprint(user)
 
 
 app.config["SQLALCHEMY_DATABASE_URI"]= DATABASE_CONNECTION_URI
@@ -43,7 +38,7 @@ def hello_world():
     return 'Hello, World!'
 
 with app.app_context():
-    from models.user import Usuario
+    from models.user import User
     # db.drop_all()
     db.create_all()
 
