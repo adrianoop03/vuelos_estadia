@@ -1,5 +1,5 @@
 from flask import Blueprint,jsonify,request
-from controllers.estadia_controller import *
+from vuelos_estadia.controllers.stays_controller import *
 
 estadia_bp = Blueprint('estadia',__name__)
 

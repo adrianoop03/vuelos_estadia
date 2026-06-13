@@ -1,4 +1,4 @@
-from models.estadia import ALOJAMIENTO
+from vuelos_estadia.models.stays import ALOJAMIENTO
 from models.db import db
 
 def get_all_alojamientos():
