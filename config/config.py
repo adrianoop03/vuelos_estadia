@@ -11,3 +11,8 @@ port = os.getenv("MYSQL_PORT")
 
 DATABASE_CONNECTION_URI = f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
 
+mail_server = 'smtp.gmail.com'
+mail_port = 587
+use_tls = True
+mail_username = os.getenv("MAIL_USERNAME")
+mail_password = os.getenv("MAIL_PASSWORD")
