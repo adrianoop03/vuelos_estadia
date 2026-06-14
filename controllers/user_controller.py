@@ -1,6 +1,12 @@
+from flask import Flask, current_app, render_template, request, redirect, url_for
+from flask_mail import Message
 from models.user import User
 from models.db import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_mail import Mail, Message
+from extensions import mail
+
+
 def obtenerUsuarios():
     users = User.query.all()
     return [User.serialize() for User in users]
@@ -24,3 +30,29 @@ def iniciarSesion(email, password):
         return user.serialize(), 200
     else:
         return "Error: Credenciales inválidas", 401
+    
+def correo_recuperacion(email, token):
+    msg = Message(
+        "Recuperacion de contrasena",
+        
+        sender=current_app.config['MAIL_USERNAME'],
+        recipients=[email]
+    )
+
+    msg.body = f"""
+    Para recuperar tu contrasena visita:
+
+    http://localhost:5000/reset/{token}
+    """
+    mail.send(msg)
+
+    return "Correo enviado", 200
+
+def cambiar_contrasena(email, nueva_contrasena):
+    user = User.query.filter_by(email=email).first()
+    if user:
+        user.password = generate_password_hash(nueva_contrasena)
+        db.session.commit()
+        return "Contraseña actualizada", 200
+    else:
+        return "Error: Usuario no encontrado", 404
