@@ -34,3 +34,30 @@ def delete_flight(id_flight):
     return jsonify({
         "message": "Vuelo eliminado correctamente"
     }), 200
+
+@flight_bp.route('/flights/<int:id_flight>', methods=['PUT'])
+def update_flight(id_flight):
+    data = request.get_json()
+
+    flight = FlightController.update(id_flight, data)
+
+    if not flight:
+        return jsonify({
+            "message": "Vuelo no encontrado"
+        }), 404
+
+    return jsonify(flight), 200
+
+
+@flight_bp.route('/flights/<int:id_flight>', methods=['PATCH'])
+def patch_flight(id_flight):
+    data = request.get_json()
+
+    flight = FlightController.patch(id_flight, data)
+
+    if not flight:
+        return jsonify({
+            "message": "Vuelo no encontrado"
+        }), 404
+
+    return jsonify(flight), 200
