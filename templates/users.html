@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Selección</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/users.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            Mundial 2026
+        </a>
+
+        <div class="ms-auto">
+            <a href="/logout" class="btn btn-outline-light">
+                Cerrar Sesión
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container py-5">
+
+    {# 'teams' viene de wc26_data.cargar_selecciones(). 'team.seleccion' es el campo real que trae el JSON #}
+    <div class="card glass-card mb-4">
+        <div class="card-body">
+
+            <h3 class="section-title mb-3">
+                Elegí tu selección
+            </h3>
+
+            <form method="GET" class="d-flex gap-2 flex-wrap">
+
+                <select name="id_team"
+                        class="form-select"
+                        style="max-width: 320px;"
+                        onchange="this.form.submit()">
+
+                    <option value="" {% if not selected_team %}selected{% endif %} disabled>
+                        Elegí una selección
+                    </option>
+
+                    {% for team in teams %}
+                    <option value="{{ team.id_team }}"
+                            {% if selected_team and selected_team.id_team == team.id_team %}selected{% endif %}>
+                        {{ team.seleccion }}
+                    </option>
+                    {% endfor %}
+
+                </select>
+
+                <noscript>
+                    <button type="submit" class="btn btn-outline-light">Ver</button>
+                </noscript>
+
+            </form>
+
+        </div>
+    </div>
+
+    {% if selected_team %}
+
+        <div class="card glass-card mb-4">
+            <div class="card-body">
+
+                <h1 class="section-title">
+                    {{ selected_team.seleccion }}
+                </h1>
+
+                <p>
+                    Esta es tu selección favorita.
+                </p>
+
+            </div>
+        </div>
+
+        {# 'vuelo_ida' y 'vuelo_vuelta' vienen de wc26_data.obtener_vuelo_ida()/obtener_vuelo_vuelta() #}
+        <div class="card glass-card mb-4">
+            <div class="card-body">
+
+                <h3 class="section-title mb-3">
+                    Vuelo de ida
+                </h3>
+
+                {% if vuelo_ida %}
+                <table class="table table-borderless text-white mb-3">
+                    <tr><th>Vuelo</th><td>{{ vuelo_ida.flight_number }} · {{ vuelo_ida.airline }}</td></tr>
+                    <tr><th>Origen</th><td>{{ vuelo_ida.origin_city }} ({{ vuelo_ida.origin_airport_code }})</td></tr>
+                    <tr><th>Destino</th><td>{{ vuelo_ida.destination_city }} ({{ vuelo_ida.destination_airport_code }})</td></tr>
+                    <tr><th>Salida</th><td>{{ vuelo_ida.departure_datetime.strftime('%d/%m/%Y %H:%M') }}</td></tr>
+                    <tr><th>Llegada</th><td>{{ vuelo_ida.arrival_datetime.strftime('%d/%m/%Y %H:%M') }}</td></tr>
+                </table>
+                <p class="text-light-emphasis mb-0">
+                    Llegás a tiempo para tu primer partido el {{ vuelo_ida.first_match_date }}
+                    a las {{ vuelo_ida.first_match_time }} en el {{ vuelo_ida.first_match_stadium }}.
+                </p>
+                {% else %}
+                <p class="text-white-50 mb-0">Todavía no hay vuelo de ida cargado para esta selección.</p>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <div class="card glass-card mb-4">
+            <div class="card-body">
+
+                <h3 class="section-title mb-3">
+                    Vuelo de vuelta
+                </h3>
+
+                {% if vuelo_vuelta %}
+                <table class="table table-borderless text-white mb-3">
+                    <tr><th>Vuelo</th><td>{{ vuelo_vuelta.flight_number }} · {{ vuelo_vuelta.airline }}</td></tr>
+                    <tr><th>Origen</th><td>{{ vuelo_vuelta.origin_city }} ({{ vuelo_vuelta.origin_airport_code }})</td></tr>
+                    <tr><th>Destino</th><td>{{ vuelo_vuelta.destination_city }} ({{ vuelo_vuelta.destination_airport_code }})</td></tr>
+                    <tr><th>Salida</th><td>{{ vuelo_vuelta.departure_datetime.strftime('%d/%m/%Y %H:%M') }}</td></tr>
+                    <tr><th>Llegada</th><td>{{ vuelo_vuelta.arrival_datetime.strftime('%d/%m/%Y %H:%M') }}</td></tr>
+                </table>
+                <p class="text-light-emphasis mb-0">
+                    Sale después de tu último partido de grupos el {{ vuelo_vuelta.last_group_match_date }}
+                    a las {{ vuelo_vuelta.last_group_match_time }} en el {{ vuelo_vuelta.last_group_match_stadium }}.
+                </p>
+                {% else %}
+                <p class="text-white-50 mb-0">Todavía no hay vuelo de vuelta cargado para esta selección.</p>
+                {% endif %}
+
+            </div>
+        </div>
+
+        {# TODO: ALOJAMIENTO no tiene FK a teams en tu modelo actual, así que por ahora se listan TODOS los alojamientos, no solo los de esta selección. Si querés que sean por selección, agregá una columna id_team a ese modelo. #}
+        <div class="card glass-card">
+            <div class="card-body">
+
+                <h3 class="section-title">
+                    Alojamientos disponibles
+                </h3>
+
+                <table class="table table-borderless text-white">
+
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>País</th>
+                            <th>Estado</th>
+                            <th>Ciudad</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for alojamiento in alojamientos %}
+                        <tr>
+                            <td>{{ alojamiento.nombre_alojamiento }}</td>
+                            <td>{{ alojamiento.pais }}</td>
+                            <td>{{ alojamiento.estado }}</td>
+                            <td>{{ alojamiento.ciudad }}</td>
+                        </tr>
+                        {% else %}
+                        <tr><td colspan="4" class="text-center text-white-50">No hay alojamientos cargados todavía.</td></tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+
+    {% else %}
+
+        <div class="card glass-card">
+            <div class="card-body text-center py-5">
+                <p class="mb-0">Elegí una selección arriba para ver sus vuelos y alojamientos.</p>
+            </div>
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

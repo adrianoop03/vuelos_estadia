@@ -1,100 +1,132 @@
 <!DOCTYPE html>
 <html lang="latam">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundial 2026 — Iniciar sesión</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mundial 2026 - Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
 
-<div class="card" role="main">
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
 
-  <div class="header">
-    <div class="trophy-icon" aria-hidden="true">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 36V42M17 42h14" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M24 32c-8 0-14-6.5-14-14V8h28v10c0 7.5-6 14-14 14z" fill="rgba(212,175,55,0.15)" stroke="#d4af37" stroke-width="2"/>
-        <path d="M10 12H6c0 6 3 10 8 12" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
-        <path d="M38 12h4c0 6-3 10-8 12" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="24" cy="20" r="5" fill="rgba(212,175,55,0.25)" stroke="#d4af37" stroke-width="1.8"/>
-        <path d="M24 17v3l2 1.5" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+        <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+
+            <div class="card login-card border-0">
+
+                <div class="card-body p-4">
+
+                    <h1 class="brand text-center mb-1">
+                        MUNDIAL <span>2026</span>
+                    </h1>
+
+                    <p class="text-center text-light-emphasis mb-4">
+                        Acceso al portal oficial
+                    </p>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ 'danger' if category in ['error', 'danger'] else category }} py-2">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    {# TODO: ajustá el endpoint si tu ruta de login se llama distinto o usa blueprint (ej: 'auth.login') #}
+                    <form method="POST" action="{{ url_for('login') }}">
+
+                        <div class="mb-3">
+                            <label class="form-label text-light">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control custom-input"
+                                placeholder="tu@correo.com"
+                                value="{{ request.form.email or '' }}"
+                                required
+                                autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-light">
+                                Contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control custom-input"
+                                placeholder="••••••••"
+                                required>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-4">
+
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="remember">
+
+                                <label class="form-check-label text-light">
+                                    Recordarme
+                                </label>
+                            </div>
+
+                            <a href="#" class="link-mundial">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-mundial w-100 mb-3">
+                            INICIAR SESIÓN
+                        </button>
+
+                    </form>
+
+                    <div class="text-center text-secondary mb-3">
+                        o continuar con
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-outline-light" disabled>
+                            Google
+                        </button>
+
+                        <button type="button" class="btn btn-outline-light" disabled>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <p class="text-center mt-4 text-light">
+                        ¿No tenés cuenta?
+                        <a href="#" class="link-mundial">
+                            Registrate
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-    <div class="brand">MUNDIAL <span>2026</span></div>
-    <div class="subtitle">Acceso al portal oficial</div>
-  </div>
-
-  <div class="divider"></div>
-
-  <form action="/login" method="POST">
-
-
-    <div class="form-group">
-      {% if error %}
-      <div class="error-message">
-        {{ error }}
-      </div>
-      {% endif %}
-      <label for="email">Correo electrónico</label>
-      <div class="input-wrap">
-        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,5 12,13 21,5"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="password">Contraseña</label>
-      <div class="input-wrap">
-        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="5" y="11" width="14" height="10" rx="2"/>
-          <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="row-options">
-      <label class="remember">
-        <input type="checkbox" id="remember">
-        Recordarme
-      </label>
-      <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
-    </div>
-
-    <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
-
-  </form>
-
-  <div class="sep">o continuar con</div>
-
-  <div class="social-row">
-    <button class="btn-social" type="button" aria-label="Ingresar con Google">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-      </svg>
-      Google
-    </button>
-    <button class="btn-social" type="button" aria-label="Ingresar con Facebook">
-      <svg viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 12.073C24 5.41 18.629 0 12 0S0 5.41 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-      </svg>
-      Facebook
-    </button>
-  </div>
-
-  <div class="footer">
-    ¿No tenés cuenta? <a href="#">Registrate</a>
-  </div>
-
 </div>
 
 </body>

@@ -1,0 +1,51 @@
+body{
+    min-height:100vh;
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.80),
+            rgba(0,0,0,.80)
+        ),
+        url("../img/mundial.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.navbar{
+    background:rgba(0,0,0,.5);
+    backdrop-filter:blur(10px);
+}
+
+.glass-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    color:white;
+}
+
+.form-control{
+    background:rgba(255,255,255,.1);
+    border:none;
+    color:white;
+}
+
+.form-control:focus{
+    background:rgba(255,255,255,.15);
+    color:white;
+    box-shadow:none;
+}
+
+.form-control::placeholder{
+    color:rgba(255,255,255,.6);
+}
+
+.table,
+.table th,
+.table td{
+    color:white !important;
+}
