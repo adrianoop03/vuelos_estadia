@@ -1,0 +1,198 @@
+[
+  {
+    "id_team": 1,
+    "name": "Alemania"
+  },
+  {
+    "id_team": 2,
+    "name": "Arabia Saudí"
+  },
+  {
+    "id_team": 3,
+    "name": "Argelia"
+  },
+  {
+    "id_team": 4,
+    "name": "Argentina"
+  },
+  {
+    "id_team": 5,
+    "name": "Australia"
+  },
+  {
+    "id_team": 6,
+    "name": "Austria"
+  },
+  {
+    "id_team": 7,
+    "name": "Bosnia y Herzegovina"
+  },
+  {
+    "id_team": 8,
+    "name": "Brasil"
+  },
+  {
+    "id_team": 9,
+    "name": "Bélgica"
+  },
+  {
+    "id_team": 10,
+    "name": "Cabo Verde"
+  },
+  {
+    "id_team": 11,
+    "name": "Canadá"
+  },
+  {
+    "id_team": 12,
+    "name": "Catar"
+  },
+  {
+    "id_team": 13,
+    "name": "Colombia"
+  },
+  {
+    "id_team": 14,
+    "name": "Costa de Marfil"
+  },
+  {
+    "id_team": 15,
+    "name": "Croacia"
+  },
+  {
+    "id_team": 16,
+    "name": "Curazao"
+  },
+  {
+    "id_team": 17,
+    "name": "Ecuador"
+  },
+  {
+    "id_team": 18,
+    "name": "Egipto"
+  },
+  {
+    "id_team": 19,
+    "name": "Escocia"
+  },
+  {
+    "id_team": 20,
+    "name": "España"
+  },
+  {
+    "id_team": 21,
+    "name": "Estados Unidos"
+  },
+  {
+    "id_team": 22,
+    "name": "Francia"
+  },
+  {
+    "id_team": 23,
+    "name": "Ghana"
+  },
+  {
+    "id_team": 24,
+    "name": "Haití"
+  },
+  {
+    "id_team": 25,
+    "name": "Inglaterra"
+  },
+  {
+    "id_team": 26,
+    "name": "Irak"
+  },
+  {
+    "id_team": 27,
+    "name": "Irán"
+  },
+  {
+    "id_team": 28,
+    "name": "Japón"
+  },
+  {
+    "id_team": 29,
+    "name": "Jordania"
+  },
+  {
+    "id_team": 30,
+    "name": "Marruecos"
+  },
+  {
+    "id_team": 31,
+    "name": "México"
+  },
+  {
+    "id_team": 32,
+    "name": "Noruega"
+  },
+  {
+    "id_team": 33,
+    "name": "Nueva Zelanda"
+  },
+  {
+    "id_team": 34,
+    "name": "Panamá"
+  },
+  {
+    "id_team": 35,
+    "name": "Paraguay"
+  },
+  {
+    "id_team": 36,
+    "name": "Países Bajos"
+  },
+  {
+    "id_team": 37,
+    "name": "Portugal"
+  },
+  {
+    "id_team": 38,
+    "name": "RD Congo"
+  },
+  {
+    "id_team": 39,
+    "name": "RI de Irán"
+  },
+  {
+    "id_team": 40,
+    "name": "República Checa"
+  },
+  {
+    "id_team": 41,
+    "name": "República de Corea"
+  },
+  {
+    "id_team": 42,
+    "name": "Senegal"
+  },
+  {
+    "id_team": 43,
+    "name": "Sudáfrica"
+  },
+  {
+    "id_team": 44,
+    "name": "Suecia"
+  },
+  {
+    "id_team": 45,
+    "name": "Suiza"
+  },
+  {
+    "id_team": 46,
+    "name": "Turquía"
+  },
+  {
+    "id_team": 47,
+    "name": "Túnez"
+  },
+  {
+    "id_team": 48,
+    "name": "Uruguay"
+  },
+  {
+    "id_team": 49,
+    "name": "Uzbekistán"
+  }
+]

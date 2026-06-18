@@ -9,7 +9,8 @@ class Stadium(db.Model):
     city = db.Column(db.String(100), nullable=False)
     country = db.Column(db.String(100), nullable=False)
 
-    def __init__(self, name, ubication, city, country):
+    def __init__(self, id_stadium, name, ubication, city, country):
+        self.id_stadium = id_stadium
         self.name = name
         self.ubication = ubication
         self.city = city

@@ -1,5 +1,4 @@
 from atexit import register
-import token
 from unicodedata import category
 
 from flask import Flask, render_template
@@ -8,9 +7,6 @@ from config.config import DATABASE_CONNECTION_URI
 from models.db import db
 from sqlalchemy.exc import OperationalError
 from sqlalchemy_utils import database_exists, create_database
-from flask_mail import Mail
-
-from models.user import User
 
 
 app = Flask(__name__)
@@ -43,6 +39,10 @@ def admin():
 
 with app.app_context():
     from models.user import User
+    from models.flight import Flight
+    from models.stadium import Stadium
+    from models.stays import ALOJAMIENTO
+    from models.team import Team
     # db.drop_all()
     db.create_all()
     
