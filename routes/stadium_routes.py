@@ -1,14 +1,16 @@
-from flask import blueprints, jsonify, request
-from TeamTransit.models import Stadium
-from TeamTransit.controllers import stadium_controller
+from flask import Blueprint, jsonify, request
+from models.stadium import Stadium
+from controllers.stadium_controller import *
 
-@stadium_controller.route('/stadiums', methods=['GET'])
-def listar_productos():
-    return jsonify(stadium_controller.get_all_stadiums())
+stadium_bp = Blueprint('stadium_bp', __name__)
 
-@stadium_controller.route('/stadiums/<int:id_stadium>', methods=['GET'])
-def obtener_producto(id_stadium):
-    stadium = stadium_controller.get_stadium_by_id(id_stadium)
+@stadium_bp.route('/stadiums', methods=['GET'])
+def listar_estadios():
+    return jsonify(get_all_stadiums())
+
+@stadium_bp.route('/stadiums/<int:id_stadium>', methods=['GET'])
+def obtener_estadio(id_stadium):
+    stadium = get_stadium_by_id(id_stadium)
     if stadium:
         return jsonify(stadium)
     else:
