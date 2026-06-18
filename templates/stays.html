@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estadias de las selecciones</title>
+</head>
+<body>
+    <div> class="container">
+        <h1> FIFA World Cup 2026 Estadias de las selecciones</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Seleccion</th>
+                    <th>ciudad</th>
+                    <th>estado</th>
+                    <th>pais</th>
+                    <th>instalacion</th>
+                </tr>
+        <tbody>
+            {% for estadia in selecciones %}
+            <tr>
+                <td>{{ estadia.seleccion }}</td>
+                <td>{{ estadia.ciudad }}</td>
+                <td>{{ estadia.estado_provincia }}</td>
+                <td>{{ estadia.pais }}</td>
+                <td>{{ estadia.instalacion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <table>
+        </div>
+
+</body>
+</html>
