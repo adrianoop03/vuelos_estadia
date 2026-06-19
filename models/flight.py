@@ -12,6 +12,9 @@ class Flight(db.Model):
     arrival_datetime = db.Column(db.DateTime, nullable=False)
     id_team = db.Column(db.Integer, db.ForeignKey('teams.id_team'), nullable=False)
 
+    team=db.relationship("team", backref="flights")
+    stadium=db.relationship("stadium", backref="flights")
+
 
     
     def __init__(self, flight_number, airline, origin_city,
@@ -24,6 +27,8 @@ class Flight(db.Model):
         self.departure_datetime = departure_datetime
         self.arrival_datetime = arrival_datetime
         self.id_team = id_team
+        self.team=self.team
+        self.stadium=self.stadium
       
 
     def serialize(self):
@@ -36,4 +41,6 @@ class Flight(db.Model):
             'departure_datetime': self.departure_datetime.strftime('%Y-%m-%d %H:%M'),
             'arrival_datetime': self.arrival_datetime.strftime('%Y-%m-%d %H:%M'),
             'id_team': self.id_team,
+            'team': self.team,
+            'stafium': self.stadium
         }
