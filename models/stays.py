@@ -1,6 +1,6 @@
-from models.db import db
+sfrom models.db import db
 
-class ALOJAMIENTO(db.model):
+class stays(db.model):
     __tablename__='stays'
 
     id_stays  = db.Column(db.Integer, primary_key=True, autoincrement=True)
