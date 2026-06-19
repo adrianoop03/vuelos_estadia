@@ -1,26 +1,58 @@
-from models.flight_models import Flight
+from models.flight import Flight
+from models.team import Team
+from models.stadium import Stadium
 from models.db import db
-
 
 class FlightController:
 
-
     @staticmethod
     def get_all():
-        flights = Flight.query.all()
-        return [flight.serialize() for flight in flights]
 
+        resultados = db.session.query(
+            Flight,
+            Team.name.label("team_name"),
+            Stadium.name.label("stadium_name"),
+            Stadium.city.label("stadium_city")
+        ).join(
+            Team,
+            Flight.id_team == Team.id_team
+        ).outerjoin(
+            Stadium,
+            Flight.id_stadium == Stadium.id_stadium
+        ).all()
 
-    @staticmethod
-    def get_by_id(id_flight):
-        flight = Flight.query.get(id_flight)
+        flights = []
 
-        if not flight:
-            return None
+        for flight, team_name, stadium_name, stadium_city in resultados:
 
-        return flight.serialize()
+            duracion = (
+                flight.arrival_datetime -
+                flight.departure_datetime
+            )
 
+            total_minutos = int(duracion.total_seconds() / 60)
 
+            
+            flights.append({
+                "id_flight": flight.id_flight,
+                "id_stadium": flight.id_stadium,
+                "flight_number": flight.flight_number,
+                "origin_city": flight.origin_city,
+
+                "destination": stadium_name if stadium_name else "Sin estadio",
+                "destination_city": stadium_city if stadium_city else flight.destination_city,
+
+                "departure_datetime": flight.departure_datetime.strftime('%d/%m/%Y %H:%M'),
+                "arrival_datetime": flight.arrival_datetime.strftime('%d/%m/%Y %H:%M'),
+
+                "team_name": team_name,
+
+                "duration_hours": total_minutos // 60,
+                "duration_minutes": total_minutos % 60
+            })
+
+        return flights
+         
     @staticmethod
     def delete(id_flight):
         flight = Flight.query.get(id_flight)
@@ -32,41 +64,3 @@ class FlightController:
         db.session.commit()
 
         return True
-    
-
-    @staticmethod
-    def update(id_flight, data):
-        flight = Flight.query.get(id_flight)
-
-        if not flight:
-            return None
-
-        flight.flight_number = data['flight_number']
-        flight.airline = data['airline']
-        flight.origin_city = data['origin_city']
-        flight.origin_airport = data['origin_airport']
-        flight.destination_city = data['destination_city']
-        flight.destination_airport = data['destination_airport']
-        flight.departure_datetime = data['departure_datetime']
-        flight.arrival_datetime = data['arrival_datetime']
-        flight.id_team = data['id_team']
-
-        db.session.commit()
-
-        return flight.serialize()
-    
-
-    @staticmethod
-    def patch(id_flight, data):
-        flight = Flight.query.get(id_flight)
-
-        if not flight:
-            return None
-
-        for key, value in data.items():
-            if hasattr(flight, key):
-                setattr(flight, key, value)
-
-        db.session.commit()
-
-        return flight.serialize()
