@@ -20,6 +20,7 @@ def populate_flights(data):
         departure_datetime = item.get('departure_datetime')
         arrival_datetime = item.get('arrival_datetime')
         id_team = item.get('id_team')
+        id_stadium = item.get('id_stadium')
 
         if not id_flight or not flight_number:
             continue
@@ -35,7 +36,8 @@ def populate_flights(data):
             destination_city=destination_city,
             departure_datetime=departure_datetime,
             arrival_datetime=arrival_datetime,
-            id_team=id_team
+            id_team=id_team,
+            id_stadium=id_stadium
         )
         db.session.add(flight)
         created += 1

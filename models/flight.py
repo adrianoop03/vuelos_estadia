@@ -1,5 +1,3 @@
-
-
 from models.db import db
 
 class Flight(db.Model):
@@ -12,12 +10,13 @@ class Flight(db.Model):
     departure_datetime = db.Column(db.DateTime, nullable=False)
     arrival_datetime = db.Column(db.DateTime, nullable=False)
     id_team = db.Column(db.Integer, nullable=False)
+    id_stadium = db.Column(db.Integer, nullable=False)
 
 
     
     def __init__(self, id_flight, flight_number, origin_city,
                  destination_city, departure_datetime,
-                 arrival_datetime, id_team):
+                 arrival_datetime, id_team, id_stadium):
         self.id_flight = id_flight
         self.flight_number = flight_number
         self.origin_city = origin_city
@@ -25,7 +24,7 @@ class Flight(db.Model):
         self.departure_datetime = departure_datetime
         self.arrival_datetime = arrival_datetime
         self.id_team = id_team
-      
+        self.id_stadium = id_stadium
 
     def serialize(self):
         return {
@@ -36,4 +35,5 @@ class Flight(db.Model):
             'departure_datetime': self.departure_datetime.strftime('%Y-%m-%d %H:%M'),
             'arrival_datetime': self.arrival_datetime.strftime('%Y-%m-%d %H:%M'),
             'id_team': self.id_team,
+            'id_stadium': self.id_stadium
         }

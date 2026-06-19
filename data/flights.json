@@ -4,1439 +4,1439 @@
     "flight_number": "WC0001",
     "origin_city": "Ciudad de México",
     "destination_city": "Ciudad de México",
-    "departure_datetime": "2026-06-10T12:00:00",
-    "arrival_datetime": "2026-06-10T13:00:00",
+    "departure_datetime": "2026-06-11 10:00:00",
+    "arrival_datetime": "2026-06-11 11:00:00",
     "id_team": 31,
-    "duracion_horas": 1.0
+    "id_stadium": 1
   },
   {
     "id_flight": 2,
     "flight_number": "WC0002",
     "origin_city": "San Agustín Tlaxiaca",
     "destination_city": "Ciudad de México",
-    "departure_datetime": "2026-06-10T11:53:32",
-    "arrival_datetime": "2026-06-10T13:00:00",
+    "departure_datetime": "2026-06-11 09:53:00",
+    "arrival_datetime": "2026-06-11 11:00:00",
     "id_team": 43,
-    "duracion_horas": 1.11
+    "id_stadium": 1
   },
   {
     "id_flight": 3,
     "flight_number": "WC0003",
     "origin_city": "Zapopan",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-10T11:59:26",
-    "arrival_datetime": "2026-06-10T13:00:00",
+    "departure_datetime": "2026-06-11 16:59:00",
+    "arrival_datetime": "2026-06-11 18:00:00",
     "id_team": 41,
-    "duracion_horas": 1.01
+    "id_stadium": 2
   },
   {
     "id_flight": 4,
     "flight_number": "WC0004",
     "origin_city": "Mansfield",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-10T10:03:20",
-    "arrival_datetime": "2026-06-10T13:00:00",
+    "departure_datetime": "2026-06-11 15:04:00",
+    "arrival_datetime": "2026-06-11 18:00:00",
     "id_team": 40,
-    "duracion_horas": 2.94
+    "id_stadium": 2
   },
   {
     "id_flight": 5,
     "flight_number": "WC0005",
     "origin_city": "Vancouver",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-11T07:31:15",
-    "arrival_datetime": "2026-06-11T13:00:00",
+    "departure_datetime": "2026-06-12 05:31:00",
+    "arrival_datetime": "2026-06-12 11:00:00",
     "id_team": 11,
-    "duracion_horas": 5.48
+    "id_stadium": 4
   },
   {
     "id_flight": 6,
     "flight_number": "WC0006",
     "origin_city": "Sandy",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-11T08:25:25",
-    "arrival_datetime": "2026-06-11T13:00:00",
+    "departure_datetime": "2026-06-12 06:25:00",
+    "arrival_datetime": "2026-06-12 11:00:00",
     "id_team": 7,
-    "duracion_horas": 4.58
+    "id_stadium": 4
   },
   {
     "id_flight": 7,
     "flight_number": "WC0007",
     "origin_city": "Irvine",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-11T11:55:31",
-    "arrival_datetime": "2026-06-11T13:00:00",
+    "departure_datetime": "2026-06-12 15:56:00",
+    "arrival_datetime": "2026-06-12 17:00:00",
     "id_team": 21,
-    "duracion_horas": 1.07
+    "id_stadium": 6
   },
   {
     "id_flight": 8,
     "flight_number": "WC0008",
     "origin_city": "San Jose",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-11T11:20:36",
-    "arrival_datetime": "2026-06-11T13:00:00",
+    "departure_datetime": "2026-06-12 15:20:00",
+    "arrival_datetime": "2026-06-12 17:00:00",
     "id_team": 35,
-    "duracion_horas": 1.66
+    "id_stadium": 6
   },
   {
     "id_flight": 9,
     "flight_number": "WC0009",
     "origin_city": "Santa Barbara",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-12T11:24:21",
-    "arrival_datetime": "2026-06-12T13:00:00",
+    "departure_datetime": "2026-06-13 09:25:00",
+    "arrival_datetime": "2026-06-13 11:00:00",
     "id_team": 12,
-    "duracion_horas": 1.59
+    "id_stadium": 7
   },
   {
     "id_flight": 10,
     "flight_number": "WC0010",
     "origin_city": "San Diego",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-12T11:01:02",
-    "arrival_datetime": "2026-06-12T13:00:00",
+    "departure_datetime": "2026-06-13 09:01:00",
+    "arrival_datetime": "2026-06-13 11:00:00",
     "id_team": 45,
-    "duracion_horas": 1.98
+    "id_stadium": 7
   },
   {
     "id_flight": 11,
     "flight_number": "WC0011",
     "origin_city": "Morristown",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-12T11:57:49",
-    "arrival_datetime": "2026-06-12T13:00:00",
+    "departure_datetime": "2026-06-13 12:58:00",
+    "arrival_datetime": "2026-06-13 14:00:00",
     "id_team": 8,
-    "duracion_horas": 1.04
+    "id_stadium": 12
   },
   {
     "id_flight": 12,
     "flight_number": "WC0012",
     "origin_city": "Basking Ridge",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-12T11:57:25",
-    "arrival_datetime": "2026-06-12T13:00:00",
+    "departure_datetime": "2026-06-13 12:58:00",
+    "arrival_datetime": "2026-06-13 14:00:00",
     "id_team": 30,
-    "duracion_horas": 1.04
+    "id_stadium": 12
   },
   {
     "id_flight": 13,
     "flight_number": "WC0013",
     "origin_city": "Galloway Township",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-12T11:25:22",
-    "arrival_datetime": "2026-06-12T13:00:00",
+    "departure_datetime": "2026-06-13 15:25:00",
+    "arrival_datetime": "2026-06-13 17:00:00",
     "id_team": 24,
-    "duracion_horas": 1.58
+    "id_stadium": 13
   },
   {
     "id_flight": 14,
     "flight_number": "WC0014",
     "origin_city": "Charlotte",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-12T00:42:50",
-    "arrival_datetime": "2026-06-12T13:00:00",
+    "departure_datetime": "2026-06-13 04:43:00",
+    "arrival_datetime": "2026-06-13 17:00:00",
     "id_team": 19,
-    "duracion_horas": 12.29
+    "id_stadium": 13
   },
   {
     "id_flight": 15,
     "flight_number": "WC0015",
     "origin_city": "Alameda",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-13T10:17:28",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-13 17:17:00",
+    "arrival_datetime": "2026-06-13 20:00:00",
     "id_team": 5,
-    "duracion_horas": 2.71
+    "id_stadium": 5
   },
   {
     "id_flight": 16,
     "flight_number": "WC0016",
     "origin_city": "Mesa",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-13T09:20:26",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-13 16:20:00",
+    "arrival_datetime": "2026-06-13 20:00:00",
     "id_team": 46,
-    "duracion_horas": 3.66
+    "id_stadium": 5
   },
   {
     "id_flight": 17,
     "flight_number": "WC0017",
     "origin_city": "Winston-Salem",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-13T09:53:56",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 05:54:00",
+    "arrival_datetime": "2026-06-14 09:00:00",
     "id_team": 1,
-    "duracion_horas": 3.1
+    "id_stadium": 9
   },
   {
     "id_flight": 18,
     "flight_number": "WC0018",
     "origin_city": "Boca Raton",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-13T09:56:44",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 05:57:00",
+    "arrival_datetime": "2026-06-14 09:00:00",
     "id_team": 16,
-    "duracion_horas": 3.05
+    "id_stadium": 9
   },
   {
     "id_flight": 19,
     "flight_number": "WC0019",
     "origin_city": "Riverside",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-13T11:01:01",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 10:01:00",
+    "arrival_datetime": "2026-06-14 12:00:00",
     "id_team": 36,
-    "duracion_horas": 1.98
+    "id_stadium": 10
   },
   {
     "id_flight": 20,
     "flight_number": "WC0020",
     "origin_city": "Nashville",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-13T10:40:39",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 09:41:00",
+    "arrival_datetime": "2026-06-14 12:00:00",
     "id_team": 28,
-    "duracion_horas": 2.32
+    "id_stadium": 10
   },
   {
     "id_flight": 21,
     "flight_number": "WC0021",
     "origin_city": "Chester",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-13T11:58:25",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 13:58:00",
+    "arrival_datetime": "2026-06-14 15:00:00",
     "id_team": 14,
-    "duracion_horas": 1.03
+    "id_stadium": 14
   },
   {
     "id_flight": 22,
     "flight_number": "WC0022",
     "origin_city": "Columbus",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-13T11:06:41",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 13:07:00",
+    "arrival_datetime": "2026-06-14 15:00:00",
     "id_team": 17,
-    "duracion_horas": 1.89
+    "id_stadium": 14
   },
   {
     "id_flight": 23,
     "flight_number": "WC0023",
     "origin_city": "Frisco",
     "destination_city": "Monterrey",
-    "departure_datetime": "2026-06-13T10:48:16",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 15:48:00",
+    "arrival_datetime": "2026-06-14 18:00:00",
     "id_team": 44,
-    "duracion_horas": 2.2
+    "id_stadium": 3
   },
   {
     "id_flight": 24,
     "flight_number": "WC0024",
     "origin_city": "Santiago",
     "destination_city": "Monterrey",
-    "departure_datetime": "2026-06-13T07:51:06",
-    "arrival_datetime": "2026-06-13T13:00:00",
+    "departure_datetime": "2026-06-14 12:51:00",
+    "arrival_datetime": "2026-06-14 18:00:00",
     "id_team": 47,
-    "duracion_horas": 5.15
+    "id_stadium": 3
   },
   {
     "id_flight": 25,
     "flight_number": "WC0025",
     "origin_city": "Chattanooga",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-14T11:46:36",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 06:47:00",
+    "arrival_datetime": "2026-06-15 08:00:00",
     "id_team": 20,
-    "duracion_horas": 1.22
+    "id_stadium": 15
   },
   {
     "id_flight": 26,
     "flight_number": "WC0026",
     "origin_city": "Tampa",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-14T11:06:20",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 06:07:00",
+    "arrival_datetime": "2026-06-15 08:00:00",
     "id_team": 10,
-    "duracion_horas": 1.89
+    "id_stadium": 15
   },
   {
     "id_flight": 27,
     "flight_number": "WC0027",
     "origin_city": "Renton",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-14T11:58:40",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 09:59:00",
+    "arrival_datetime": "2026-06-15 11:00:00",
     "id_team": 9,
-    "duracion_horas": 1.02
+    "id_stadium": 8
   },
   {
     "id_flight": 28,
     "flight_number": "WC0028",
     "origin_city": "Spokane",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-14T11:30:37",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 09:31:00",
+    "arrival_datetime": "2026-06-15 11:00:00",
     "id_team": 18,
-    "duracion_horas": 1.49
+    "id_stadium": 8
   },
   {
     "id_flight": 29,
     "flight_number": "WC0029",
     "origin_city": "Austin",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-14T09:36:38",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 10:37:00",
+    "arrival_datetime": "2026-06-15 14:00:00",
     "id_team": 2,
-    "duracion_horas": 3.39
+    "id_stadium": 16
   },
   {
     "id_flight": 30,
     "flight_number": "WC0030",
     "origin_city": "Playa del Carmen",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-14T10:47:35",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 11:47:00",
+    "arrival_datetime": "2026-06-15 14:00:00",
     "id_team": 48,
-    "duracion_horas": 2.21
+    "id_stadium": 16
   },
   {
     "id_flight": 31,
     "flight_number": "WC0031",
     "origin_city": "Tijuana",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-14T11:43:39",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 15:44:00",
+    "arrival_datetime": "2026-06-15 17:00:00",
     "id_team": 39,
-    "duracion_horas": 1.27
+    "id_stadium": 6
   },
   {
     "id_flight": 32,
     "flight_number": "WC0032",
     "origin_city": "San Diego",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-14T11:45:42",
-    "arrival_datetime": "2026-06-14T13:00:00",
+    "departure_datetime": "2026-06-15 15:46:00",
+    "arrival_datetime": "2026-06-15 17:00:00",
     "id_team": 33,
-    "duracion_horas": 1.24
+    "id_stadium": 6
   },
   {
     "id_flight": 33,
     "flight_number": "WC0033",
     "origin_city": "Waltham",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-15T11:35:35",
-    "arrival_datetime": "2026-06-15T13:00:00",
+    "departure_datetime": "2026-06-16 09:35:00",
+    "arrival_datetime": "2026-06-16 11:00:00",
     "id_team": 22,
-    "duracion_horas": 1.41
+    "id_stadium": 12
   },
   {
     "id_flight": 34,
     "flight_number": "WC0034",
     "origin_city": "Piscataway",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-15T11:57:25",
-    "arrival_datetime": "2026-06-15T13:00:00",
+    "departure_datetime": "2026-06-16 09:58:00",
+    "arrival_datetime": "2026-06-16 11:00:00",
     "id_team": 42,
-    "duracion_horas": 1.04
+    "id_stadium": 12
   },
   {
     "id_flight": 35,
     "flight_number": "WC0035",
     "origin_city": "White Sulphur Springs",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-15T10:45:10",
-    "arrival_datetime": "2026-06-15T13:00:00",
+    "departure_datetime": "2026-06-16 11:45:00",
+    "arrival_datetime": "2026-06-16 14:00:00",
     "id_team": 26,
-    "duracion_horas": 2.25
+    "id_stadium": 13
   },
   {
     "id_flight": 36,
     "flight_number": "WC0036",
     "origin_city": "Greensboro",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-15T10:37:55",
-    "arrival_datetime": "2026-06-15T13:00:00",
+    "departure_datetime": "2026-06-16 11:38:00",
+    "arrival_datetime": "2026-06-16 14:00:00",
     "id_team": 32,
-    "duracion_horas": 2.37
+    "id_stadium": 13
   },
   {
     "id_flight": 37,
     "flight_number": "WC0037",
     "origin_city": "Kansas City",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-15T12:00:00",
-    "arrival_datetime": "2026-06-15T13:00:00",
+    "departure_datetime": "2026-06-16 16:00:00",
+    "arrival_datetime": "2026-06-16 17:00:00",
     "id_team": 4,
-    "duracion_horas": 1.0
+    "id_stadium": 11
   },
   {
     "id_flight": 38,
     "flight_number": "WC0038",
     "origin_city": "Lawrence",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-15T11:55:17",
-    "arrival_datetime": "2026-06-15T13:00:00",
+    "departure_datetime": "2026-06-16 15:55:00",
+    "arrival_datetime": "2026-06-16 17:00:00",
     "id_team": 3,
-    "duracion_horas": 1.08
+    "id_stadium": 11
   },
   {
     "id_flight": 39,
     "flight_number": "WC0039",
     "origin_city": "Santa Barbara",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-16T11:24:21",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-16 18:25:00",
+    "arrival_datetime": "2026-06-16 20:00:00",
     "id_team": 6,
-    "duracion_horas": 1.59
+    "id_stadium": 7
   },
   {
     "id_flight": 40,
     "flight_number": "WC0040",
     "origin_city": "Portland",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-16T10:51:02",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-16 17:51:00",
+    "arrival_datetime": "2026-06-16 20:00:00",
     "id_team": 29,
-    "duracion_horas": 2.15
+    "id_stadium": 7
   },
   {
     "id_flight": 41,
     "flight_number": "WC0041",
     "origin_city": "Palm Beach Gardens",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-16T09:57:58",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 05:58:00",
+    "arrival_datetime": "2026-06-17 09:00:00",
     "id_team": 37,
-    "duracion_horas": 3.03
+    "id_stadium": 9
   },
   {
     "id_flight": 42,
     "flight_number": "WC0042",
     "origin_city": "Houston",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-16T12:00:00",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 08:00:00",
+    "arrival_datetime": "2026-06-17 09:00:00",
     "id_team": 38,
-    "duracion_horas": 1.0
+    "id_stadium": 9
   },
   {
     "id_flight": 43,
     "flight_number": "WC0043",
     "origin_city": "Kansas City",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-16T11:01:33",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 10:02:00",
+    "arrival_datetime": "2026-06-17 12:00:00",
     "id_team": 25,
-    "duracion_horas": 1.97
+    "id_stadium": 10
   },
   {
     "id_flight": 44,
     "flight_number": "WC0044",
     "origin_city": "Alexandria",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-16T09:28:08",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 08:28:00",
+    "arrival_datetime": "2026-06-17 12:00:00",
     "id_team": 15,
-    "duracion_horas": 3.53
+    "id_stadium": 10
   },
   {
     "id_flight": 45,
     "flight_number": "WC0045",
     "origin_city": "Smithfield",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-16T11:06:38",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 13:07:00",
+    "arrival_datetime": "2026-06-17 15:00:00",
     "id_team": 23,
-    "duracion_horas": 1.89
+    "id_stadium": 4
   },
   {
     "id_flight": 46,
     "flight_number": "WC0046",
     "origin_city": "New Tecumseth",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-16T11:55:19",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 13:55:00",
+    "arrival_datetime": "2026-06-17 15:00:00",
     "id_team": 34,
-    "duracion_horas": 1.08
+    "id_stadium": 4
   },
   {
     "id_flight": 47,
     "flight_number": "WC0047",
     "origin_city": "Marietta",
     "destination_city": "Ciudad de México",
-    "departure_datetime": "2026-06-16T09:06:52",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 14:07:00",
+    "arrival_datetime": "2026-06-17 18:00:00",
     "id_team": 49,
-    "duracion_horas": 3.89
+    "id_stadium": 1
   },
   {
     "id_flight": 48,
     "flight_number": "WC0048",
     "origin_city": "Zapopan",
     "destination_city": "Ciudad de México",
-    "departure_datetime": "2026-06-16T11:22:36",
-    "arrival_datetime": "2026-06-16T13:00:00",
+    "departure_datetime": "2026-06-17 16:23:00",
+    "arrival_datetime": "2026-06-17 18:00:00",
     "id_team": 13,
-    "duracion_horas": 1.62
+    "id_stadium": 1
   },
   {
     "id_flight": 49,
     "flight_number": "WC0049",
     "origin_city": "Mansfield",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-17T10:24:31",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 05:25:00",
+    "arrival_datetime": "2026-06-18 08:00:00",
     "id_team": 40,
-    "duracion_horas": 2.59
+    "id_stadium": 15
   },
   {
     "id_flight": 50,
     "flight_number": "WC0050",
     "origin_city": "San Agustín Tlaxiaca",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-17T09:13:16",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 04:13:00",
+    "arrival_datetime": "2026-06-18 08:00:00",
     "id_team": 43,
-    "duracion_horas": 3.78
+    "id_stadium": 15
   },
   {
     "id_flight": 51,
     "flight_number": "WC0051",
     "origin_city": "San Diego",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-17T11:45:42",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 09:46:00",
+    "arrival_datetime": "2026-06-18 11:00:00",
     "id_team": 45,
-    "duracion_horas": 1.24
+    "id_stadium": 6
   },
   {
     "id_flight": 52,
     "flight_number": "WC0052",
     "origin_city": "Sandy",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-17T10:46:27",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 08:46:00",
+    "arrival_datetime": "2026-06-18 11:00:00",
     "id_team": 7,
-    "duracion_horas": 2.23
+    "id_stadium": 6
   },
   {
     "id_flight": 53,
     "flight_number": "WC0053",
     "origin_city": "Vancouver",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-17T12:00:00",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 13:00:00",
+    "arrival_datetime": "2026-06-18 14:00:00",
     "id_team": 11,
-    "duracion_horas": 1.0
+    "id_stadium": 5
   },
   {
     "id_flight": 54,
     "flight_number": "WC0054",
     "origin_city": "Santa Barbara",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-17T09:45:55",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 10:46:00",
+    "arrival_datetime": "2026-06-18 14:00:00",
     "id_team": 12,
-    "duracion_horas": 3.23
+    "id_stadium": 5
   },
   {
     "id_flight": 55,
     "flight_number": "WC0055",
     "origin_city": "Ciudad de México",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-17T11:23:03",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 15:23:00",
+    "arrival_datetime": "2026-06-18 17:00:00",
     "id_team": 31,
-    "duracion_horas": 1.62
+    "id_stadium": 2
   },
   {
     "id_flight": 56,
     "flight_number": "WC0056",
     "origin_city": "Zapopan",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-17T11:59:26",
-    "arrival_datetime": "2026-06-17T13:00:00",
+    "departure_datetime": "2026-06-18 15:59:00",
+    "arrival_datetime": "2026-06-18 17:00:00",
     "id_team": 41,
-    "duracion_horas": 1.01
+    "id_stadium": 2
   },
   {
     "id_flight": 57,
     "flight_number": "WC0057",
     "origin_city": "Irvine",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-18T09:52:28",
-    "arrival_datetime": "2026-06-18T13:00:00",
+    "departure_datetime": "2026-06-19 07:52:00",
+    "arrival_datetime": "2026-06-19 11:00:00",
     "id_team": 21,
-    "duracion_horas": 3.13
+    "id_stadium": 8
   },
   {
     "id_flight": 58,
     "flight_number": "WC0058",
     "origin_city": "Alameda",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-18T10:32:28",
-    "arrival_datetime": "2026-06-18T13:00:00",
+    "departure_datetime": "2026-06-19 08:32:00",
+    "arrival_datetime": "2026-06-19 11:00:00",
     "id_team": 5,
-    "duracion_horas": 2.46
+    "id_stadium": 8
   },
   {
     "id_flight": 59,
     "flight_number": "WC0059",
     "origin_city": "Charlotte",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-18T00:42:50",
-    "arrival_datetime": "2026-06-18T13:00:00",
+    "departure_datetime": "2026-06-19 01:43:00",
+    "arrival_datetime": "2026-06-19 14:00:00",
     "id_team": 19,
-    "duracion_horas": 12.29
+    "id_stadium": 13
   },
   {
     "id_flight": 60,
     "flight_number": "WC0060",
     "origin_city": "Basking Ridge",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-18T11:32:31",
-    "arrival_datetime": "2026-06-18T13:00:00",
+    "departure_datetime": "2026-06-19 12:32:00",
+    "arrival_datetime": "2026-06-19 14:00:00",
     "id_team": 30,
-    "duracion_horas": 1.46
+    "id_stadium": 13
   },
   {
     "id_flight": 61,
     "flight_number": "WC0061",
     "origin_city": "Morristown",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-18T11:51:06",
-    "arrival_datetime": "2026-06-18T13:00:00",
+    "departure_datetime": "2026-06-19 15:51:00",
+    "arrival_datetime": "2026-06-19 17:00:00",
     "id_team": 8,
-    "duracion_horas": 1.15
+    "id_stadium": 14
   },
   {
     "id_flight": 62,
     "flight_number": "WC0062",
     "origin_city": "Galloway Township",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-18T11:54:03",
-    "arrival_datetime": "2026-06-18T13:00:00",
+    "departure_datetime": "2026-06-19 15:54:00",
+    "arrival_datetime": "2026-06-19 17:00:00",
     "id_team": 24,
-    "duracion_horas": 1.1
+    "id_stadium": 14
   },
   {
     "id_flight": 63,
     "flight_number": "WC0063",
     "origin_city": "Mesa",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-19T10:34:15",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-19 17:34:00",
+    "arrival_datetime": "2026-06-19 20:00:00",
     "id_team": 46,
-    "duracion_horas": 2.43
+    "id_stadium": 7
   },
   {
     "id_flight": 64,
     "flight_number": "WC0064",
     "origin_city": "San Jose",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-19T11:54:39",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-19 18:55:00",
+    "arrival_datetime": "2026-06-19 20:00:00",
     "id_team": 35,
-    "duracion_horas": 1.09
+    "id_stadium": 7
   },
   {
     "id_flight": 65,
     "flight_number": "WC0065",
     "origin_city": "Riverside",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-19T10:36:06",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-20 06:36:00",
+    "arrival_datetime": "2026-06-20 09:00:00",
     "id_team": 36,
-    "duracion_horas": 2.4
+    "id_stadium": 9
   },
   {
     "id_flight": 66,
     "flight_number": "WC0066",
     "origin_city": "Frisco",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-19T11:27:54",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-20 07:28:00",
+    "arrival_datetime": "2026-06-20 09:00:00",
     "id_team": 44,
-    "duracion_horas": 1.53
+    "id_stadium": 9
   },
   {
     "id_flight": 67,
     "flight_number": "WC0067",
     "origin_city": "Winston-Salem",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-19T10:52:34",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-20 09:53:00",
+    "arrival_datetime": "2026-06-20 12:00:00",
     "id_team": 1,
-    "duracion_horas": 2.12
+    "id_stadium": 4
   },
   {
     "id_flight": 68,
     "flight_number": "WC0068",
     "origin_city": "Chester",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-19T11:16:56",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-20 10:17:00",
+    "arrival_datetime": "2026-06-20 12:00:00",
     "id_team": 14,
-    "duracion_horas": 1.72
+    "id_stadium": 4
   },
   {
     "id_flight": 69,
     "flight_number": "WC0069",
     "origin_city": "Columbus",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-19T10:40:10",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-20 15:40:00",
+    "arrival_datetime": "2026-06-20 18:00:00",
     "id_team": 17,
-    "duracion_horas": 2.33
+    "id_stadium": 11
   },
   {
     "id_flight": 70,
     "flight_number": "WC0070",
     "origin_city": "Boca Raton",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-19T09:23:49",
-    "arrival_datetime": "2026-06-19T13:00:00",
+    "departure_datetime": "2026-06-20 14:24:00",
+    "arrival_datetime": "2026-06-20 18:00:00",
     "id_team": 16,
-    "duracion_horas": 3.6
+    "id_stadium": 11
   },
   {
     "id_flight": 71,
     "flight_number": "WC0071",
     "origin_city": "Santiago",
     "destination_city": "Monterrey",
-    "departure_datetime": "2026-06-20T07:51:06",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-20 14:51:00",
+    "arrival_datetime": "2026-06-20 20:00:00",
     "id_team": 47,
-    "duracion_horas": 5.15
+    "id_stadium": 3
   },
   {
     "id_flight": 72,
     "flight_number": "WC0072",
     "origin_city": "Nashville",
     "destination_city": "Monterrey",
-    "departure_datetime": "2026-06-20T09:41:09",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-20 16:41:00",
+    "arrival_datetime": "2026-06-20 20:00:00",
     "id_team": 28,
-    "duracion_horas": 3.31
+    "id_stadium": 3
   },
   {
     "id_flight": 73,
     "flight_number": "WC0073",
     "origin_city": "Chattanooga",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-20T11:46:36",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 06:47:00",
+    "arrival_datetime": "2026-06-21 08:00:00",
     "id_team": 20,
-    "duracion_horas": 1.22
+    "id_stadium": 15
   },
   {
     "id_flight": 74,
     "flight_number": "WC0074",
     "origin_city": "Austin",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-20T10:14:44",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 05:15:00",
+    "arrival_datetime": "2026-06-21 08:00:00",
     "id_team": 2,
-    "duracion_horas": 2.75
+    "id_stadium": 15
   },
   {
     "id_flight": 75,
     "flight_number": "WC0075",
     "origin_city": "Renton",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-20T09:57:36",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 07:58:00",
+    "arrival_datetime": "2026-06-21 11:00:00",
     "id_team": 9,
-    "duracion_horas": 3.04
+    "id_stadium": 6
   },
   {
     "id_flight": 76,
     "flight_number": "WC0076",
     "origin_city": "Tijuana",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-20T11:43:39",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 09:44:00",
+    "arrival_datetime": "2026-06-21 11:00:00",
     "id_team": 27,
-    "duracion_horas": 1.27
+    "id_stadium": 6
   },
   {
     "id_flight": 77,
     "flight_number": "WC0077",
     "origin_city": "Playa del Carmen",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-20T10:47:35",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 11:47:00",
+    "arrival_datetime": "2026-06-21 14:00:00",
     "id_team": 48,
-    "duracion_horas": 2.21
+    "id_stadium": 16
   },
   {
     "id_flight": 78,
     "flight_number": "WC0078",
     "origin_city": "Tampa",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-20T11:33:28",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 12:34:00",
+    "arrival_datetime": "2026-06-21 14:00:00",
     "id_team": 10,
-    "duracion_horas": 1.44
+    "id_stadium": 16
   },
   {
     "id_flight": 79,
     "flight_number": "WC0079",
     "origin_city": "San Diego",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-20T09:27:28",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 13:28:00",
+    "arrival_datetime": "2026-06-21 17:00:00",
     "id_team": 33,
-    "duracion_horas": 3.54
+    "id_stadium": 5
   },
   {
     "id_flight": 80,
     "flight_number": "WC0080",
     "origin_city": "Spokane",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-20T11:23:29",
-    "arrival_datetime": "2026-06-20T13:00:00",
+    "departure_datetime": "2026-06-21 15:23:00",
+    "arrival_datetime": "2026-06-21 17:00:00",
     "id_team": 18,
-    "duracion_horas": 1.61
+    "id_stadium": 5
   },
   {
     "id_flight": 81,
     "flight_number": "WC0081",
     "origin_city": "Kansas City",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-21T11:01:33",
-    "arrival_datetime": "2026-06-21T13:00:00",
+    "departure_datetime": "2026-06-22 07:02:00",
+    "arrival_datetime": "2026-06-22 09:00:00",
     "id_team": 4,
-    "duracion_horas": 1.97
+    "id_stadium": 10
   },
   {
     "id_flight": 82,
     "flight_number": "WC0082",
     "origin_city": "Santa Barbara",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-21T09:10:03",
-    "arrival_datetime": "2026-06-21T13:00:00",
+    "departure_datetime": "2026-06-22 05:10:00",
+    "arrival_datetime": "2026-06-22 09:00:00",
     "id_team": 6,
-    "duracion_horas": 3.83
+    "id_stadium": 10
   },
   {
     "id_flight": 83,
     "flight_number": "WC0083",
     "origin_city": "Waltham",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-21T11:25:56",
-    "arrival_datetime": "2026-06-21T13:00:00",
+    "departure_datetime": "2026-06-22 11:26:00",
+    "arrival_datetime": "2026-06-22 13:00:00",
     "id_team": 22,
-    "duracion_horas": 1.57
+    "id_stadium": 14
   },
   {
     "id_flight": 84,
     "flight_number": "WC0084",
     "origin_city": "White Sulphur Springs",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-21T11:19:37",
-    "arrival_datetime": "2026-06-21T13:00:00",
+    "departure_datetime": "2026-06-22 11:20:00",
+    "arrival_datetime": "2026-06-22 13:00:00",
     "id_team": 26,
-    "duracion_horas": 1.67
+    "id_stadium": 14
   },
   {
     "id_flight": 85,
     "flight_number": "WC0085",
     "origin_city": "Greensboro",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-21T11:02:59",
-    "arrival_datetime": "2026-06-21T13:00:00",
+    "departure_datetime": "2026-06-22 14:03:00",
+    "arrival_datetime": "2026-06-22 16:00:00",
     "id_team": 32,
-    "duracion_horas": 1.95
+    "id_stadium": 12
   },
   {
     "id_flight": 86,
     "flight_number": "WC0086",
     "origin_city": "Piscataway",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-21T11:57:25",
-    "arrival_datetime": "2026-06-21T13:00:00",
+    "departure_datetime": "2026-06-22 14:58:00",
+    "arrival_datetime": "2026-06-22 16:00:00",
     "id_team": 42,
-    "duracion_horas": 1.04
+    "id_stadium": 12
   },
   {
     "id_flight": 87,
     "flight_number": "WC0087",
     "origin_city": "Portland",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-22T10:51:02",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-22 17:51:00",
+    "arrival_datetime": "2026-06-22 20:00:00",
     "id_team": 29,
-    "duracion_horas": 2.15
+    "id_stadium": 7
   },
   {
     "id_flight": 88,
     "flight_number": "WC0088",
     "origin_city": "Lawrence",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-22T08:50:50",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-22 15:51:00",
+    "arrival_datetime": "2026-06-22 20:00:00",
     "id_team": 3,
-    "duracion_horas": 4.15
+    "id_stadium": 7
   },
   {
     "id_flight": 89,
     "flight_number": "WC0089",
     "origin_city": "Palm Beach Gardens",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-22T09:57:58",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 05:58:00",
+    "arrival_datetime": "2026-06-23 09:00:00",
     "id_team": 37,
-    "duracion_horas": 3.03
+    "id_stadium": 9
   },
   {
     "id_flight": 90,
     "flight_number": "WC0090",
     "origin_city": "Marietta",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-22T10:30:13",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 06:30:00",
+    "arrival_datetime": "2026-06-23 09:00:00",
     "id_team": 49,
-    "duracion_horas": 2.5
+    "id_stadium": 9
   },
   {
     "id_flight": 91,
     "flight_number": "WC0091",
     "origin_city": "Kansas City",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-22T09:19:21",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 08:19:00",
+    "arrival_datetime": "2026-06-23 12:00:00",
     "id_team": 25,
-    "duracion_horas": 3.68
+    "id_stadium": 13
   },
   {
     "id_flight": 92,
     "flight_number": "WC0092",
     "origin_city": "Smithfield",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-22T11:54:55",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 10:55:00",
+    "arrival_datetime": "2026-06-23 12:00:00",
     "id_team": 23,
-    "duracion_horas": 1.08
+    "id_stadium": 13
   },
   {
     "id_flight": 93,
     "flight_number": "WC0093",
     "origin_city": "New Tecumseth",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-22T11:55:19",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 13:55:00",
+    "arrival_datetime": "2026-06-23 15:00:00",
     "id_team": 34,
-    "duracion_horas": 1.08
+    "id_stadium": 4
   },
   {
     "id_flight": 94,
     "flight_number": "WC0094",
     "origin_city": "Alexandria",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-22T11:14:07",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 13:14:00",
+    "arrival_datetime": "2026-06-23 15:00:00",
     "id_team": 15,
-    "duracion_horas": 1.76
+    "id_stadium": 4
   },
   {
     "id_flight": 95,
     "flight_number": "WC0095",
     "origin_city": "Zapopan",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-22T11:59:26",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 16:59:00",
+    "arrival_datetime": "2026-06-23 18:00:00",
     "id_team": 13,
-    "duracion_horas": 1.01
+    "id_stadium": 2
   },
   {
     "id_flight": 96,
     "flight_number": "WC0096",
     "origin_city": "Houston",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-22T10:16:48",
-    "arrival_datetime": "2026-06-22T13:00:00",
+    "departure_datetime": "2026-06-23 15:17:00",
+    "arrival_datetime": "2026-06-23 18:00:00",
     "id_team": 38,
-    "duracion_horas": 2.72
+    "id_stadium": 2
   },
   {
     "id_flight": 97,
     "flight_number": "WC0097",
     "origin_city": "San Diego",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-23T09:27:28",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 07:28:00",
+    "arrival_datetime": "2026-06-24 11:00:00",
     "id_team": 45,
-    "duracion_horas": 3.54
+    "id_stadium": 5
   },
   {
     "id_flight": 98,
     "flight_number": "WC0098",
     "origin_city": "Vancouver",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-23T12:00:00",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 10:00:00",
+    "arrival_datetime": "2026-06-24 11:00:00",
     "id_team": 11,
-    "duracion_horas": 1.0
+    "id_stadium": 5
   },
   {
     "id_flight": 99,
     "flight_number": "WC0099",
     "origin_city": "Sandy",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-23T10:28:25",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 08:28:00",
+    "arrival_datetime": "2026-06-24 11:00:00",
     "id_team": 7,
-    "duracion_horas": 2.53
+    "id_stadium": 8
   },
   {
     "id_flight": 100,
     "flight_number": "WC0100",
     "origin_city": "Santa Barbara",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-23T10:01:21",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 08:01:00",
+    "arrival_datetime": "2026-06-24 11:00:00",
     "id_team": 12,
-    "duracion_horas": 2.98
+    "id_stadium": 8
   },
   {
     "id_flight": 101,
     "flight_number": "WC0101",
     "origin_city": "Charlotte",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-22T23:57:55",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 00:58:00",
+    "arrival_datetime": "2026-06-24 14:00:00",
     "id_team": 19,
-    "duracion_horas": 13.03
+    "id_stadium": 16
   },
   {
     "id_flight": 102,
     "flight_number": "WC0102",
     "origin_city": "Morristown",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-23T09:39:43",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 10:40:00",
+    "arrival_datetime": "2026-06-24 14:00:00",
     "id_team": 8,
-    "duracion_horas": 3.34
+    "id_stadium": 16
   },
   {
     "id_flight": 103,
     "flight_number": "WC0103",
     "origin_city": "Basking Ridge",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-23T10:26:53",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 11:27:00",
+    "arrival_datetime": "2026-06-24 14:00:00",
     "id_team": 30,
-    "duracion_horas": 2.55
+    "id_stadium": 15
   },
   {
     "id_flight": 104,
     "flight_number": "WC0104",
     "origin_city": "Galloway Township",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-23T10:33:10",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 11:33:00",
+    "arrival_datetime": "2026-06-24 14:00:00",
     "id_team": 24,
-    "duracion_horas": 2.45
+    "id_stadium": 15
   },
   {
     "id_flight": 105,
     "flight_number": "WC0105",
     "origin_city": "Mansfield",
     "destination_city": "Ciudad de México",
-    "departure_datetime": "2026-06-23T10:02:07",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 14:02:00",
+    "arrival_datetime": "2026-06-24 17:00:00",
     "id_team": 40,
-    "duracion_horas": 2.96
+    "id_stadium": 1
   },
   {
     "id_flight": 106,
     "flight_number": "WC0106",
     "origin_city": "Ciudad de México",
     "destination_city": "Ciudad de México",
-    "departure_datetime": "2026-06-23T12:00:00",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 16:00:00",
+    "arrival_datetime": "2026-06-24 17:00:00",
     "id_team": 31,
-    "duracion_horas": 1.0
+    "id_stadium": 1
   },
   {
     "id_flight": 107,
     "flight_number": "WC0107",
     "origin_city": "San Agustín Tlaxiaca",
     "destination_city": "Monterrey",
-    "departure_datetime": "2026-06-23T11:09:11",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 15:09:00",
+    "arrival_datetime": "2026-06-24 17:00:00",
     "id_team": 43,
-    "duracion_horas": 1.85
+    "id_stadium": 3
   },
   {
     "id_flight": 108,
     "flight_number": "WC0108",
     "origin_city": "Zapopan",
     "destination_city": "Monterrey",
-    "departure_datetime": "2026-06-23T11:09:12",
-    "arrival_datetime": "2026-06-23T13:00:00",
+    "departure_datetime": "2026-06-24 15:09:00",
+    "arrival_datetime": "2026-06-24 17:00:00",
     "id_team": 41,
-    "duracion_horas": 1.85
+    "id_stadium": 3
   },
   {
     "id_flight": 109,
     "flight_number": "WC0109",
     "origin_city": "Boca Raton",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-24T09:53:44",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 08:54:00",
+    "arrival_datetime": "2026-06-25 12:00:00",
     "id_team": 16,
-    "duracion_horas": 3.1
+    "id_stadium": 14
   },
   {
     "id_flight": 110,
     "flight_number": "WC0110",
     "origin_city": "Chester",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-24T11:58:25",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 10:58:00",
+    "arrival_datetime": "2026-06-25 12:00:00",
     "id_team": 14,
-    "duracion_horas": 1.03
+    "id_stadium": 14
   },
   {
     "id_flight": 111,
     "flight_number": "WC0111",
     "origin_city": "Columbus",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-24T10:59:50",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 10:00:00",
+    "arrival_datetime": "2026-06-25 12:00:00",
     "id_team": 17,
-    "duracion_horas": 2.0
+    "id_stadium": 12
   },
   {
     "id_flight": 112,
     "flight_number": "WC0112",
     "origin_city": "Winston-Salem",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-24T11:00:59",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 10:01:00",
+    "arrival_datetime": "2026-06-25 12:00:00",
     "id_team": 1,
-    "duracion_horas": 1.98
+    "id_stadium": 12
   },
   {
     "id_flight": 113,
     "flight_number": "WC0113",
     "origin_city": "Nashville",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-24T10:40:39",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 12:41:00",
+    "arrival_datetime": "2026-06-25 15:00:00",
     "id_team": 28,
-    "duracion_horas": 2.32
+    "id_stadium": 10
   },
   {
     "id_flight": 114,
     "flight_number": "WC0114",
     "origin_city": "Frisco",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-24T11:56:42",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 13:57:00",
+    "arrival_datetime": "2026-06-25 15:00:00",
     "id_team": 44,
-    "duracion_horas": 1.05
+    "id_stadium": 10
   },
   {
     "id_flight": 115,
     "flight_number": "WC0115",
     "origin_city": "Santiago",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-24T07:46:56",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 09:47:00",
+    "arrival_datetime": "2026-06-25 15:00:00",
     "id_team": 47,
-    "duracion_horas": 5.22
+    "id_stadium": 11
   },
   {
     "id_flight": 116,
     "flight_number": "WC0116",
     "origin_city": "Riverside",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-24T11:59:20",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 13:59:00",
+    "arrival_datetime": "2026-06-25 15:00:00",
     "id_team": 36,
-    "duracion_horas": 1.01
+    "id_stadium": 11
   },
   {
     "id_flight": 117,
     "flight_number": "WC0117",
     "origin_city": "Mesa",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-24T11:12:15",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 16:12:00",
+    "arrival_datetime": "2026-06-25 18:00:00",
     "id_team": 46,
-    "duracion_horas": 1.8
+    "id_stadium": 6
   },
   {
     "id_flight": 118,
     "flight_number": "WC0118",
     "origin_city": "Irvine",
     "destination_city": "Los Ángeles",
-    "departure_datetime": "2026-06-24T11:55:31",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 16:56:00",
+    "arrival_datetime": "2026-06-25 18:00:00",
     "id_team": 21,
-    "duracion_horas": 1.07
+    "id_stadium": 6
   },
   {
     "id_flight": 119,
     "flight_number": "WC0119",
     "origin_city": "San Jose",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-24T11:54:39",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 16:55:00",
+    "arrival_datetime": "2026-06-25 18:00:00",
     "id_team": 35,
-    "duracion_horas": 1.09
+    "id_stadium": 7
   },
   {
     "id_flight": 120,
     "flight_number": "WC0120",
     "origin_city": "Alameda",
     "destination_city": "San Francisco",
-    "departure_datetime": "2026-06-24T11:59:00",
-    "arrival_datetime": "2026-06-24T13:00:00",
+    "departure_datetime": "2026-06-25 16:59:00",
+    "arrival_datetime": "2026-06-25 18:00:00",
     "id_team": 5,
-    "duracion_horas": 1.02
+    "id_stadium": 7
   },
   {
     "id_flight": 121,
     "flight_number": "WC0121",
     "origin_city": "Greensboro",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-25T10:37:55",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 08:38:00",
+    "arrival_datetime": "2026-06-26 11:00:00",
     "id_team": 32,
-    "duracion_horas": 2.37
+    "id_stadium": 13
   },
   {
     "id_flight": 122,
     "flight_number": "WC0122",
     "origin_city": "Waltham",
     "destination_city": "Boston",
-    "departure_datetime": "2026-06-25T11:58:48",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 09:59:00",
+    "arrival_datetime": "2026-06-26 11:00:00",
     "id_team": 22,
-    "duracion_horas": 1.02
+    "id_stadium": 13
   },
   {
     "id_flight": 123,
     "flight_number": "WC0123",
     "origin_city": "Piscataway",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-25T11:16:48",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 09:17:00",
+    "arrival_datetime": "2026-06-26 11:00:00",
     "id_team": 42,
-    "duracion_horas": 1.72
+    "id_stadium": 4
   },
   {
     "id_flight": 124,
     "flight_number": "WC0124",
     "origin_city": "White Sulphur Springs",
     "destination_city": "Toronto",
-    "departure_datetime": "2026-06-25T11:07:30",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 09:08:00",
+    "arrival_datetime": "2026-06-26 11:00:00",
     "id_team": 26,
-    "duracion_horas": 1.87
+    "id_stadium": 4
   },
   {
     "id_flight": 125,
     "flight_number": "WC0125",
     "origin_city": "Tampa",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-25T10:18:11",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 13:18:00",
+    "arrival_datetime": "2026-06-26 16:00:00",
     "id_team": 10,
-    "duracion_horas": 2.7
+    "id_stadium": 9
   },
   {
     "id_flight": 126,
     "flight_number": "WC0126",
     "origin_city": "Austin",
     "destination_city": "Houston",
-    "departure_datetime": "2026-06-25T11:41:11",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 14:41:00",
+    "arrival_datetime": "2026-06-26 16:00:00",
     "id_team": 2,
-    "duracion_horas": 1.31
+    "id_stadium": 9
   },
   {
     "id_flight": 127,
     "flight_number": "WC0127",
     "origin_city": "Playa del Carmen",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-25T09:44:32",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 12:44:00",
+    "arrival_datetime": "2026-06-26 16:00:00",
     "id_team": 48,
-    "duracion_horas": 3.26
+    "id_stadium": 2
   },
   {
     "id_flight": 128,
     "flight_number": "WC0128",
     "origin_city": "Chattanooga",
     "destination_city": "Guadalajara",
-    "departure_datetime": "2026-06-25T08:49:34",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 11:50:00",
+    "arrival_datetime": "2026-06-26 16:00:00",
     "id_team": 20,
-    "duracion_horas": 4.17
+    "id_stadium": 2
   },
   {
     "id_flight": 129,
     "flight_number": "WC0129",
     "origin_city": "Spokane",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-25T11:30:37",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 17:31:00",
+    "arrival_datetime": "2026-06-26 19:00:00",
     "id_team": 18,
-    "duracion_horas": 1.49
+    "id_stadium": 8
   },
   {
     "id_flight": 130,
     "flight_number": "WC0130",
     "origin_city": "Tijuana",
     "destination_city": "Seattle",
-    "departure_datetime": "2026-06-25T09:41:01",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 15:41:00",
+    "arrival_datetime": "2026-06-26 19:00:00",
     "id_team": 27,
-    "duracion_horas": 3.32
+    "id_stadium": 8
   },
   {
     "id_flight": 131,
     "flight_number": "WC0131",
     "origin_city": "San Diego",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-25T09:27:28",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 15:28:00",
+    "arrival_datetime": "2026-06-26 19:00:00",
     "id_team": 33,
-    "duracion_horas": 3.54
+    "id_stadium": 5
   },
   {
     "id_flight": 132,
     "flight_number": "WC0132",
     "origin_city": "Renton",
     "destination_city": "Vancouver",
-    "departure_datetime": "2026-06-25T11:43:07",
-    "arrival_datetime": "2026-06-25T13:00:00",
+    "departure_datetime": "2026-06-26 17:43:00",
+    "arrival_datetime": "2026-06-26 19:00:00",
     "id_team": 9,
-    "duracion_horas": 1.28
+    "id_stadium": 5
   },
   {
     "id_flight": 133,
     "flight_number": "WC0133",
     "origin_city": "New Tecumseth",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-26T11:12:31",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 11:13:00",
+    "arrival_datetime": "2026-06-27 13:00:00",
     "id_team": 34,
-    "duracion_horas": 1.79
+    "id_stadium": 12
   },
   {
     "id_flight": 134,
     "flight_number": "WC0134",
     "origin_city": "Kansas City",
     "destination_city": "Nueva York / Nueva Jersey",
-    "departure_datetime": "2026-06-26T09:40:18",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 09:40:00",
+    "arrival_datetime": "2026-06-27 13:00:00",
     "id_team": 25,
-    "duracion_horas": 3.33
+    "id_stadium": 12
   },
   {
     "id_flight": 135,
     "flight_number": "WC0135",
     "origin_city": "Alexandria",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-26T11:43:30",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 11:44:00",
+    "arrival_datetime": "2026-06-27 13:00:00",
     "id_team": 15,
-    "duracion_horas": 1.27
+    "id_stadium": 14
   },
   {
     "id_flight": 136,
     "flight_number": "WC0136",
     "origin_city": "Smithfield",
     "destination_city": "Filadelfia",
-    "departure_datetime": "2026-06-26T11:30:01",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 11:30:00",
+    "arrival_datetime": "2026-06-27 13:00:00",
     "id_team": 23,
-    "duracion_horas": 1.5
+    "id_stadium": 14
   },
   {
     "id_flight": 137,
     "flight_number": "WC0137",
     "origin_city": "Zapopan",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-26T08:45:25",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 11:16:00",
+    "arrival_datetime": "2026-06-27 15:30:00",
     "id_team": 13,
-    "duracion_horas": 4.24
+    "id_stadium": 16
   },
   {
     "id_flight": 138,
     "flight_number": "WC0138",
     "origin_city": "Palm Beach Gardens",
     "destination_city": "Miami",
-    "departure_datetime": "2026-06-26T11:50:33",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 14:20:00",
+    "arrival_datetime": "2026-06-27 15:30:00",
     "id_team": 37,
-    "duracion_horas": 1.16
+    "id_stadium": 16
   },
   {
     "id_flight": 139,
     "flight_number": "WC0139",
     "origin_city": "Houston",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-26T10:29:44",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 13:00:00",
+    "arrival_datetime": "2026-06-27 15:30:00",
     "id_team": 38,
-    "duracion_horas": 2.5
+    "id_stadium": 15
   },
   {
     "id_flight": 140,
     "flight_number": "WC0140",
     "origin_city": "Marietta",
     "destination_city": "Atlanta",
-    "departure_datetime": "2026-06-26T11:57:51",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 14:28:00",
+    "arrival_datetime": "2026-06-27 15:30:00",
     "id_team": 49,
-    "duracion_horas": 1.04
+    "id_stadium": 15
   },
   {
     "id_flight": 141,
     "flight_number": "WC0141",
     "origin_city": "Lawrence",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-26T11:55:17",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 16:55:00",
+    "arrival_datetime": "2026-06-27 18:00:00",
     "id_team": 3,
-    "duracion_horas": 1.08
+    "id_stadium": 11
   },
   {
     "id_flight": 142,
     "flight_number": "WC0142",
     "origin_city": "Santa Barbara",
     "destination_city": "Kansas City",
-    "departure_datetime": "2026-06-26T08:56:50",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 13:57:00",
+    "arrival_datetime": "2026-06-27 18:00:00",
     "id_team": 6,
-    "duracion_horas": 4.05
+    "id_stadium": 11
   },
   {
     "id_flight": 143,
     "flight_number": "WC0143",
     "origin_city": "Portland",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-26T08:29:59",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 13:30:00",
+    "arrival_datetime": "2026-06-27 18:00:00",
     "id_team": 29,
-    "duracion_horas": 4.5
+    "id_stadium": 10
   },
   {
     "id_flight": 144,
     "flight_number": "WC0144",
     "origin_city": "Kansas City",
     "destination_city": "Dallas",
-    "departure_datetime": "2026-06-26T11:01:33",
-    "arrival_datetime": "2026-06-26T13:00:00",
+    "departure_datetime": "2026-06-27 16:02:00",
+    "arrival_datetime": "2026-06-27 18:00:00",
     "id_team": 4,
-    "duracion_horas": 1.97
+    "id_stadium": 10
   }
 ]
