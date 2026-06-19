@@ -1,4 +1,6 @@
 from models.db import db
+from models.team import Team
+from models.stadium import Stadium
 
 class Flight(db.Model):
     __tablename__ = 'flights'
@@ -9,8 +11,8 @@ class Flight(db.Model):
     destination_city = db.Column(db.String(100), nullable=False)
     departure_datetime = db.Column(db.DateTime, nullable=False)
     arrival_datetime = db.Column(db.DateTime, nullable=False)
-    id_team = db.Column(db.Integer, nullable=False)
-    id_stadium = db.Column(db.Integer, nullable=False)
+    id_team = db.Column(db.Integer, db.ForeignKey('teams.id_team'), nullable=False)
+    id_stadium = db.Column(db.Integer, db.ForeignKey('stadiums.id_stadium'), nullable=False)
 
 
     

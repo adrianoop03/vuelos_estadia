@@ -39,11 +39,12 @@ def admin():
 
 with app.app_context():
     from models.user import User
-    from models.flight import Flight
     from models.stadium import Stadium
     from models.stays import ALOJAMIENTO
     from models.team import Team
-    # db.drop_all()
+    from models.flight import Flight
+
+    db.drop_all()
     db.create_all()
     
     

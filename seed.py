@@ -99,29 +99,37 @@ def populate_stadiums(data):
 def populate_all():
     with app.app_context():
         print("Entrando en el contexto de la app...")
+        
+        order = ['teams', 'stadiums', 'flights']
+        
+        files_by_type = {}
         for filename in os.listdir(DATA_DIR):
-            print(f"Revisando archivo: {filename}")
             if not filename.endswith('.json'):
-                print(f"Archivo ignorado: {filename}")
                 continue
+            for key in order:
+                if key in filename:
+                    files_by_type[key] = filename
+                    break
+
+        for key in order:
+            filename = files_by_type.get(key)
+            if not filename:
+                print(f'No se encontró archivo para crear flights. Se esperaba un archivo con "{key}" en el nombre.')
+                break
 
             filepath = os.path.join(DATA_DIR, filename)
             with open(filepath, 'r', encoding='utf-8') as file:
                 data = json.load(file)
 
-            print(f"Datos cargados desde {filename}: {data}")
-
-            if 'flights' in filename:
-                created = populate_flights(data)
-                print(f'{created} vuelos cargados desde {filename}')
-            elif 'teams' in filename:
+            if key == 'teams':
                 created = populate_teams(data)
                 print(f'{created} equipos cargados desde {filename}')
-            elif 'stadiums' in filename:
+            elif key == 'stadiums':
                 created = populate_stadiums(data)
                 print(f'{created} estadios cargados desde {filename}')
-            else:
-                print(f'Se ignoró el archivo {filename}, tipo desconocido.')
+            elif key == 'flights':
+                created = populate_flights(data)
+                print(f'{created} vuelos cargados desde {filename}')
 
         print("Haciendo commit a la base de datos...")
         db.session.commit()
