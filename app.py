@@ -40,7 +40,7 @@ def admin():
 with app.app_context():
     from models.user import User
     from models.stadium import Stadium
-    from models.stays import ALOJAMIENTO
+    from models.stays import stays
     from models.team import Team
     from models.flight import Flight
 
