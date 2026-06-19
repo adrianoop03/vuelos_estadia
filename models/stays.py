@@ -4,12 +4,14 @@ class stays(db.model):
     __tablename__='stays'
 
     id_stays  = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    team = db.column(db.string(100), nullable=False)
     name_stays=db.column(db.string(100), nullable=False)
     pais=db.column(db.string(100),nullable=False)
     estado=db.column(db.string(100),nullable=False)
     ciudad=db.column(db.string(100),nullable=False)
 
-    def __init__(self,name_stays,pais,estado,ciudad):
+    def __init__(self,team.name_stays,pais,estado,ciudad):
+        self.team = team
         self.name_stays = name_stays
         self.pais = pais
         self.estado = estado
@@ -18,6 +20,7 @@ class stays(db.model):
     def serialize(self):
         return{
             'id_stays': self.id_stays,
+            'team': self.team,
             'name_stays': self.name_stays,
             'pais': self.pais,
             'estado': self.estado,
