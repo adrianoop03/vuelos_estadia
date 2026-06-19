@@ -1,32 +1,32 @@
-from vuelos_estadia.models.stays import ALOJAMIENTO
+from vuelos_estadia.models.stays import stays
 from models.db import db
 
-def get_all_alojamientos():
-    alojamientos = ALOJAMIENTO.query.all()
-    return [alojamiento.serialize()for alojamiento in alojamientos]
+def get_all_stay():
+    stay = stays.query.all()
+    return [stay.serialize()for stay in stay]
 
-def get_ciudad_alojamientos(ciudad):
-    alojamientos = ALOJAMIENTO.query.filter_by(ciudad=ciudad).all()
-    return [alojamiento.serialize()for alojamiento in alojamientos]
+def get_ciudad_stay(ciudad):
+    stay = stays.query.filter_by(ciudad=ciudad).all()
+    return [stay.serialize()for stay in stay]
 
-def get_alojamiento_by_pais(pais):
-    alojamientos= ALOJAMIENTO.query.filter_by(pais=pais).all()
-    return [alojamiento.serialize()for alojamiento in alojamientos]
+def get_stay_by_pais(pais):
+    stay= stays.query.filter_by(pais=pais).all()
+    return [stay.serialize()for stay in stay]
 
-def get_alojamiento_by_id(id):
-    alojamientos= ALOJAMIENTO.query.filter_by(id=id).all()
-    return [alojamiento.serialize()for alojamiento in alojamientos]
+def get_stay_by_id(id):
+    stay= stays.query.filter_by(id=id).all()
+    return [stay.serialize()for stay in stay]
 
-def create_alojamiento(nombre_alojamiento,pais,estado,ciudad):
-    nuevo_alojamiento = ALOJAMIENTO(nombre_alojamiento,pais,estado,ciudad)
-    db.session.add(nuevo_alojamiento)
+def create_stay(name_stays,pais,estado,ciudad):
+    new_stay = stays(name_stays,pais,estado,ciudad)
+    db.session.add(new_stay)
     db.session.commit()
-    return nuevo_alojamiento.serialize()
+    return new_stay.serialize()
 
-def borrar_alojamiento(id):
-    alojamiento= ALOJAMIENTO.query.get(id)
+def borrar_stay(id):
+    stay= stays.query.get(id)
     try:
-        db.session.delete(alojamiento)
+        db.session.delete(stay)
         db.session.commit()
         return True
     except:

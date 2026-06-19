@@ -3,32 +3,32 @@ from vuelos_estadia.controllers.stays_controller import *
 
 estadia_bp = Blueprint('estadia',__name__)
 
-@estadia_bp.route('/alojamientos',methods=['GET'])
-def get_alojamientos():
-    return jsonify(get_all_alojamientos())
+@estadia_bp.route('/stays',methods=['GET'])
+def get_stay():
+    return jsonify(get_all_stay())
 
-@estadia_bp.route('/alojamientos/ciudad/<string:ciudad>',methods=['GET'])
-def get_alojamientos_by_ciudad(ciudad):
-    return jsonify(get_ciudad_alojamientos(ciudad))
+@estadia_bp.route('/stays/ciudad/<string:ciudad>',methods=['GET'])
+def get_stays_by_ciudad(ciudad):
+    return jsonify(get_ciudad_stay(ciudad))
 
-@estadia_bp.route('/alojamientos/pais/<string:pais>',methods=['GET'])
-def get_alojamientos_by_pais(pais):
-    return jsonify(get_alojamientos_by_pais(pais))
+@estadia_bp.route('/stays/pais/<string:pais>',methods=['GET'])
+def get_stays_by_pais(pais):
+    return jsonify(get_stay_by_pais(pais))
 
-@estadia_bp.route('/alojamientos/id/<int:id>',methods=['GET'])
-def get_alojamientos_by_id(id):
-    return jsonify(get_alojamiento_by_id(id))
+@estadia_bp.route('/stays/id/<int:id>',methods=['GET'])
+def get_stays_by_id(id):
+    return jsonify(get_stay_by_id(id))
 
-@estadia_bp.route('/alojamientos',methods=['POST'])
-def create_alojamiento():
+@estadia_bp.route('/stays',methods=['POST'])
+def create_stay():
     data=request.json
-    create_alojamiento(data)
-    return "alojamiento creado",201
+    create_stay(data)
+    return "estadia creada",201
 
-@estadia_bp.route('/alojamientos/<int:id>',methods=['DELETE'])
-def delete_alojamiento(id):
+@estadia_bp.route('/stays/<int:id>',methods=['DELETE'])
+def delete_stay(id):
     try:
-        borrar=delete_alojamiento(id)
-        return jsonify({'mensaje':'alojamiento borrado'})
+        borrar=borrar_stay(id)
+        return jsonify({'mensaje':'estadia borrada'})
     except:
-        return jsonify({'mensaje':'error al borrar el alojamiento'}),404
+        return jsonify({'mensaje':'error al borrar la estadia'}),404

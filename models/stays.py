@@ -1,24 +1,24 @@
 from models.db import db
 
 class ALOJAMIENTO(db.model):
-    __tablename__='ALOJAMIENTO'
+    __tablename__='stays'
 
-    id_alojamiento= db.Column(db.Integer, primary_key=True, autoincrement=True)
-    nombre_alojamiento=db.column(db.string(100), nullable=False)
+    id_stays  = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name_stays=db.column(db.string(100), nullable=False)
     pais=db.column(db.string(100),nullable=False)
     estado=db.column(db.string(100),nullable=False)
     ciudad=db.column(db.string(100),nullable=False)
 
-    def __init__(self,nombre_alojamiento,pais,estado,ciudad):
-        self.nombre_alojamiento = nombre_alojamiento
+    def __init__(self,name_stays,pais,estado,ciudad):
+        self.name_stays = name_stays
         self.pais = pais
         self.estado = estado
         self.ciudad = ciudad
 
     def serialize(self):
         return{
-            'id_alojamiento': self.id_alojamiento,
-            'nombre_alojamiento': self.nombre_alojamiento,
+            'id_stays': self.id_stays,
+            'name_stays': self.name_stays,
             'pais': self.pais,
             'estado': self.estado,
             'ciudad': self.ciudad
