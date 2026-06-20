@@ -12,6 +12,10 @@ def get_users():
     users = obtenerUsuarios()
     return jsonify(users)
 
+@user_bp.route('/register', methods=['GET'])
+def register_hud():
+    return render_template("register.html")
+
 @user_bp.route('/register', methods=['POST'])
 def register_user():
     data = request.get_json()
@@ -48,7 +52,7 @@ def login_user():
     user, status_code = iniciarSesion(email, password)
 
     if status_code == 200:
-        return redirect('/users')
+        return redirect('/index')
     
 
     return render_template(
@@ -59,10 +63,14 @@ def login_user():
  
     
 #Correo de recuperacion de contraseña
+
+@user_bp.route('/reset-password' , methods=['GET'])
+def reset_password_hud():
+    return render_template("forgot_password.html")
+
 @user_bp.route('/reset-password' , methods=['POST'])
 def reset_password():
-    data = request.get_json()
-    email = data.get('email')
+    email = request.form.get('email')
     serializer = URLSafeTimedSerializer("clave_secreta")
     token = serializer.dumps(email, salt="change_pass")
     message, status_code = correo_recuperacion(email, token)

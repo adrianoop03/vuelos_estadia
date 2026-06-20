@@ -85,7 +85,7 @@
                                 </label>
                             </div>
 
-                            <a href="#" class="link-mundial">
+                            <a href="{{ url_for("user.reset_password_hud") }}" class="link-mundial">
                                 ¿Olvidaste tu contraseña?
                             </a>
 
@@ -115,7 +115,7 @@
 
                     <p class="text-center mt-4 text-light">
                         ¿No tenés cuenta?
-                        <a href="#" class="link-mundial">
+                        <a href="{{ url_for('user.register_user') }}" class="link-mundial">
                             Registrate
                         </a>
                     </p>
