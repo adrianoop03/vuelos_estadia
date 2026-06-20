@@ -1,174 +1,114 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="latam">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Mundial 2026 - Login</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
-            <img src="{{ url_for('static', filename='img/fifalogo.svg') }}" alt="FIFA" class="logo-mundial">
-            Mundial 2026
-        </a>
-    </div>
-</nav>
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
 
-<main class="d-flex align-items-center">
-    <div class="container">
-        <div class="row justify-content-center align-items-center py-5">
+        <div class="col-11 col-sm-8 col-md-6 col-lg-4">
 
-            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+            <div class="card login-card border-0">
 
-                <div class="card login-card border-0">
+                <div class="card-body p-4">
 
-                    <div class="card-body p-4">
+                    <h1 class="brand text-center mb-1">
+                        MUNDIAL <span>2026</span>
+                    </h1>
 
-                        <h1 class="brand text-center mb-1">
-                            MUNDIAL 2026
-                        </h1>
-
-                        <p class="text-center text-light-emphasis mb-4">
-                            <img src="{{ url_for('static', filename='img/fifalogo.svg') }}" alt="FIFA" class="logo-mundial">
-                            
-                        </p>
-
-                        {% with messages = get_flashed_messages(with_categories=true) %}
-                            {% if messages %}
-                                {% for category, message in messages %}
-                                    <div class="alert alert-{{ 'danger' if category in ['error', 'danger'] else category }} py-2">
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                        {% endwith %}
-
-                        <form method="POST" action="{{ url_for('user.login_user') }}">
-
-                            <div class="mb-3">
-                                <label class="form-label">
-                                    Correo electrónico
-                                </label>
-
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="tu@correo.com"
-                                    value="{{ request.form.email or '' }}"
-                                    required
-                                    autofocus>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">
-                                    Contraseña
-                                </label>
-
-                                <input
-                                    type="password"
-                                    name="password"
-                                    class="form-control"
-                                    placeholder="••••••••"
-                                    required>
-                            </div>
-
-                            <div class="d-flex justify-content-between mb-4">
-
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="remember">
-
-                                    <label class="form-check-label">
-                                        Recordarme
-                                    </label>
+                    <p class="text-center text-light-emphasis mb-4">
+                        Acceso al portal oficial
+                    </p>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ 'danger' if category in ['error', 'danger'] else category }} py-2">
+                                    {{ message }}
                                 </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
 
-                                <a href="{{ url_for('user.reset_password_hud') }}" class="link-mundial">
-                                    ¿Olvidaste tu contraseña?
-                                </a>
+                    <form method="POST" action="{{ url_for('user.login_user_route') }}">
 
+                        <div class="mb-3">
+                            <label class="form-label text-light">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control custom-input"
+                                placeholder="tu@correo.com"
+                                value="{{ request.form.email or '' }}"
+                                required
+                                autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-light">
+                                Contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control custom-input"
+                                placeholder="••••••••"
+                                required>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-4">
+
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="remember"
+                                    {% if request.form.get('remember') %}checked{% endif %}>
+                                <label class="form-check-label text-light">
+                                    Recordarme
+                                </label>
                             </div>
 
-                            <div class="text-center mb-3">
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary btn-login">
-                                    INICIAR SESIÓN
-                                </button>
-                            </div>
-
-                        </form>
-
-                        <p class="text-center mt-4 mb-0">
-                            ¿No tenés cuenta?
-                            <a href="{{ url_for('user.register_hud') }}" class="link-mundial">
-                                Registrate
+                            <a href="{{ url_for("user.reset_password_hud") }}" class="link-mundial">
+                                ¿Olvidaste tu contraseña?
                             </a>
-                        </p>
 
-                    </div>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-mundial w-100 mb-3">
+                            INICIAR SESIÓN
+                        </button>
+                    <p class="text-center mt-4 text-light">
+                        ¿No tenés cuenta?
+                        <a href="{{ url_for('user.register_user') }}" class="link-mundial">
+                            Registrate
+                        </a>
+                    </p>
 
                 </div>
 
             </div>
 
         </div>
-    </div>
-</main>
-
-<footer class="footer-mundial" id="contacto">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h5>Mundial 2026</h5>
-                <p class="footer-text">
-                    Organizá tu viaje al mundial: vuelos, alojamientos y partidos en un solo lugar.
-                </p>
-            </div>
-
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h5>Contacto</h5>
-                <p class="footer-text mb-1">
-                    <i class="bi bi-envelope-fill me-2"></i>contacto@mundial2026.com
-                </p>
-                <p class="footer-text">
-                    <i class="bi bi-telephone-fill me-2"></i>+54 261 123-4567
-                </p>
-            </div>
-
-            <div class="col-md-4">
-                <h5>Seguinos</h5>
-                <a href="#" class="footer-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="footer-social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="footer-social" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-            </div>
-
-        </div>
-
-        <hr class="footer-divider">
-
-        <p class="text-center footer-text mb-0">
-            &copy; 2026 Tonini y asociados. Todos los derechos reservados.
-        </p>
 
     </div>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</div>
 
 </body>
 </html>

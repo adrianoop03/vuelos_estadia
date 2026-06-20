@@ -78,9 +78,7 @@ def admin():
     return render_template("admin.html", current_user=current_user)
 
 
-@app.route('/')
-def hello_world():
-    return 'Servidor iniciado!'
+
 
 @login_manager.user_loader
 def load_user(user_id):
