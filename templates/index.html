@@ -60,11 +60,11 @@
             </ul>
 
             {% if session.get('user_id') %}
-                <a href="{{ url_for('auth.logout') }}" class="btn btn-outline-light">
+                <a href="{{ url_for('user.logout') }}" class="btn btn-outline-light">
                     Cerrar sesión
                 </a>
             {% else %}
-                <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light">
+                <a href="{{ url_for('user.login_page') }}" class="btn btn-outline-light">
                     Iniciar Sesión
                 </a>
             {% endif %}
@@ -110,7 +110,7 @@
             {% endif %}
 
         {% else %}
-            <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg btn-home">
+            <a href="{{ url_for('user.login_page') }}" class="btn btn-primary btn-lg btn-home">
                 Comenzar
             </a>
         {% endif %}

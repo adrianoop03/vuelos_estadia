@@ -47,14 +47,13 @@ except Exception:
 
 
 db.init_app(app)
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
 
-@app.route('/api/hello')
-def hello_api():
-    
-    return render_template("login.html")
+@app.route('/index')
+def index():
+    return render_template("index.html")
+
+
+
 
 with app.app_context():
     from models.user import User
