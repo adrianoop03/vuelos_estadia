@@ -19,10 +19,34 @@ def crearUsuario(data):
     name=data["name"],
     email=data["email"],
     password=generate_password_hash(data["password"]),
+    verified = data.get("verified", False),
     admin=data.get("admin", False))
     db.session.add(usuario_nuevo)
     db.session.commit()
     return usuario_nuevo.serialize(), 201
+
+def verificacionCorreo(email, token):
+    msg = Message(
+        "Verificacion de cuenta",
+        
+        sender=current_app.config['MAIL_USERNAME'],
+        recipients=[email]
+    )
+
+    msg.body = f"""
+    Para verificar tu cuenta visita:
+
+    http://localhost:5000/verif/{token}
+    """
+    mail.send(msg)
+
+    print ("Correo enviado a", email, 200)
+
+def verificarUsuario(email):
+    user = User.query.filter_by(email=email).first()
+    user.verified = True
+    db.session.commit()
+
 
 def iniciarSesion(email, password):
     user = User.query.filter_by(email=email).first()
@@ -48,7 +72,7 @@ def correo_recuperacion(email, token):
 
     return "Correo enviado", 200
 
-def cambiar_contrasena(email, nueva_contrasena):
+def cambiarContrasena(email, nueva_contrasena):
     user = User.query.filter_by(email=email).first()
     if user:
         user.password = generate_password_hash(nueva_contrasena)
