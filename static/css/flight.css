@@ -1,6 +1,3 @@
-/* =============================================
-   flight.css — Boarding Pass con Bootstrap 5
-============================================= */
 
 :root {
     --primary:    #2563eb;
@@ -17,7 +14,108 @@ body {
 
 h1 { color: var(--secondary); }
 
-/* ---- Tarjeta ---- */
+/* buscador de vuelos */
+
+.serch-wrapper {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+
+}
+
+.serch-box {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px 16px;
+    gap: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+}
+
+.serch_box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.serch-icon {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.serch-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--secondary);
+    flex: 1;
+    min-width: 0;
+}
+
+.serch-input::placeholder { color: #94a3b8; }
+
+.serch-clear {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: color 0.15s;
+}
+
+.serch-clear:hover { color: var(--secondary); }
+
+/* dropdown de sugerencias */
+
+.serch-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    z-index: 100;
+    max-height: 260px;
+    overflow-y: auto;
+
+    /* animacion tipo slide */
+    animation: slidedown 0.18s ease;
+}
+
+@keyframes slidedown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.search-dropdown li {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--secondary);
+    transition: background 0.12s;
+}
+
+.serch-dropdown li:hover,
+.serch-dropdown li:focus {
+    background: #f1f5f9;
+    color : var(--primary);
+}
+
+/* Tarjeta */
 .travel-card-modern {
     background: var(--card-bg);
     border-radius: 16px;
@@ -31,7 +129,7 @@ h1 { color: var(--secondary); }
     box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
-/* ---- Cabecera con imagen de estadio ---- */
+/* Cabecera con imagen de estadio */
 .card-map-header {
     position: relative;
     height: 180px;
@@ -60,7 +158,7 @@ h1 { color: var(--secondary); }
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
-/* ---- Sección de ruta ---- */
+/*  Sección de ruta */
 .route-info {
     display: flex;
     justify-content: space-between;
@@ -76,7 +174,7 @@ h1 { color: var(--secondary); }
     flex-shrink: 0;
 }
 
-/* Avión en círculo */
+/* Avioncito */
 .map-plane {
     background: var(--primary);
     color: #fff;
@@ -91,7 +189,7 @@ h1 { color: var(--secondary); }
     transform: rotate(45deg);
 }
 
-/* Badge de duración */
+/* Badge de duración de viaje */
 .duration-badge {
     background: #f1f5f9;
     padding: 4px 10px;
@@ -105,7 +203,7 @@ h1 { color: var(--secondary); }
     white-space: nowrap;
 }
 
-/* ---- Textos ciudad ---- */
+/* Textos de estadio */
 .airport-code {
     font-size: 1.5rem;
     font-weight: 800;
@@ -119,7 +217,7 @@ h1 { color: var(--secondary); }
     margin: 4px 0 0 0;
 }
 
-/* ---- Grid detalles ---- */
+/* Grid de detalles */
 .details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -143,9 +241,7 @@ h1 { color: var(--secondary); }
     color: var(--secondary);
 }
 
-/* =============================================
-   RESPONSIVE — ajustes para mobile
-============================================= */
+/* Responsive: Ajustes para pantallas pequeñas */
 @media (max-width: 576px) {
     .card-map-header { height: 150px; }
     .airport-code    { font-size: 1.25rem; }
