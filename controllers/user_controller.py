@@ -50,10 +50,17 @@ def verificarUsuario(email):
 
 def iniciarSesion(email, password):
     user = User.query.filter_by(email=email).first()
+    
     if user and check_password_hash(user.password, password):
-        return user.serialize(), 200
-    else:
-        return "Error: Credenciales inválidas", 401
+        return user, 200
+
+    return None, 401
+    
+def existeCorreo(email):
+    email = User.query.filter_by(email=email).first()
+    if not email:
+        return "El correo no existe", 400
+    return "Correo existente...", 200
     
 def correo_recuperacion(email, token):
     msg = Message(

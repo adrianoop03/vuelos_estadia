@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-lg">
 
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('user.user_index') }}">
         <img src="{{ url_for('static', filename='img/fifalogo.svg') }}" alt="FIFA" class="logo-mundial">
           Mundial 2026
         </a>
@@ -33,23 +33,10 @@
             <ul class="navbar-nav mx-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Inicio</a>
+                    <a class="nav-link" href="{{ url_for('user.user_index') }}">Inicio</a>
                 </li>
 
-                {% if session.get('user_id') %}
-
-                    {% if session.get('is_admin') %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin.flights_list') }}">Vuelos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin.stays_list') }}">Alojamientos</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('user.dashboard') }}">Mi selección</a>
-                    </li>
-                    {% endif %}
+                {% if current_user.is_authenticated %}
 
                 {% endif %}
 
@@ -59,12 +46,12 @@
 
             </ul>
 
-            {% if session.get('user_id') %}
+            {% if current_user.is_authenticated %}
                 <a href="{{ url_for('user.logout') }}" class="btn btn-outline-light">
                     Cerrar sesión
                 </a>
             {% else %}
-                <a href="{{ url_for('user.login_page') }}" class="btn btn-outline-light">
+                <a href="{{ url_for('user.login_user_route') }}" class="btn btn-outline-light">
                     Iniciar Sesión
                 </a>
             {% endif %}
@@ -97,17 +84,8 @@
             Acompaña tu seleccion.
         </p>
 
-        {% if session.get('user_id') %}
+        {% if current_user.is_authenticated %}
 
-            {% if session.get('is_admin') %}
-            <a href="{{ url_for('admin.dashboard') }}" class="btn btn-primary btn-lg btn-home">
-                Ir al panel admin
-            </a>
-            {% else %}
-            <a href="{{ url_for('user.dashboard') }}" class="btn btn-primary btn-lg btn-home">
-                Ver mi selección
-            </a>
-            {% endif %}
 
         {% else %}
             <a href="{{ url_for('user.login_page') }}" class="btn btn-primary btn-lg btn-home">

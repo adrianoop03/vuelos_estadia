@@ -14,14 +14,12 @@ from routes.stadium_routes import stadium_bp
 from routes.stays_routes import estadia_bp
 from routes.team_routes import team_bp
 
-from extensions import mail
-app = Flask(__name__)
-app.register_blueprint(user_bp)
-app.register_blueprint(flight_bp)
-app.register_blueprint(stadium_bp)
-app.register_blueprint(estadia_bp)
-app.register_blueprint(team_bp)
+from extensions import mail, login_manager
 
+app = Flask(__name__)
+
+
+#Configuracion de mail automatizado
 
 app.config['MAIL_SERVER'] = mail_server
 app.config['MAIL_PORT'] = mail_port
@@ -31,8 +29,22 @@ app.config['MAIL_PASSWORD'] = mail_password
 
 mail.init_app(app)
 
+#Configuracion de base de datos
+
 app.config["SQLALCHEMY_DATABASE_URI"]= DATABASE_CONNECTION_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+#Configuracion del sistema de login
+
+app.config['SECRET_KEY'] = 'tu_clave_super_secreta'
+
+login_manager.init_app(app)
+
+app.register_blueprint(user_bp)
+app.register_blueprint(flight_bp)
+app.register_blueprint(stadium_bp)
+app.register_blueprint(estadia_bp)
+app.register_blueprint(team_bp)
 
 try:
     if not database_exists(DATABASE_CONNECTION_URI):
@@ -47,6 +59,7 @@ except Exception:
 
 
 db.init_app(app)
+<<<<<<< HEAD
 #index 
 @app.route('/index')
 def index():
@@ -54,6 +67,15 @@ def index():
 
 
 
+=======
+@app.route('/')
+def hello_world():
+    return 'Servidor iniciado!'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+>>>>>>> 16277e81421eb1de38d0d7275479020496a4a1c0
 
 with app.app_context():
     from models.user import User
