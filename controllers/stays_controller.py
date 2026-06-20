@@ -26,7 +26,7 @@ def get_stay_by_id(id):
 
 
 # subir una nueva estadia
-def create_stay(name_stays,pais,estado,ciudad):
+def create_stay(team,name_stays,pais,estado,ciudad):
     new_stay = stays(team,name_stays,pais,estado,ciudad)
     db.session.add(new_stay)
     db.session.commit()
