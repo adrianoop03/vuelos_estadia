@@ -1,0 +1,250 @@
+
+:root {
+    --primary:    #2563eb;
+    --secondary:  #0f172a;
+    --bg-body:    #f1f5f9;
+    --card-bg:    #ffffff;
+    --text-muted: #64748b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+}
+
+h1 { color: var(--secondary); }
+
+/* buscador de vuelos */
+
+.search-wrapper {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px 16px;
+    gap: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+}
+
+.search_box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.search-icon {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--secondary);
+    flex: 1;
+    min-width: 0;
+}
+
+.search-input::placeholder { color: #94a3b8; }
+
+.search-clear {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: color 0.15s;
+}
+
+.search-clear:hover { color: var(--secondary); }
+
+/* dropdown de sugerencias */
+
+.search-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    z-index: 100;
+    max-height: 260px;
+    overflow-y: auto;
+
+    /* animacion tipo slide */
+    animation: slidedown 0.18s ease;
+}
+
+@keyframes slidedown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.search-dropdown li {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--secondary);
+    transition: background 0.12s;
+}
+
+.search-dropdown li:hover,
+.search-dropdown li:focus {
+    background: #f1f5f9;
+    color : var(--primary);
+}
+
+/* Tarjeta */
+.travel-card-modern {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.travel-card-modern:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* Cabecera con imagen de estadio */
+.card-map-header {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+.stadium-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* Overlay degradado sobre la imagen */
+.stadium-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.1) 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px 14px;
+}
+.stadium-name-badge {
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/*  Sección de ruta */
+.route-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.route-city { flex: 1; }
+.route-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+/* Avioncito */
+.map-plane {
+    background: var(--primary);
+    color: #fff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(37,99,235,0.35);
+    transform: rotate(45deg);
+}
+
+/* Badge de duración de viaje */
+.duration-badge {
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+/* Textos de estadio */
+.airport-code {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin: 0;
+    line-height: 1;
+}
+.airport-name {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 4px 0 0 0;
+}
+
+/* Grid de detalles */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 14px;
+    margin-top: 14px;
+}
+.detail-item label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+.detail-item span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* Responsive: Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+    .card-map-header { height: 150px; }
+    .airport-code    { font-size: 1.25rem; }
+    .map-plane       { width: 32px; height: 32px; font-size: 0.8rem; }
+    .duration-badge  { font-size: 0.65rem; padding: 3px 8px; }
+}

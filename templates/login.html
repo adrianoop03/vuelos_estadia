@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="latam">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mundial 2026 - Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+
+        <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+
+            <div class="card login-card border-0">
+
+                <div class="card-body p-4">
+
+                    <h1 class="brand text-center mb-1">
+                        MUNDIAL <span>2026</span>
+                    </h1>
+
+                    <p class="text-center text-light-emphasis mb-4">
+                        Acceso al portal oficial
+                    </p>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ 'danger' if category in ['error', 'danger'] else category }} py-2">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    {# TODO: ajustá el endpoint si tu ruta de login se llama distinto o usa blueprint (ej: 'auth.login') #}
+                    <form method="POST" action="{{ url_for('login') }}">
+
+                        <div class="mb-3">
+                            <label class="form-label text-light">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control custom-input"
+                                placeholder="tu@correo.com"
+                                value="{{ request.form.email or '' }}"
+                                required
+                                autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-light">
+                                Contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control custom-input"
+                                placeholder="••••••••"
+                                required>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-4">
+
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="remember">
+
+                                <label class="form-check-label text-light">
+                                    Recordarme
+                                </label>
+                            </div>
+
+                            <a href="#" class="link-mundial">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-mundial w-100 mb-3">
+                            INICIAR SESIÓN
+                        </button>
+
+                    </form>
+
+                    <div class="text-center text-secondary mb-3">
+                        o continuar con
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-outline-light" disabled>
+                            Google
+                        </button>
+
+                        <button type="button" class="btn btn-outline-light" disabled>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <p class="text-center mt-4 text-light">
+                        ¿No tenés cuenta?
+                        <a href="#" class="link-mundial">
+                            Registrate
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

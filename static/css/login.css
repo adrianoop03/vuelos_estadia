@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.65)
+        ),
+        url("../img/mundial.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.login-card{
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+.brand{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:3rem;
+    letter-spacing:2px;
+    color:white;
+}
+
+.brand span{
+    color:#ff5a1f;
+}
+
+.custom-input{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    color:white;
+}
+
+.custom-input:focus{
+    background:rgba(255,255,255,.12);
+    color:white;
+    border-color:#ff5a1f;
+    box-shadow:none;
+}
+
+.custom-input::placeholder{
+    color:rgba(255,255,255,.5);
+}
+
+.btn-mundial{
+    background:linear-gradient(
+        135deg,
+        #ff5a1f,
+        #7b2cbf,
+        #2563eb
+    );
+    color:white;
+    border:none;
+    font-weight:600;
+}
+
+.btn-mundial:hover{
+    opacity:.9;
+}
+
+.link-mundial{
+    color:#ff5a1f;
+    text-decoration:none;
+}
+
+.link-mundial:hover{
+    color:#ff7a45;
+}

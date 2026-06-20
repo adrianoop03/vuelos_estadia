@@ -1,0 +1,46 @@
+body{
+    min-height:100vh;
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.75)
+        ),
+        url("../img/mundial.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.navbar{
+    background:rgba(0,0,0,.5);
+    backdrop-filter:blur(10px);
+}
+
+.glass-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    color:white;
+}
+
+.section-title{
+    color:white;
+    font-weight:bold;
+}
+
+.table{
+    --bs-table-bg: transparent;
+    --bs-table-color: white;
+    --bs-table-border-color: rgba(255,255,255,.2);
+}
+
+.table th,
+.table td{
+    background: transparent !important;
+    color: white !important;
+}

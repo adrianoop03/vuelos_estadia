@@ -7,9 +7,13 @@ from config.config import DATABASE_CONNECTION_URI
 from models.db import db
 from sqlalchemy.exc import OperationalError
 from sqlalchemy_utils import database_exists, create_database
+from flask_mail import Mail
 
+from models.user import User
+from routes.user_route import user
 
 app = Flask(__name__)
+app.register_blueprint(user)
 
 
 app.config["SQLALCHEMY_DATABASE_URI"]= DATABASE_CONNECTION_URI
@@ -32,19 +36,14 @@ db.init_app(app)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/admin')
-def admin():
-    return render_template("register.html")
-
+@app.route('/api/hello')
+def hello_api():
+    
+    return render_template("login.html")
 
 with app.app_context():
     from models.user import User
-    from models.stadium import Stadium
-    from models.stays import Stay
-    from models.team import Team
-    from models.flight import Flight
-
-    db.drop_all()
+    # db.drop_all()
     db.create_all()
     
     
