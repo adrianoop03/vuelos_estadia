@@ -5,7 +5,7 @@ from models.db import db
 from models.user import User
 from models.flight import Flight
 from models.stadium import Stadium
-from models.stays import ALOJAMIENTO
+from models.stays import Stay
 from models.team import Team
 
 DATA_DIR = 'data'
@@ -96,11 +96,40 @@ def populate_stadiums(data):
 
     return created
 
+def populate_stays(data):
+    created = 0
+    for item in data:
+        team = item.get('team')
+        name_stays = item.get('name_stays')
+        pais = item.get('pais')
+        estado = item.get('estado')
+        ciudad = item.get('ciudad')
+
+        if not name_stays:
+            continue
+
+        exists = Stay.query.filter(Stay.name_stays == name_stays).first()
+        if exists:
+            continue
+
+        stay = Stay(
+            team=team,
+            name_stays=name_stays,
+            pais=pais,
+            estado=estado,
+            ciudad=ciudad
+        )
+        db.session.add(stay)
+        
+        created += 1
+
+    return created
+
 def populate_all():
     with app.app_context():
         print("Entrando en el contexto de la app...")
         
-        order = ['teams', 'stadiums', 'flights']
+        order = ['teams', 'stadiums', 'flights', 'stays']
         
         files_by_type = {}
         for filename in os.listdir(DATA_DIR):
@@ -130,6 +159,9 @@ def populate_all():
             elif key == 'flights':
                 created = populate_flights(data)
                 print(f'{created} vuelos cargados desde {filename}')
+            elif key == 'stays':
+                created = populate_stays(data)
+                print(f'{created} estancia cargados desde {filename}')
 
         print("Haciendo commit a la base de datos...")
         db.session.commit()

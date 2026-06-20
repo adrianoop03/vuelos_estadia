@@ -466,7 +466,7 @@
     "destination_city": "Ciudad de México",
     "departure_datetime": "2026-06-17 14:07:00",
     "arrival_datetime": "2026-06-17 18:00:00",
-    "id_team": 49,
+    "id_team": 27,
     "id_stadium": 1
   },
   {
@@ -756,7 +756,7 @@
     "destination_city": "Los Ángeles",
     "departure_datetime": "2026-06-21 09:44:00",
     "arrival_datetime": "2026-06-21 11:00:00",
-    "id_team": 27,
+    "id_team": 39,
     "id_stadium": 6
   },
   {
@@ -896,7 +896,7 @@
     "destination_city": "Houston",
     "departure_datetime": "2026-06-23 06:30:00",
     "arrival_datetime": "2026-06-23 09:00:00",
-    "id_team": 49,
+    "id_team": 27,
     "id_stadium": 9
   },
   {
@@ -1296,7 +1296,7 @@
     "destination_city": "Seattle",
     "departure_datetime": "2026-06-26 15:41:00",
     "arrival_datetime": "2026-06-26 19:00:00",
-    "id_team": 27,
+    "id_team": 39,
     "id_stadium": 8
   },
   {
@@ -1396,7 +1396,7 @@
     "destination_city": "Atlanta",
     "departure_datetime": "2026-06-27 14:28:00",
     "arrival_datetime": "2026-06-27 15:30:00",
-    "id_team": 49,
+    "id_team": 27,
     "id_stadium": 15
   },
   {

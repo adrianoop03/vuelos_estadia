@@ -105,7 +105,7 @@
   },
   {
     "id_team": 27,
-    "name": "Irán"
+	"name": "Uzbekistán"
   },
   {
     "id_team": 28,
@@ -190,9 +190,5 @@
   {
     "id_team": 48,
     "name": "Uruguay"
-  },
-  {
-    "id_team": 49,
-    "name": "Uzbekistán"
   }
 ]

@@ -1,10 +1,10 @@
 from models.db import db
 
-class stays(db.Model):
+class Stay(db.Model):
     __tablename__='stays'
 
     id_stays  = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    team = db.column(db.string(100), nullable=False)
+    team = db.Column(db.String(100), nullable=False)
     name_stays=db.Column(db.String(100), nullable=False)
     pais=db.Column(db.String(100),nullable=False)
     estado=db.Column(db.String(100),nullable=False)
@@ -20,7 +20,7 @@ class stays(db.Model):
     def serialize(self):
         return{
             'id_stays': self.id_stays,
-            'team': self.team
+            'team': self.team,
             'name_stays': self.name_stays,
             'pais': self.pais,
             'estado': self.estado,
