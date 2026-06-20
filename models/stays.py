@@ -1,6 +1,6 @@
 from models.db import db
 
-class Stay(db.Model):
+class stays(db.Model):
     __tablename__='stays'
 
     id_stays  = db.Column(db.Integer, primary_key=True, autoincrement=True)

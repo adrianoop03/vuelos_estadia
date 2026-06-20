@@ -5,14 +5,14 @@ from models.user import User
 from controllers.user_controller import *
 
 
-user = Blueprint('user', __name__)
+user_bp = Blueprint('user', __name__)
 
-@user.route('/users', methods=['GET'])
+@user_bp.route('/users', methods=['GET'])
 def get_users():
     users = obtenerUsuarios()
     return jsonify(users)
 
-@user.route('/register', methods=['POST'])
+@user_bp.route('/register', methods=['POST'])
 def register_user():
     data = request.get_json()
     email = data.get('email')
@@ -22,7 +22,7 @@ def register_user():
     verificacionCorreo(email, token)
     return jsonify(user), status_code
 
-@user.route('/verif/<token>')
+@user_bp.route('/verif/<token>')
 def verif_mail(token):
 
     serializer = URLSafeTimedSerializer("clave_secreta")
@@ -35,11 +35,11 @@ def verif_mail(token):
     except Exception:
         return "Token inválido o expirado"   
 
-@user.route('/login', methods=['GET'])
+@user_bp.route('/login', methods=['GET'])
 def login_page():
     return render_template('login.html')
 
-@user.route('/login', methods=['POST'])
+@user_bp.route('/login', methods=['POST'])
 def login_user():
 
     email = request.form.get('email')
@@ -59,7 +59,7 @@ def login_user():
  
     
 #Correo de recuperacion de contraseña
-@user.route('/reset-password' , methods=['POST'])
+@user_bp.route('/reset-password' , methods=['POST'])
 def reset_password():
     data = request.get_json()
     email = data.get('email')
@@ -69,7 +69,7 @@ def reset_password():
     return jsonify(message), status_code
 
 #Cambio de contraseña
-@user.route('/reset/<token>', methods=["GET", "POST"])
+@user_bp.route('/reset/<token>', methods=["GET", "POST"])
 def change_password(token):
 
     serializer = URLSafeTimedSerializer("clave_secreta")

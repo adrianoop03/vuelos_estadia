@@ -1,4 +1,4 @@
-from vuelos_estadia.models.stays import stays
+from models.stays import stays
 from models.db import db
 
 def get_all_stay():

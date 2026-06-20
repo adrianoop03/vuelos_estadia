@@ -1,11 +1,12 @@
-from flask import Blueprint,jsonify,request
-from vuelos_estadia.controllers.stays_controller import *
+from flask import Blueprint,jsonify,request, render_template
+from controllers.stays_controller import *
+from models.stays import stays
 
 estadia_bp = Blueprint('estadia',__name__)
 
 @estadia_bp.route('/stays',methods=['GET'])
 def get_stay():
-     stay=get_all_stay()
+    stay=get_all_stay()
     return render_template('stays.html', stays=stay)
 
 @estadia_bp.route('/stays/ciudad/<string:ciudad>',methods=['GET'])
@@ -18,8 +19,8 @@ def get_stays_by_ciudad(ciudad):
 
 @estadia_bp.route('/stays/pais/<string:pais>',methods=['GET'])
 def get_stays_by_pais(pais):
-     stay=get_stay_by_pais(pais)
-    if not stay:
+    stay=get_stay_by_pais(pais)
+    if not stays:
         return render_template('error.html', mensaje='estadia no encontrada'),404
     return render_template('stays.html', stays=stay),201    
 
@@ -33,14 +34,14 @@ def get_stays_by_id(id):
 
 @estadia_bp.route('/stays',methods=['POST'])
 def create_stay():
-   data=request.get_json()
+    data=request.get_json()
     stay=create_stay(data)
     return jsonify(stay),201
 
 
 @estadia_bp.route('/stays/<int:id>',methods=['DELETE'])
 def delete_stay(id):
-     delete=borrar_stay(id)
+    delete=borrar_stay(id)
     try:
         borrar=borrar_stay(id)
         return "",201

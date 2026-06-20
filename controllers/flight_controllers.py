@@ -1,4 +1,4 @@
-from models.flight_models import Flight
+from models.flight import Flight
 from models.db import db
 
 

@@ -8,10 +8,19 @@ from models.db import db
 from sqlalchemy.exc import OperationalError
 from sqlalchemy_utils import database_exists, create_database
 from flask_mail import Mail
-from routes.user_route import user
+from routes.user_route import user_bp
+from routes.flight_route import flight_bp
+from routes.stadium_routes import stadium_bp
+from routes.stays_routes import estadia_bp
+from routes.team_routes import team_bp
+
 from extensions import mail
 app = Flask(__name__)
-app.register_blueprint(user)
+app.register_blueprint(user_bp)
+app.register_blueprint(flight_bp)
+app.register_blueprint(stadium_bp)
+app.register_blueprint(estadia_bp)
+app.register_blueprint(team_bp)
 
 
 app.config['MAIL_SERVER'] = mail_server
