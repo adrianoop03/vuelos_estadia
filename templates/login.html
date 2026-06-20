@@ -42,7 +42,7 @@
                     {% endwith %}
 
                     {# TODO: ajustá el endpoint si tu ruta de login se llama distinto o usa blueprint (ej: 'auth.login') #}
-                    <form method="POST" action="{{ url_for('login') }}">
+                    <form method="POST" action="{{ url_for('user.login_user') }}">
 
                         <div class="mb-3">
                             <label class="form-label text-light">
