@@ -23,7 +23,7 @@ h1 { color: var(--secondary); }
 
 }
 
-.serch-box {
+.search-box {
     display: flex;
     align-items: center;
     background: var(--card-bg);
