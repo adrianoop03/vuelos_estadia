@@ -59,15 +59,6 @@ except Exception:
 
 
 db.init_app(app)
-<<<<<<< HEAD
-#index 
-@app.route('/index')
-def index():
-    return render_template("index.html")
-
-
-
-=======
 @app.route('/')
 def hello_world():
     return 'Servidor iniciado!'
@@ -75,7 +66,6 @@ def hello_world():
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
->>>>>>> 16277e81421eb1de38d0d7275479020496a4a1c0
 
 with app.app_context():
     from models.user import User
