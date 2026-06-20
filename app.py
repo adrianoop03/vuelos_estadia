@@ -14,6 +14,9 @@ from routes.stadium_routes import stadium_bp
 from routes.stays_routes import estadia_bp
 from routes.team_routes import team_bp
 
+from flask import Flask, render_template, session, redirect, url_for
+from models.user import User
+
 from extensions import mail, login_manager
 
 app = Flask(__name__)
@@ -59,15 +62,22 @@ except Exception:
 
 
 db.init_app(app)
-<<<<<<< HEAD
 #index 
 @app.route('/index')
 def index():
     return render_template("index.html")
 
+@app.route('/admin')
+def admin():
+    if not session.get('user_id') or not session.get('is_admin'):
+        return redirect(url_for('user.login_page'))
+
+    current_user = User.query.get(session['user_id'])
+
+    
+    return render_template("admin.html", current_user=current_user)
 
 
-=======
 @app.route('/')
 def hello_world():
     return 'Servidor iniciado!'
@@ -75,7 +85,6 @@ def hello_world():
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
->>>>>>> 16277e81421eb1de38d0d7275479020496a4a1c0
 
 with app.app_context():
     from models.user import User
