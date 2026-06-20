@@ -1,13 +1,14 @@
-from flask import Blueprint, app, jsonify, redirect, render_template, request
+from flask import Blueprint, jsonify, redirect, render_template, request, flash, url_for
 from itsdangerous import URLSafeTimedSerializer
 from models.db import db
 from models.user import User
 from controllers.user_controller import *
-
+from flask_login import login_user, login_required, logout_user
 
 user_bp = Blueprint('user', __name__)
 
 @user_bp.route('/users', methods=['GET'])
+@login_required
 def get_users():
     users = obtenerUsuarios()
     return jsonify(users)
@@ -18,13 +19,42 @@ def register_hud():
 
 @user_bp.route('/register', methods=['POST'])
 def register_user():
-    data = request.get_json()
-    email = data.get('email')
+
+    data = {
+        "name": request.form.get("name"),
+        "email": request.form.get("email"),
+        "password": request.form.get("password")
+    }
+    #Confirmar contraseña
+    confirm_password = request.form.get("confirm_password")
+
+    if data["password"] != confirm_password:
+        return render_template(
+            "register.html",
+            error="Las contraseñas no coinciden."
+        )
+
+    email = data["email"]
+
     serializer = URLSafeTimedSerializer("clave_secreta")
     token = serializer.dumps(email, salt="verif_mail")
+
     user, status_code = crearUsuario(data)
+
+    if status_code != 201:
+        return render_template(
+            "register.html",
+            error=user
+        )
+
     verificacionCorreo(email, token)
-    return jsonify(user), status_code
+
+    flash(
+        "Te enviamos un correo de verificación. Revisa tu bandeja de entrada.",
+        "success"
+    )
+
+    return redirect(url_for("user.login_page"))
 
 @user_bp.route('/verif/<token>')
 def verif_mail(token):
@@ -39,28 +69,44 @@ def verif_mail(token):
     except Exception:
         return "Token inválido o expirado"   
 
+#Sistema de login
+
 @user_bp.route('/login', methods=['GET'])
 def login_page():
     return render_template('login.html')
 
 @user_bp.route('/login', methods=['POST'])
-def login_user():
+def login_user_route():
 
     email = request.form.get('email')
     password = request.form.get('password')
+    remember = request.form.get('remember') == 'on'
 
     user, status_code = iniciarSesion(email, password)
 
     if status_code == 200:
-        return redirect('/index')
-    
+        if not user.verified:
+            flash('Correo no verificado.', 'danger')
+            return render_template(
+                'login.html'
+            )
+        login_user(user, remember=remember)
 
-    return render_template(
-        'login.html',
-        error='Correo o contraseña incorrectos'
-    )
-    
+        return redirect(url_for('user.user_index'))
+
+    flash('Correo o contraseña incorrectos.', 'danger')
+    return render_template("login.html")
  
+@user_bp.route('/index', methods=['GET'])
+def user_index():
+    return render_template("index.html")
+
+@user_bp.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('user.user_index'))
+
     
 #Correo de recuperacion de contraseña
 
@@ -71,10 +117,13 @@ def reset_password_hud():
 @user_bp.route('/reset-password' , methods=['POST'])
 def reset_password():
     email = request.form.get('email')
-    serializer = URLSafeTimedSerializer("clave_secreta")
-    token = serializer.dumps(email, salt="change_pass")
-    message, status_code = correo_recuperacion(email, token)
-    return jsonify(message), status_code
+    message, verif = existeCorreo(email)
+    if verif == 200:
+        serializer = URLSafeTimedSerializer("clave_secreta")
+        token = serializer.dumps(email, salt="change_pass")
+        message, status_code = correo_recuperacion(email, token)
+        return jsonify(message), status_code
+    return jsonify(message), verif
 
 #Cambio de contraseña
 @user_bp.route('/reset/<token>', methods=["GET", "POST"])

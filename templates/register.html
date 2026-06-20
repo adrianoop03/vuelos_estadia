@@ -31,7 +31,10 @@
                     <p class="text-center text-light-emphasis mb-4">
                         Crear una cuenta
                     </p>
-
+                    {% if messages %}
+                        <div class="alert alert-success d-flex align-items-start gap-3 shadow-sm border-0 mb-4">
+                        {{ message }}
+                    {% endif %}
                     {% if error %}
                         <div class="alert alert-danger py-2">
                             {{ error }}
@@ -50,6 +53,7 @@
                                 name="name"
                                 class="form-control custom-input"
                                 placeholder="Ingresa tu nombre"
+                                value="{{ request.form.name or '' }}"
                                 required>
                         </div>
 
@@ -63,6 +67,7 @@
                                 name="email"
                                 class="form-control custom-input"
                                 placeholder="tu@correo.com"
+                                value="{{ request.form.email or '' }}"
                                 required>
                         </div>
 

@@ -30,7 +30,6 @@
                     <p class="text-center text-light-emphasis mb-4">
                         Acceso al portal oficial
                     </p>
-
                     {% with messages = get_flashed_messages(with_categories=true) %}
                         {% if messages %}
                             {% for category, message in messages %}
@@ -41,8 +40,7 @@
                         {% endif %}
                     {% endwith %}
 
-                    {# TODO: ajustá el endpoint si tu ruta de login se llama distinto o usa blueprint (ej: 'auth.login') #}
-                    <form method="POST" action="{{ url_for('user.login_user') }}">
+                    <form method="POST" action="{{ url_for('user.login_user_route') }}">
 
                         <div class="mb-3">
                             <label class="form-label text-light">
@@ -78,8 +76,8 @@
                                 <input
                                     class="form-check-input"
                                     type="checkbox"
-                                    name="remember">
-
+                                    name="remember"
+                                    {% if request.form.get('remember') %}checked{% endif %}>
                                 <label class="form-check-label text-light">
                                     Recordarme
                                 </label>
@@ -96,23 +94,6 @@
                             class="btn btn-mundial w-100 mb-3">
                             INICIAR SESIÓN
                         </button>
-
-                    </form>
-
-                    <div class="text-center text-secondary mb-3">
-                        o continuar con
-                    </div>
-
-                    <div class="d-grid gap-2">
-                        <button type="button" class="btn btn-outline-light" disabled>
-                            Google
-                        </button>
-
-                        <button type="button" class="btn btn-outline-light" disabled>
-                            Facebook
-                        </button>
-                    </div>
-
                     <p class="text-center mt-4 text-light">
                         ¿No tenés cuenta?
                         <a href="{{ url_for('user.register_user') }}" class="link-mundial">
