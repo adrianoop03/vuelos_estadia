@@ -1,10 +1,25 @@
+<<<<<<< HEAD
 /venv
 /requirements
+=======
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+>>>>>>> origin/feature/stadium_team
 .venv
 __pycache__
 .venv/
 env/
+<<<<<<< HEAD
 .env
 .est/
 .venv/
 __pycache__/
+=======
+/APP_FLASK/
+/Farmacia/
+/TP_CSS/
+/TallerMecanico/
+/app_estacionamiento/
+/python pruebas
+.env
+>>>>>>> origin/feature/stadium_team
