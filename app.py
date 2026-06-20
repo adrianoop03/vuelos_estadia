@@ -47,7 +47,7 @@ except Exception:
 
 
 db.init_app(app)
-
+#index 
 @app.route('/index')
 def index():
     return render_template("index.html")

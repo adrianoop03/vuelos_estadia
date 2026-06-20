@@ -8,7 +8,7 @@
 
         body{
 
-            background-image: url(../img/mundial2026.jpg);
+            background: url(../img/mundial2026.jpg);
             background-size:cover;
             background-position:center;
             background-repeat:no-repeat;
