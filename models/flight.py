@@ -26,31 +26,16 @@ class Flight(db.Model):
         self.departure_datetime = departure_datetime
         self.arrival_datetime = arrival_datetime
         self.id_team = id_team
-<<<<<<< HEAD
         self.id_stadium = id_stadium
-=======
-        self.team=self.team
-        self.stadium=self.stadium
-      
->>>>>>> feature/vuelos
 
     def serialize(self):
         return {
             'id_flight': self.id_flight,
             'flight_number': self.flight_number,
-<<<<<<< HEAD
-=======
-            'airline': self.airline,
->>>>>>> feature/vuelos
             'origin_city': self.origin_city,
             'destination_city': self.destination_city,
             'departure_datetime': self.departure_datetime.strftime('%Y-%m-%d %H:%M'),
             'arrival_datetime': self.arrival_datetime.strftime('%Y-%m-%d %H:%M'),
             'id_team': self.id_team,
-<<<<<<< HEAD
             'id_stadium': self.id_stadium
-=======
-            'team': self.team,
-            'stafium': self.stadium
->>>>>>> feature/vuelos
         }
