@@ -1,34 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>estadias de las selecciones</title>
+
+    <title>Estadías Mundial 2026</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/estadias.css') }}">
+
 </head>
+
 <body>
-        <h1> FIFA World Cup 2026 Estadias de las selecciones</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Seleccion</th>
-                    <th>ciudad</th>
-                    <th>estado</th>
-                    <th>pais</th>
-                    <th>instalacion</th>
-                </tr>
-        <tbody>
-            {% for estadia in selecciones %}
-            <tr>
-                <td>{{ estadia.seleccion }}</td>
-                <td>{{ estadia.ciudad }}</td>
-                <td>{{ estadia.estado_provincia }}</td>
-                <td>{{ estadia.pais }}</td>
-                <td>{{ estadia.instalacion }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        <table>
+
+    <!-- hero -->
+    <section class="hero-estadias">
+
+        <div class="container">
+
+            <h1> FIFA World Cup 2026</h1>
+
+            <p>
+                Centros de entrenamiento y estadías oficiales de las selecciones participantes.
+            </p>
+
         </div>
 
+    </section>
+
+    <!-- contenido -->
+    <main class="container">
+
+        <!-- TARJETA ESTADISTICA -->
+        <div class="row mb-4">
+
+            <div class="col-md-4 mx-auto">
+
+                <div class="stats-card">
+
+                    <h2>{{ selecciones|length }}</h2>
+
+                    <span>Selecciones Participantes</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- buscador -->
+        <div class="search-box mb-5">
+
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar selección...">
+
+        </div>
+
+        <!-- tabla -->
+        <div class="table-card">
+
+            <div class="table-responsive">
+
+                <table class="table align-middle">
+
+                    <thead>
+
+                        <tr>
+                            <th>Selección</th>
+                            <th>Ciudad</th>
+                            <th>Estado / Provincia</th>
+                            <th>País</th>
+                            <th>Instalación</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for estadia in selecciones %}
+
+                        <tr>
+
+                            <td>
+                                <span class="badge-country">
+                                    {{ estadia.seleccion }}
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="badge-city">
+                                    {{ estadia.ciudad }}
+                                </span>
+                            </td>
+
+                            <td>{{ estadia.estado_provincia }}</td>
+
+                            <td>{{ estadia.pais }}</td>
+
+                            <td class="installation">
+                                {{ estadia.instalacion }}
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!--footer-->
+    <footer class="footer-mundial mt-5">
+
+        <div class="container text-center">
+
+            <h5>FIFA World Cup 2026™</h5>
+
+            <p class="footer-text">
+                Estadías y centros de entrenamiento oficiales.
+            </p>
+
+        </div>
+
+    </footer>
+
 </body>
+
 </html>
