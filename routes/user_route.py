@@ -3,7 +3,7 @@ from itsdangerous import URLSafeTimedSerializer
 from models.db import db
 from models.user import User
 from controllers.user_controller import *
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 
 user_bp = Blueprint('user', __name__)
 
@@ -91,7 +91,10 @@ def login_user_route():
                 'login.html'
             )
         login_user(user, remember=remember)
-
+        
+        if current_user.admin:
+            return redirect(url_for('user.adminVista'))
+        
         return redirect(url_for('user.user_index'))
 
     flash('Correo o contraseña incorrectos.', 'danger')
@@ -100,6 +103,13 @@ def login_user_route():
 @user_bp.route('/index', methods=['GET'])
 def user_index():
     return render_template("index.html")
+
+@user_bp.route("/admin")
+def adminVista():
+    if current_user.admin:
+        return render_template("admin.html")
+    return "Tienes que ser admin", 400
+    
 
 @user_bp.route('/logout')
 @login_required
