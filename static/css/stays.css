@@ -70,52 +70,45 @@ h1 {
     margin-right: 10px;
 }
 
-/* ---------- Buscador Moderno (Fijo) ---------- */
-.search-wrapper {
-    position: relative;
-    max-width: 480px;
-    margin: 0 auto;
+
+
+/* div section y card*/
+.section1 {
+    color: #ffffff;
+    background-color: #0a4f9e;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85%;
+    border-radius: 20px;
+    padding: 40px;
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
 }
 
-/* Corregido: Se le da una estructura e iluminación real a la caja blanca para que no flote en el aire */
-.search-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff !important; 
-    border: 1px solid #cbd5e1 !important;
-    border-radius: 12px;
-    padding: 12px 16px;
-    gap: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+.stats-card-box {
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
+/* Animación por si pasan el mouse por encima */
+.stats-card-box:hover {
+    transform: translateY(-5px);
 }
 
-.search-box:focus-within {
-    border-color: var(--primary) !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+/* Espaciado del texto */
+.tracking-wider {
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    opacity: 0.9;
 }
-
-.search-icon {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-.search-input {
-    border: none !important;
-    outline: none !important;
-    background: transparent !important;
-    font-size: 0.95rem;
-    color: var(--secondary) !important;
-    flex: 1;
-    min-width: 0;
-}
-
-.search-input::placeholder { 
-    color: #94a3b8; 
-}
-
-/* ---------- Tabla de Estadías (Hover) ---------- */
+/* Tabla de Estadías  */
 .table-card {
     background: white;
     border-radius: 16px;
@@ -128,13 +121,13 @@ table tbody tr:hover {
     background-color: #f8fafc !important;
 }
 
-/* ---------- Footer Oficial Corregido ---------- */
+/*  Footer Oficial Corregido */
 .footer-mundial {
     background-color: #073a78 !important; 
     color: #ffffff !important;
     padding: 50px 0 20px 0;
     margin-top: auto; 
-    width: 100%; /* Forzar ancho completo */
+    width: 100%; 
 }
 
 .footer-mundial h5 {

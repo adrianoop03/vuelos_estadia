@@ -25,7 +25,7 @@
             <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
                  alt="FIFA"
                  class="logo-mundial">
-            Menu Usuario
+            TeamTransit
         </a>
 
         <button class="navbar-toggler" type="button"
@@ -54,29 +54,29 @@
     </div>
 </nav>
 
-<section class="py-5 text-center text-white">
-    <div class="container py-4">
-        <h1 class="display-4 fw-bold text-uppercase main-title">
-            FIFA World Cup 2026
-        </h1>
-        <p class="lead fw-medium sub-title">
-            Centros de entrenamiento y estadías oficiales de las selecciones participantes.
-        </p>
-    </div>
-</section>
+<section class="section1">
+    <div class="section1 text-center">
+    <h1 class="display-4 fw-bold mb-3">FIFA WORLD CUP 2026</h1>
+    <p class="lead mb-4">Centros de entrenamiento y estadías oficiales de las selecciones participantes.</p>
+    
+    <hr class="border-light opacity-25 my-4">
 
-<main class="container mb-5">
-
-    <div class="row mb-4">
+    <div class="row">
         <div class="col-md-4 mx-auto">
-            <div class="stats-card-box text-center">
-                <h2 class="display-5 fw-bold">{{ stays|length }}</h2>
-                <span class="text-uppercase fw-bold">
+            <div class="stats-card-box">
+                <h2 class="display-3 fw-bold m-0">{{ stays|length }}</h2>
+                <span class="text-uppercase tracking-wider fw-semibold">
                     Selecciones Participantes
                 </span>
             </div>
         </div>
     </div>
+</div>
+</section>
+
+<main class="container mb-5">
+
+    
 
     
 
