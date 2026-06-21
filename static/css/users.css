@@ -17,8 +17,13 @@ body{
 
     display:flex;
     flex-direction:column;
+    
 }
-
+.logo-mundial{
+             height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
 main{
     flex:1 0 auto;
 }
@@ -54,7 +59,16 @@ main{
     font-size:18px;
 
 }
-
+.bt1{
+     font-weight:bold;
+    font-size:18px;
+    margin: 10px;
+}
+.btn2{
+    font-weight:bold;
+    font-size:18px;
+    margin: 10px;
+}
 .logo-mundial{
     height: 40px;
     width: auto;

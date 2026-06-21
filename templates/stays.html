@@ -2,142 +2,157 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Estadías Mundial 2026</title>
 
-    <!-- bootstrap -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- css -->
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/estadias.css') }}">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
+    <!-- TU CSS (IMPORTANTE: Flask correcto) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stays.css') }}">
 </head>
 
 <body>
 
-    <!-- hero -->
-    <section class="hero-estadias">
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
 
-        <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
+                 alt="FIFA"
+                 class="logo-mundial">
+            Menu Usuario
+        </a>
 
-            <h1> FIFA World Cup 2026</h1>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
-            <p>
-                Centros de entrenamiento y estadías oficiales de las selecciones participantes.
-            </p>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-    </section>
+            <div class="ms-auto d-flex flex-column flex-lg-row gap-2">
 
-    <!-- contenido -->
-    <main class="container">
-
-        <!-- TARJETA ESTADISTICA -->
-        <div class="row mb-4">
-
-            <div class="col-md-4 mx-auto">
-
-                <div class="stats-card">
-
-                    <h2>{{ stays|length }}</h2>
-
-                    <span>Selecciones Participantes</span>
-
-                </div>
+                <a href="/users" class="btn btn-outline-light">Inicio</a>
+                <a href="/flights" class="btn btn-outline-light">Vuelos</a>
+                <a href="/stays" class="btn btn-outline-light">Estadias</a>
+                <a href="/logout" class="btn btn-outline-light">Cerrar Sesión</a>
 
             </div>
 
         </div>
 
-        <!-- buscador -->
-        <div class="search-box mb-5">
+    </div>
+</nav>
 
-            <input
-                type="text"
-                class="form-control"
-                placeholder="Buscar selección...">
+<section class="py-5 text-center text-white">
+    <div class="container py-4">
+        <h1 class="display-4 fw-bold text-uppercase main-title">
+            FIFA World Cup 2026
+        </h1>
+        <p class="lead fw-medium sub-title">
+            Centros de entrenamiento y estadías oficiales de las selecciones participantes.
+        </p>
+    </div>
+</section>
+
+<main class="container mb-5">
+
+    <div class="row mb-4">
+        <div class="col-md-4 mx-auto">
+            <div class="stats-card-box text-center">
+                <h2 class="display-5 fw-bold">{{ stays|length }}</h2>
+                <span class="text-uppercase fw-bold">
+                    Selecciones Participantes
+                </span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="table-card">
+        <div class="table-responsive">
+
+            <table class="table align-middle m-0">
+                <thead>
+                    <tr>
+                        <th>Selección</th>
+                        <th>Ciudad</th>
+                        <th>Estado</th>
+                        <th>País</th>
+                        <th>Instalación</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for estadia in stays %}
+                    <tr>
+                        <td>{{ estadia.team }}</td>
+                        <td>{{ estadia.ciudad }}</td>
+                        <td>{{ estadia.estado }}</td>
+                        <td>{{ estadia.pais }}</td>
+                        <td>{{ estadia.name_stays }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
 
         </div>
+    </div>
 
-        <!-- tabla -->
-        <div class="table-card">
+</main>
 
-            <div class="table-responsive">
+<footer class="footer-mundial">
+    <div class="container">
+        <div class="row">
 
-                <table class="table align-middle">
+            <div class="col-md-4">
+                <h5>Mundial 2026</h5>
+                <p class="footer-text">
+                    Organizá tu viaje al mundial.
+                </p>
+            </div>
 
-                    <thead>
+            <div class="col-md-4">
+                <h5>Contacto</h5>
+                <p class="footer-text">
+                    contacto@mundial2026.com
+                </p>
+            </div>
 
-                        <tr>
-                            <th>Selección</th>
-                            <th>Ciudad</th>
-                            <th>Estado / Provincia</th>
-                            <th>País</th>
-                            <th>Instalación</th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        {% for estadia in stays %}
-
-                        <tr>
-
-                            <td>
-                                <span class="badge-country">
-                                    {{ estadia.team }}
-                                </span>
-                            </td>
-
-                            <td>
-                                <span class="badge-city">
-                                    {{ estadia.ciudad }}
-                                </span>
-                            </td>
-
-                            <td>{{ estadia.estado }}</td>
-
-                            <td>{{ estadia.pais }}</td>
-
-                            <td class="installation">
-                                {{ estadia.name_stays }}
-                            </td>
-
-                        </tr>
-
-                        {% endfor %}
-
-                    </tbody>
-
-                </table>
-
+            <div class="col-md-4">
+                <h5>Seguinos</h5>
+                <a href="#" class="footer-social">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="footer-social">
+                    <i class="bi bi-facebook"></i>
+                </a>
             </div>
 
         </div>
 
-    </main>
+        <hr class="footer-divider">
 
-    <!--footer-->
-    <footer class="footer-mundial mt-5">
+        <p class="text-center footer-text">
+            © 2026 Mundial 2026
+        </p>
+    </div>
+</footer>
 
-        <div class="container text-center">
-
-            <h5>FIFA World Cup 2026™</h5>
-
-            <p class="footer-text">
-                Estadías y centros de entrenamiento oficiales.
-            </p>
-
-        </div>
-
-    </footer>
+<!-- IMPORTANTE: Bootstrap JS (para navbar responsive) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
