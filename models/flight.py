@@ -16,26 +16,26 @@ class Flight(db.Model):
 
 
     
-    def __init__(self, id_flight, flight_number, origin_city,
-                 destination_city, departure_datetime,
-                 arrival_datetime, id_team, id_stadium):
-        self.id_flight = id_flight
-        self.flight_number = flight_number
-        self.origin_city = origin_city
-        self.destination_city = destination_city
-        self.departure_datetime = departure_datetime
-        self.arrival_datetime = arrival_datetime
-        self.id_team = id_team
-        self.id_stadium = id_stadium
+def __init__(self, id_flight, flight_number, origin_city,
+                destination_city, departure_datetime,
+                arrival_datetime, id_team, id_stadium):
+    self.id_flight = id_flight
+    self.flight_number = flight_number
+    self.origin_city = origin_city
+    self.destination_city = destination_city
+    self.departure_datetime = departure_datetime
+    self.arrival_datetime = arrival_datetime
+    self.id_team = id_team
+    self.id_stadium = id_stadium
 
-    def serialize(self):
-        return {
-            'id_flight': self.id_flight,
-            'flight_number': self.flight_number,
-            'origin_city': self.origin_city,
-            'destination_city': self.destination_city,
-            'departure_datetime': self.departure_datetime.strftime('%Y-%m-%d %H:%M'),
-            'arrival_datetime': self.arrival_datetime.strftime('%Y-%m-%d %H:%M'),
-            'id_team': self.id_team,
-            'id_stadium': self.id_stadium
-        }
+def serialize(self):
+    return {
+        'id_flight': self.id_flight,
+        'flight_number': self.flight_number,
+        'origin_city': self.origin_city,
+        'destination_city': self.destination_city,
+        'departure_datetime': self.departure_datetime.strftime('%Y-%m-%d %H:%M'),
+        'arrival_datetime': self.arrival_datetime.strftime('%Y-%m-%d %H:%M'),
+        'id_team': self.id_team,
+        'id_stadium': self.id_stadium
+    }

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charse="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Administrador Mundial 2026</title>
@@ -81,133 +81,62 @@
                 </h2>
 
                 {# TODO: ajustá API_VUELOS (definida en el <script> al final) a la URL real de tu endpoint REST #}
-                <form id="formVuelo" onsubmit="guardarVuelo(event)">
+                <form id="formVuelo">   <!-- sin onsubmit -->
 
                     <input type="hidden" id="vueloEditId" value="">
+                    <input type="hidden" name="origin_city" id="originCityHidden">
+                    <input type="hidden" name="destination_city" id="destinationCityHidden">
 
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
                             <label>Número de Vuelo</label>
-                            <input type="text"
-                                   name="flight_number"
-                                   class="form-control"
-                                   placeholder="AR2026"
-                                   required>
+                            <input type="text" name="flight_number" class="form-control" placeholder="AR2026" required>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label>Selección</label>
-                            {# 'teams' viene de wc26_data.cargar_selecciones() (o de tu modelo Team si ya lo armaste con ese mismo campo 'seleccion') #}
-                            <select name="id_team" class="form-select" required>
+                            <select name="id_team" class="form-select" id="selectTeam" required>
                                 <option value="" disabled selected>Elegí una selección</option>
                                 {% for team in teams %}
-                                <option value="{{ team.id_team }}">{{ team.seleccion }}</option>
+                                <option value="{{ team.id_team }}" data-name="{{ team.name }}">
+                                    {{ team.name }}
+                                </option>
                                 {% endfor %}
                             </select>
+                            <small id="ciudadOrigenBadge" class="text-white-50 mt-1 d-block"></small>
                         </div>
-
                     </div>
 
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
-                            <label>Ciudad Origen</label>
-                            <input type="text"
-                                   name="origin_city"
-                                   class="form-control"
-                                   required>
+                            <label>Estadio Destino</label>
+                            <select name="id_stadium" class="form-select" id="selectStadium" required>
+                                <option value="" disabled selected>Elegí un estadio</option>
+                                {% for stadium in stadiums %}
+                                <option value="{{ stadium.id_stadium }}" data-city="{{ stadium.city }}">
+                                    {{ stadium.name }} — {{ stadium.city }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <small id="ciudadDestinoBadge" class="text-black-50 mt-1 d-block"></small>
                         </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label>Ciudad Destino</label>
-                            <input type="text"
-                                   name="destination_city"
-                                   class="form-control"
-                                   required>
-                        </div>
-
                     </div>
 
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
                             <label>Fecha/Hora Salida</label>
-                            <input type="datetime-local"
-                                   name="departure_datetime"
-                                   class="form-control"
-                                   required>
+                            <input type="datetime-local" name="departure_datetime" class="form-control" required>
                         </div>
-
                         <div class="col-md-6 mb-3">
                             <label>Fecha/Hora Llegada</label>
-                            <input type="datetime-local"
-                                   name="arrival_datetime"
-                                   class="form-control"
-                                   required>
+                            <input type="datetime-local" name="arrival_datetime" class="form-control" required>
                         </div>
-
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
-                        Guardar Vuelo
-                    </button>
-
-                    <button type="button" class="btn btn-outline-light" onclick="resetFormVuelo()">
-                        Cancelar edición
-                    </button>
+                    <button type="submit" class="btn btn-primary">Guardar Vuelo</button>
+                    <button type="button" class="btn btn-outline-light" onclick="resetFormVuelo()">Cancelar edición</button>
 
                 </form>
-
-            </div>
-
-        </div>
-
-        <div class="card glass-card">
-
-            <div class="card-body">
-
-                <h4 class="mb-3">Vuelos registrados</h4>
-
-                <div class="table-responsive">
-                    <table class="table table-hover text-white align-middle">
-                        <thead>
-                            <tr>
-                                <th>Vuelo</th>
-                                <th>Selección</th>
-                                <th>Origen</th>
-                                <th>Destino</th>
-                                <th>Salida</th>
-                                <th>Llegada</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for vuelo in vuelos %}
-                            <tr data-id="{{ vuelo.id_flight }}"
-                                data-flight-number="{{ vuelo.flight_number }}"
-                                data-team="{{ vuelo.id_team }}"
-                                data-origin="{{ vuelo.origin_city }}"
-                                data-destination="{{ vuelo.destination_city }}"
-                                data-departure="{{ vuelo.departure_datetime.strftime('%Y-%m-%dT%H:%M') }}"
-                                data-arrival="{{ vuelo.arrival_datetime.strftime('%Y-%m-%dT%H:%M') }}">
-                                <td>{{ vuelo.flight_number }}</td>
-                                <td>{{ vuelo.team.seleccion if vuelo.team else vuelo.id_team }}</td>
-                                <td>{{ vuelo.origin_city }}</td>
-                                <td>{{ vuelo.destination_city }}</td>
-                                <td>{{ vuelo.departure_datetime.strftime('%d/%m/%Y %H:%M') }}</td>
-                                <td>{{ vuelo.arrival_datetime.strftime('%d/%m/%Y %H:%M') }}</td>
-                                <td class="text-end">
-                                    <button type="button" class="btn btn-sm btn-outline-light" onclick="editarVuelo(this)">Editar</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="eliminarVuelo(this)">Eliminar</button>
-                                </td>
-                            </tr>
-                            {% else %}
-                            <tr><td colspan="7" class="text-center text-white-50">No hay vuelos registrados todavía.</td></tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
 
             </div>
 
@@ -326,53 +255,101 @@
 
 </div>
 
+
+<script>
+    const staysData = {{ stays | tojson | safe }};
+</script>
+
 <script>
 
-// TODO: ajustá estas dos constantes a las rutas reales de tu API REST (ej: '/api/vuelos')
-const API_VUELOS = '/vuelos';
+const API_VUELOS = '/flights';
 const API_ALOJAMIENTOS = '/alojamientos';
 
-function mostrarSeccion(seccion){
+
+
+// ---------- SECCIONES ----------
+function mostrarSeccion(seccion) {
     document.getElementById("vuelos").style.display = "none";
     document.getElementById("alojamientos").style.display = "none";
     document.getElementById(seccion).style.display = "block";
 }
 
-function mostrarMensaje(texto){
-    const mensaje = document.getElementById("mensaje");
-    if (!mensaje){
-        console.error("No existe un elemento con id='mensaje'");
-        return;
-    }
-    mensaje.textContent = texto;
-    mensaje.classList.remove("d-none");
-    setTimeout(() => {mensaje.classList.add("d-none"),} 2500);
+function mostrarMensaje(texto) {
+    const el = document.getElementById("mensaje");
+    el.textContent = texto;
+    el.classList.remove("d-none");
+    setTimeout(() => el.classList.add("d-none"), 2500);
 }
 
-function mostrarError(texto){
-    const error = document.getElementById("mensajeError");
-    if (!error){
-        console.error("No existe un elemento con id='mensajeError'");
-        return;
-    }
-    error.textContent = texto;
-    error.classList.remove("d-none");
-    setTimeout(() => error.classList.add("d-none"), 4000);
+function mostrarError(texto) {
+    const el = document.getElementById("mensajeError");
+    el.textContent = texto;
+    el.classList.remove("d-none");
+    setTimeout(() => el.classList.add("d-none"), 4000);
 }
 
+// ---------- AUTOCOMPLETAR CIUDAD ORIGEN ----------
+document.addEventListener('DOMContentLoaded', () => {
+    // Ya no hace falta cargarStays(), staysData viene de Jinja
+
+    document.getElementById('selectTeam').addEventListener('change', function () {
+        const teamName = this.options[this.selectedIndex].dataset.name || '';
+
+        const stay = staysData.find(
+            s => s.team.toLowerCase() === teamName.toLowerCase()
+        );
+
+        document.getElementById('originCityHidden').value = stay ? stay.ciudad : '';
+
+        let badge = document.getElementById('ciudadOrigenBadge');
+        if (!badge) {
+            badge = document.createElement('small');
+            badge.id = 'ciudadOrigenBadge';
+            badge.className = 'text-white-50 mt-1 d-block';
+            this.parentElement.appendChild(badge);
+        }
+        badge.textContent = stay
+            ? `📍 Ciudad de origen: ${stay.ciudad}`
+            : teamName
+                ? '⚠️ Sin estadía registrada para este equipo'
+                : '';
+    });
+
+    document.getElementById('formVuelo').addEventListener('submit', guardarVuelo);
+});
 // ---------- VUELOS ----------
-
-async function guardarVuelo(event){
+async function guardarVuelo(event) {
     event.preventDefault();
 
     const form = event.target;
     const id = document.getElementById("vueloEditId").value;
 
+    const originCity = document.getElementById('originCityHidden').value;
+    const destCity = form.destination_city.value.trim();
+    const departure = form.departure_datetime.value;
+    const arrival = form.arrival_datetime.value;
+
+    if (!originCity) {
+        mostrarError('Seleccioná una selección con estadía registrada para autocompletar la ciudad de origen');
+        return;
+    }
+
+    if (originCity === destCity) {
+        mostrarError('La ciudad de origen y destino no pueden ser iguales');
+        return;
+    }
+
+    if (new Date(departure) >= new Date(arrival)) {
+        mostrarError('La fecha de llegada debe ser posterior a la salida');
+        return;
+    }
+
     const payload = {
-        flight_number: form.flight_number.value,
-        id_team: form.id_team.value,
-        origin_city: form.origin_city.value,
-        destination_city: form.destination_city.value,
+        flight_number: form.flight_number.value.trim(),
+        id_team: parseInt(form.id_team.value),
+        id_stadium: parseInt(form.id_stadium.value),
+        origin_city: document.getElementById('originCityHidden').value,
+        destination_city: form.destination_city.value.trim(),
         departure_datetime: form.departure_datetime.value,
         arrival_datetime: form.arrival_datetime.value
     };
@@ -400,158 +377,43 @@ async function guardarVuelo(event){
     }
 }
 
-function editarVuelo(btn){
+function editarVuelo(btn) {
     const row = btn.closest('tr');
     const form = document.getElementById('formVuelo');
-    
-    if(!row || !form){
-        console.error('No se encontró la fila o el formulario');
-        return;
-    }
 
     document.getElementById('vueloEditId').value = row.dataset.id;
     form.flight_number.value = row.dataset.flightNumber;
     form.id_team.value = row.dataset.team;
-    form.origin_city.value = row.dataset.origin;
+    document.getElementById('originCityHidden').value = row.dataset.origin;
     form.destination_city.value = row.dataset.destination;
     form.departure_datetime.value = row.dataset.departure;
     form.arrival_datetime.value = row.dataset.arrival;
 
-   const titulo = document.getElementById('tituloFormVuelo');
-
-    if(titulo){
-        titulo.textContent =
-            `Editando vuelo ${row.dataset.flightNumber}`;
+    // Mostrar badge con la ciudad guardada
+    let badge = document.getElementById('ciudadOrigenBadge');
+    if (!badge) {
+        badge = document.createElement('small');
+        badge.id = 'ciudadOrigenBadge';
+        badge.className = 'text-white-50 mt-1 d-block';
+        document.getElementById('selectTeam').parentElement.appendChild(badge);
     }
+    badge.textContent = row.dataset.origin ? `📍 Ciudad de origen: ${row.dataset.origin}` : '';
 
-    if(typeof mostrarSeccion === 'function'){
-        mostrarSeccion('vuelos');
-    }
-
-    form.scrollIntoView({
-        behavior:'smooth'
-    });
+    document.getElementById('tituloFormVuelo').textContent = `Editando vuelo ${row.dataset.flightNumber}`;
+    mostrarSeccion('vuelos');
+    form.scrollIntoView({ behavior: 'smooth' });
 }
 
-async function crearVuelo(event){
-
-    event.preventDefault();
-
-    const form = document.getElementById('formVuelo');
-
-    const payload = {
-
-        flight_number: form.flight_number.value.trim(),
-
-        origin_city: form.origin_city.value.trim(),
-
-        destination_city: form.destination_city.value.trim(),
-
-        departure_datetime: form.departure_datetime.value,
-
-        arrival_datetime: form.arrival_datetime.value,
-
-        id_team: parseInt(form.id_team.value),
-
-        id_stadium: parseInt(form.id_stadium.value)
-
-    };
-
-    /* Validaciones */
-
-    if(payload.origin_city === payload.destination_city){
-
-        mostrarError(
-            'La ciudad de origen y destino no pueden ser iguales'
-        );
-
-        return;
-    }
-
-    if(
-        new Date(payload.departure_datetime) >=
-        new Date(payload.arrival_datetime)
-    ){
-
-        mostrarError(
-            'La fecha de llegada debe ser posterior a la salida'
-        );
-
-        return;
-    }
-
-    try{
-
-        const response = await fetch(API_VUELOS, {
-
-            method:'POST',
-
-            headers:{
-                'Content-Type':'application/json'
-            },
-
-            body: JSON.stringify(payload)
-
-        });
-
-        const data = await response.json();
-
-        if(response.ok){
-
-            mostrarMensaje(
-                'Vuelo creado correctamente'
-            );
-
-            form.reset();
-
-            document.getElementById(
-                'vueloEditId'
-            ).value = '';
-
-            document.getElementById(
-                'tituloFormVuelo'
-            ).textContent = 'Nuevo Vuelo';
-
-            setTimeout(() => {
-                location.reload();
-            }, 800);
-
-        }else{
-
-            mostrarError(
-                data.message ||
-                'No se pudo crear el vuelo'
-            );
-        }
-
-    }catch(error){
-
-        console.error(error);
-
-        mostrarError(
-            'Error de conexión con el servidor'
-        );
-    }
-}
-document.addEventListener('DOMContentLoaded', () => {
-
-    document
-        .getElementById('formVuelo')
-        .addEventListener(
-            'submit',
-            crearVuelo
-        );
-
-});
-
-function resetFormVuelo(){
-    const form = document.getElementById('formVuelo');
-    form.reset();
+function resetFormVuelo() {
+    document.getElementById('formVuelo').reset();
     document.getElementById('vueloEditId').value = '';
+    document.getElementById('originCityHidden').value = '';
     document.getElementById('tituloFormVuelo').textContent = 'Gestión de Vuelos';
+    const badge = document.getElementById('ciudadOrigenBadge');
+    if (badge) badge.textContent = '';
 }
 
-async function eliminarVuelo(btn){
+async function eliminarVuelo(btn) {
     const row = btn.closest('tr');
     const id = row.dataset.id;
 
@@ -572,8 +434,7 @@ async function eliminarVuelo(btn){
 }
 
 // ---------- ALOJAMIENTOS ----------
-
-async function guardarAlojamiento(event){
+async function guardarAlojamiento(event) {
     event.preventDefault();
 
     const form = event.target;
@@ -597,7 +458,7 @@ async function guardarAlojamiento(event){
         });
 
         if (resp.ok) {
-            mostrarMensaje(id ? 'Alojamiento actualizado correctamente' : 'Alojamiento creado correctamente');
+            mostrarMensaje(id ? 'Alojamiento actualizado' : 'Alojamiento creado');
             setTimeout(() => location.reload(), 600);
         } else {
             const data = await resp.json().catch(() => ({}));
@@ -609,7 +470,7 @@ async function guardarAlojamiento(event){
     }
 }
 
-function editarAlojamiento(btn){
+function editarAlojamiento(btn) {
     const row = btn.closest('tr');
     const form = document.getElementById('formAlojamiento');
 
@@ -623,13 +484,12 @@ function editarAlojamiento(btn){
     form.scrollIntoView({ behavior: 'smooth' });
 }
 
-function resetFormAlojamiento(){
-    const form = document.getElementById('formAlojamiento');
-    form.reset();
+function resetFormAlojamiento() {
+    document.getElementById('formAlojamiento').reset();
     document.getElementById('alojamientoEditId').value = '';
 }
 
-async function eliminarAlojamiento(btn){
+async function eliminarAlojamiento(btn) {
     const row = btn.closest('tr');
     const id = row.dataset.id;
 

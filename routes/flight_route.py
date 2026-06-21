@@ -1,18 +1,21 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from controllers.flight_controllers import FlightController
 from flask_login import login_required
+from controllers.team_controller import get_all_teams
+
 flight_bp = Blueprint('flight_bp', __name__)
 
 
 @flight_bp.route('/flights', methods=['GET'])
 @login_required
 def get_flights():
-
     flights = FlightController.get_all()
+    teams = get_all_teams()
 
     return render_template(
         'flight.html',
-        flights=flights
+        flights=flights,
+        teams=teams       # ← esto hace que aparezcan las selecciones
     )
 
 
@@ -77,3 +80,10 @@ def patch_flight(id_flight):
         ), 404
 
     return redirect(url_for('flight_bp.get_flights'))
+
+@flight_bp.route('/flights', methods=['POST'])
+@login_required
+def create_flight():
+    data = request.get_json()
+    result, status = FlightController.crear_vuelo(data)
+    return jsonify(result), status

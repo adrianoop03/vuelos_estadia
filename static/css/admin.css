@@ -75,26 +75,25 @@ main{
 /* ---------- Formularios ---------- */
 
 .form-control,
-.form-select{
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    color:white;
+.form-select option {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #0f172a !important; /* El color oscuro que quieras (ej: azul oscuro/gris) */
+    color: #ff0000 !important;
 }
-
-.form-control:focus,
-.form-select:focus{
-    background:rgba(255,255,255,.15);
-    color:white;
-    border-color:#0a4f9e;
-    box-shadow:0 0 0 .2rem rgba(10,79,158,.4);
+/* Evitar que al hacer foco o seleccionar cambie a fondo blanco (ataca bugs de Chrome/Edge) */
+.form-select:focus option {
+    background-color: #ff0000;
+    color: rgb(255, 0, 0);
 }
 
 .form-control::placeholder{
-    color:rgba(255,255,255,.6);
+    color:rgb(255, 0, 0);
 }
 
 label{
-    color:rgba(255,255,255,.9);
+    color:rgba(255, 0, 0, 0.9);
     font-weight:600;
 }
 

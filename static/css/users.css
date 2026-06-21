@@ -92,17 +92,32 @@ main{
 
 /* ---------- Formularios ---------- */
 
-.form-select{
-    background-color:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    color:white;
+.form-control,
+.form-select {
+    background-color: transparent !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.form-select:focus{
-    background-color:rgba(255,255,255,.15);
-    color:white;
-    border-color:#0a4f9e;
-    box-shadow:0 0 0 .2rem rgba(10,79,158,.4);
+.form-select option {
+    background-color: #0f172a !important;
+    color: white !important;
+}
+
+.form-select:focus {
+    background-color: transparent !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+label {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
 }
 
 /* ---------- Tablas ---------- */

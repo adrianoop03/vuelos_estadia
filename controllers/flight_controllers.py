@@ -66,3 +66,27 @@ class FlightController:
         db.session.commit()
 
         return True
+    
+    @staticmethod
+    def crear_vuelo(data):
+        from datetime import datetime
+
+        estadio = Stadium.query.get(data.get("id_stadium"))
+        if not estadio:
+            return {"message": "Estadio no encontrado"}, 404
+
+        vuelo = Flight(
+            id_flight=None,
+            flight_number=data["flight_number"],
+            origin_city=data["origin_city"],
+            destination_city=estadio.city,
+            departure_datetime=datetime.fromisoformat(data["departure_datetime"]),
+            arrival_datetime=datetime.fromisoformat(data["arrival_datetime"]),
+            id_team=int(data["id_team"]),
+            id_stadium=int(data["id_stadium"])
+        )
+
+        db.session.add(vuelo)
+        db.session.commit()
+
+        return {"message": "Vuelo creado", "id_flight": vuelo.id_flight}, 201

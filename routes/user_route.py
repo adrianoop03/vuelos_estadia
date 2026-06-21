@@ -4,6 +4,9 @@ from models.db import db
 from models.user import User
 from controllers.user_controller import *
 from flask_login import login_user, login_required, logout_user, current_user
+from controllers.team_controller import get_all_teams
+from controllers.stays_controller import get_all_stay
+from controllers.stadium_controller import get_all_stadiums
 
 user_bp = Blueprint('user', __name__)
 
@@ -107,7 +110,10 @@ def user_index():
 @user_bp.route("/admin")
 def adminVista():
     if current_user.admin:
-        return render_template("admin.html")
+        teams = get_all_teams()
+        stays = get_all_stay()
+        stadiums = get_all_stadiums()
+        return render_template("admin.html", teams=teams, stays=stays, stadiums=stadiums)
     return "Tienes que ser admin", 400
 
 @user_bp.route("/users")
