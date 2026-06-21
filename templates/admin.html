@@ -16,27 +16,23 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
 
-        <a class="navbar-brand fw-bold" href="#">
-            Admin Mundial 2026
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
+                 alt="FIFA"
+                 class="logo-mundial">
+            Menu Usuario
         </a>
 
-        <button class="navbar-toggler"
-                type="button"
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarAdmin">
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarAdmin">
-
-            <ul class="navbar-nav me-auto">
-
-                <li class="nav-item">
-                    <button class="nav-link btn btn-link text-white"
-                            onclick="mostrarSeccion('vuelos')">
-                        Vuelos
-                    </button>
-                </li>
 
                 <li class="nav-item">
                     <button class="nav-link btn btn-link text-white"
@@ -344,13 +340,21 @@ function mostrarSeccion(seccion){
 
 function mostrarMensaje(texto){
     const mensaje = document.getElementById("mensaje");
+    if (!mensaje){
+        console.error("No existe un elemento con id='mensaje'");
+        return;
+    }
     mensaje.textContent = texto;
     mensaje.classList.remove("d-none");
-    setTimeout(() => mensaje.classList.add("d-none"), 2500);
+    setTimeout(() => {mensaje.classList.add("d-none"),} 2500);
 }
 
 function mostrarError(texto){
     const error = document.getElementById("mensajeError");
+    if (!error){
+        console.error("No existe un elemento con id='mensajeError'");
+        return;
+    }
     error.textContent = texto;
     error.classList.remove("d-none");
     setTimeout(() => error.classList.add("d-none"), 4000);
@@ -399,6 +403,11 @@ async function guardarVuelo(event){
 function editarVuelo(btn){
     const row = btn.closest('tr');
     const form = document.getElementById('formVuelo');
+    
+    if(!row || !form){
+        console.error('No se encontró la fila o el formulario');
+        return;
+    }
 
     document.getElementById('vueloEditId').value = row.dataset.id;
     form.flight_number.value = row.dataset.flightNumber;
@@ -408,10 +417,132 @@ function editarVuelo(btn){
     form.departure_datetime.value = row.dataset.departure;
     form.arrival_datetime.value = row.dataset.arrival;
 
-    document.getElementById('tituloFormVuelo').textContent = `Editando vuelo ${row.dataset.flightNumber}`;
-    mostrarSeccion('vuelos');
-    form.scrollIntoView({ behavior: 'smooth' });
+   const titulo = document.getElementById('tituloFormVuelo');
+
+    if(titulo){
+        titulo.textContent =
+            `Editando vuelo ${row.dataset.flightNumber}`;
+    }
+
+    if(typeof mostrarSeccion === 'function'){
+        mostrarSeccion('vuelos');
+    }
+
+    form.scrollIntoView({
+        behavior:'smooth'
+    });
 }
+
+async function crearVuelo(event){
+
+    event.preventDefault();
+
+    const form = document.getElementById('formVuelo');
+
+    const payload = {
+
+        flight_number: form.flight_number.value.trim(),
+
+        origin_city: form.origin_city.value.trim(),
+
+        destination_city: form.destination_city.value.trim(),
+
+        departure_datetime: form.departure_datetime.value,
+
+        arrival_datetime: form.arrival_datetime.value,
+
+        id_team: parseInt(form.id_team.value),
+
+        id_stadium: parseInt(form.id_stadium.value)
+
+    };
+
+    /* Validaciones */
+
+    if(payload.origin_city === payload.destination_city){
+
+        mostrarError(
+            'La ciudad de origen y destino no pueden ser iguales'
+        );
+
+        return;
+    }
+
+    if(
+        new Date(payload.departure_datetime) >=
+        new Date(payload.arrival_datetime)
+    ){
+
+        mostrarError(
+            'La fecha de llegada debe ser posterior a la salida'
+        );
+
+        return;
+    }
+
+    try{
+
+        const response = await fetch(API_VUELOS, {
+
+            method:'POST',
+
+            headers:{
+                'Content-Type':'application/json'
+            },
+
+            body: JSON.stringify(payload)
+
+        });
+
+        const data = await response.json();
+
+        if(response.ok){
+
+            mostrarMensaje(
+                'Vuelo creado correctamente'
+            );
+
+            form.reset();
+
+            document.getElementById(
+                'vueloEditId'
+            ).value = '';
+
+            document.getElementById(
+                'tituloFormVuelo'
+            ).textContent = 'Nuevo Vuelo';
+
+            setTimeout(() => {
+                location.reload();
+            }, 800);
+
+        }else{
+
+            mostrarError(
+                data.message ||
+                'No se pudo crear el vuelo'
+            );
+        }
+
+    }catch(error){
+
+        console.error(error);
+
+        mostrarError(
+            'Error de conexión con el servidor'
+        );
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+
+    document
+        .getElementById('formVuelo')
+        .addEventListener(
+            'submit',
+            crearVuelo
+        );
+
+});
 
 function resetFormVuelo(){
     const form = document.getElementById('formVuelo');
@@ -521,6 +652,46 @@ async function eliminarAlojamiento(btn){
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="footer-mundial" id="contacto">
 
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Mundial 2026</h5>
+                <p class="footer-text">
+                    Organizá tu viaje al mundial: vuelos, alojamientos y partidos en un solo lugar.
+                </p>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contacto</h5>
+                <p class="footer-text mb-1">
+                    <i class="bi bi-envelope-fill me-2"></i>contacto@mundial2026.com
+                </p>
+                <p class="footer-text">
+                    <i class="bi bi-telephone-fill me-2"></i>+54 261 123-4567
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Seguinos</h5>
+                <a href="#" class="footer-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="footer-social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="text-center footer-text mb-0">
+            &copy; 2026 Tonini y asociados. Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
 </body>
 </html>
