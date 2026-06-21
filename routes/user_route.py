@@ -7,11 +7,11 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 user_bp = Blueprint('user', __name__)
 
-@user_bp.route('/users', methods=['GET'])
+"""@user_bp.route('/users', methods=['GET'])
 @login_required
 def get_users():
     users = obtenerUsuarios()
-    return jsonify(users)
+    return jsonify(users)"""
 
 @user_bp.route('/register', methods=['GET'])
 def register_hud():
@@ -95,7 +95,7 @@ def login_user_route():
         if current_user.admin:
             return redirect(url_for('user.adminVista'))
         
-        return redirect(url_for('user.user_index'))
+        return redirect(url_for('user.usersVista'))
 
     flash('Correo o contraseña incorrectos.', 'danger')
     return render_template("login.html")
@@ -109,6 +109,13 @@ def adminVista():
     if current_user.admin:
         return render_template("admin.html")
     return "Tienes que ser admin", 400
+
+@user_bp.route("/users")
+def usersVista():
+    if current_user.id:
+        return render_template("users.html")
+    return "Tienes que estar registrado", 400
+    
     
 
 @user_bp.route('/logout')
