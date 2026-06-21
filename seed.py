@@ -5,7 +5,7 @@ from models.db import db
 from models.user import User
 from models.flight import Flight
 from models.stadium import Stadium
-from models.stays import Stay
+from models.stays import stays
 from models.team import Team
 
 DATA_DIR = 'data'
@@ -108,11 +108,11 @@ def populate_stays(data):
         if not name_stays:
             continue
 
-        exists = Stay.query.filter(Stay.name_stays == name_stays).first()
+        exists = stays.query.filter(stays.name_stays == name_stays).first()
         if exists:
             continue
 
-        stay = Stay(
+        stay = stays(
             team=team,
             name_stays=name_stays,
             pais=pais,

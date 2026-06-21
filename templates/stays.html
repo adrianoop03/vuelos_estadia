@@ -44,7 +44,7 @@
 
                 <div class="stats-card">
 
-                    <h2>{{ selecciones|length }}</h2>
+                    <h2>{{ stays|length }}</h2>
 
                     <span>Selecciones Participantes</span>
 
@@ -85,13 +85,13 @@
 
                     <tbody>
 
-                        {% for estadia in selecciones %}
+                        {% for estadia in stays %}
 
                         <tr>
 
                             <td>
                                 <span class="badge-country">
-                                    {{ estadia.seleccion }}
+                                    {{ estadia.team }}
                                 </span>
                             </td>
 
@@ -101,12 +101,12 @@
                                 </span>
                             </td>
 
-                            <td>{{ estadia.estado_provincia }}</td>
+                            <td>{{ estadia.estado }}</td>
 
                             <td>{{ estadia.pais }}</td>
 
                             <td class="installation">
-                                {{ estadia.instalacion }}
+                                {{ estadia.name_stays }}
                             </td>
 
                         </tr>

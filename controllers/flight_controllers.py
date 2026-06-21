@@ -2,6 +2,7 @@ from models.flight import Flight
 from models.team import Team
 from models.stadium import Stadium
 from models.db import db
+from sqlalchemy import asc
 
 class FlightController:
 
@@ -19,6 +20,8 @@ class FlightController:
         ).outerjoin(
             Stadium,
             Flight.id_stadium == Stadium.id_stadium
+        ).order_by(
+            Flight.departure_datetime.asc()
         ).all()
 
         flights = []
@@ -50,7 +53,6 @@ class FlightController:
                 "duration_hours": total_minutos // 60,
                 "duration_minutes": total_minutos % 60
             })
-
         return flights
          
     @staticmethod
