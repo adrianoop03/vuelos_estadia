@@ -165,8 +165,7 @@ def change_password(token):
             "reset_password.html",
             token=token
         )
-    data = request.get_json()
-    password = data.get("password")
+    password = request.form.get("password")
 
     if not password:
         return "La contraseña es obligatoria", 400
