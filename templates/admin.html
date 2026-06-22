@@ -43,8 +43,8 @@
 
                 <li class="nav-item">
                     <button class="nav-link btn btn-link text-white"
-                            onclick="mostrarSeccion('alojamientos')">
-                        Alojamientos
+                            onclick="mostrarSeccion('estadias')">
+                        Estadías
                     </button>
                 </li>
 
@@ -160,62 +160,76 @@
 
     </div>
 
-    <!-- ALOJAMIENTOS -->
+    <!-- ESTADÍAS -->
 
-    <div id="alojamientos" style="display:none;">
+    <div id="estadias" style="display:none;">
 
         <div class="card glass-card mb-4">
 
             <div class="card-body">
 
-                <h2 class="mb-4">
-                    Gestión de Alojamientos
+                <h2 class="mb-4" id="tituloFormEstadia">
+                    Gestión de Estadías
                 </h2>
 
-                {# TODO: ajustá API_ALOJAMIENTOS (definida en el <script> al final) a la URL real de tu endpoint REST #}
-                <form id="formAlojamiento" onsubmit="guardarAlojamiento(event)">
+                <form id="formEstadia">
 
-                    <input type="hidden" id="alojamientoEditId" value="">
+                    <input type="hidden" id="estadiaEditId" value="">
 
-                    <div class="mb-3">
-                        <label>Nombre del alojamiento</label>
-                        <input type="text"
-                               name="nombre_alojamiento"
-                               class="form-control"
-                               required>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Selección</label>
+                            <select name="team" class="form-select" id="selectTeamEstadia" required>
+                                <option value="" disabled selected>Elegí una selección</option>
+                                {% for team in teams %}
+                                <option value="{{ team.name }}" data-name="{{ team.name }}">
+                                    {{ team.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>Nombre del alojamiento</label>
+                            <input type="text"
+                                   name="name_stays"
+                                   class="form-control"
+                                   placeholder="Hotel Gran Buenos Aires"
+                                   required>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label>País</label>
-                        <input type="text"
-                               name="pais"
-                               class="form-control"
-                               required>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>País</label>
+                            <input type="text"
+                                   name="pais"
+                                   class="form-control"
+                                   placeholder="Argentina"
+                                   required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Estado / Provincia</label>
+                            <input type="text"
+                                   name="estado"
+                                   class="form-control"
+                                   placeholder="Buenos Aires"
+                                   required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Ciudad</label>
+                            <input type="text"
+                                   name="ciudad"
+                                   class="form-control"
+                                   placeholder="La Plata"
+                                   required>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label>Estado</label>
-                        <input type="text"
-                               name="estado"
-                               class="form-control"
-                               required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Ciudad</label>
-                        <input type="text"
-                               name="ciudad"
-                               class="form-control"
-                               required>
-                    </div>
-
-                    <button type="submit" class="btn btn-success">
-                        Guardar Alojamiento
-                    </button>
-
-                    <button type="button" class="btn btn-outline-light" onclick="resetFormAlojamiento()">
-                        Cancelar edición
-                    </button>
+                    <button type="submit" class="btn btn-success">Guardar Estadía</button>
+                    <button type="button" class="btn btn-outline-light" onclick="resetFormEstadia()">Cancelar edición</button>
 
                 </form>
 
@@ -227,13 +241,14 @@
 
             <div class="card-body">
 
-                <h4 class="mb-3">Alojamientos registrados</h4>
+                <h4 class="mb-3">Estadías registradas</h4>
 
                 <div class="table-responsive">
                     <table class="table table-hover text-white align-middle">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
+                                <th>Selección</th>
+                                <th>Alojamiento</th>
                                 <th>País</th>
                                 <th>Estado</th>
                                 <th>Ciudad</th>
@@ -241,23 +256,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for alojamiento in alojamientos %}
-                            <tr data-id="{{ alojamiento.id_alojamiento }}"
-                                data-nombre="{{ alojamiento.nombre_alojamiento }}"
-                                data-pais="{{ alojamiento.pais }}"
-                                data-estado="{{ alojamiento.estado }}"
-                                data-ciudad="{{ alojamiento.ciudad }}">
-                                <td>{{ alojamiento.nombre_alojamiento }}</td>
-                                <td>{{ alojamiento.pais }}</td>
-                                <td>{{ alojamiento.estado }}</td>
-                                <td>{{ alojamiento.ciudad }}</td>
+                            {% for estadia in stays %}
+                            <tr data-id="{{ estadia.id_stays }}"
+                                data-team="{{ estadia.team }}"
+                                data-name-stays="{{ estadia.name_stays }}"
+                                data-pais="{{ estadia.pais }}"
+                                data-estado="{{ estadia.estado }}"
+                                data-ciudad="{{ estadia.ciudad }}">
+                                <td>{{ estadia.team }}</td>
+                                <td>{{ estadia.name_stays }}</td>
+                                <td>{{ estadia.pais }}</td>
+                                <td>{{ estadia.estado }}</td>
+                                <td>{{ estadia.ciudad }}</td>
                                 <td class="text-end">
-                                    <button type="button" class="btn btn-sm btn-outline-light" onclick="editarAlojamiento(this)">Editar</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="eliminarAlojamiento(this)">Eliminar</button>
+                                    <button type="button" class="btn btn-sm btn-outline-light" onclick="editarEstadia(this)">Editar</button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="eliminarEstadia(this)">Eliminar</button>
                                 </td>
                             </tr>
                             {% else %}
-                            <tr><td colspan="5" class="text-center text-white-50">No hay alojamientos registrados todavía.</td></tr>
+                            <tr><td colspan="6" class="text-center text-white-50">No hay estadías registradas todavía.</td></tr>
                             {% endfor %}
                         </tbody>
                     </table>
@@ -269,6 +286,8 @@
 
     </div>
 
+
+
 </div>
 
 
@@ -279,14 +298,16 @@
 <script>
 
 const API_VUELOS = '/flights';
-const API_ALOJAMIENTOS = '/alojamientos';
+
+const API_ESTADIAS = '/stays';
 
 
 
 // ---------- SECCIONES ----------
 function mostrarSeccion(seccion) {
     document.getElementById("vuelos").style.display = "none";
-    document.getElementById("alojamientos").style.display = "none";
+
+    document.getElementById("estadias").style.display = "none";
     document.getElementById(seccion).style.display = "block";
 }
 
@@ -332,6 +353,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('formVuelo').addEventListener('submit', guardarVuelo);
+
+    document.getElementById('formEstadia').addEventListener('submit', guardarEstadia);
 });
 // ---------- VUELOS ----------
 async function guardarVuelo(event) {
@@ -449,21 +472,22 @@ async function eliminarVuelo(btn) {
     }
 }
 
-// ---------- ALOJAMIENTOS ----------
-async function guardarAlojamiento(event) {
+// ---------- ESTADÍAS ----------
+async function guardarEstadia(event) {
     event.preventDefault();
 
     const form = event.target;
-    const id = document.getElementById("alojamientoEditId").value;
+    const id = document.getElementById('estadiaEditId').value;
 
     const payload = {
-        nombre_alojamiento: form.nombre_alojamiento.value,
-        pais: form.pais.value,
-        estado: form.estado.value,
-        ciudad: form.ciudad.value
+        team: form.team.value,
+        name_stays: form.name_stays.value.trim(),
+        pais: form.pais.value.trim(),
+        estado: form.estado.value.trim(),
+        ciudad: form.ciudad.value.trim()
     };
 
-    const url = id ? `${API_ALOJAMIENTOS}/${id}` : API_ALOJAMIENTOS;
+    const url = id ? `${API_ESTADIAS}/${id}` : API_ESTADIAS;
     const method = id ? 'PUT' : 'POST';
 
     try {
@@ -474,11 +498,11 @@ async function guardarAlojamiento(event) {
         });
 
         if (resp.ok) {
-            mostrarMensaje(id ? 'Alojamiento actualizado' : 'Alojamiento creado');
+            mostrarMensaje(id ? 'Estadía actualizada correctamente' : 'Estadía creada correctamente');
             setTimeout(() => location.reload(), 600);
         } else {
             const data = await resp.json().catch(() => ({}));
-            mostrarError(data.message || 'No se pudo guardar el alojamiento');
+            mostrarError(data.message || 'No se pudo guardar la estadía');
         }
     } catch (err) {
         console.error(err);
@@ -486,44 +510,51 @@ async function guardarAlojamiento(event) {
     }
 }
 
-function editarAlojamiento(btn) {
+function editarEstadia(btn) {
     const row = btn.closest('tr');
-    const form = document.getElementById('formAlojamiento');
+    const form = document.getElementById('formEstadia');
 
-    document.getElementById('alojamientoEditId').value = row.dataset.id;
-    form.nombre_alojamiento.value = row.dataset.nombre;
+    document.getElementById('estadiaEditId').value = row.dataset.id;
+    form.team.value = row.dataset.team;
+    form.name_stays.value = row.dataset.nameStays;
     form.pais.value = row.dataset.pais;
     form.estado.value = row.dataset.estado;
     form.ciudad.value = row.dataset.ciudad;
 
-    mostrarSeccion('alojamientos');
+    document.getElementById('tituloFormEstadia').textContent = `Editando estadía de ${row.dataset.team}`;
+    mostrarSeccion('estadias');
     form.scrollIntoView({ behavior: 'smooth' });
 }
 
-function resetFormAlojamiento() {
-    document.getElementById('formAlojamiento').reset();
-    document.getElementById('alojamientoEditId').value = '';
+function resetFormEstadia() {
+    document.getElementById('formEstadia').reset();
+    document.getElementById('estadiaEditId').value = '';
+    document.getElementById('tituloFormEstadia').textContent = 'Gestión de Estadías';
 }
 
-async function eliminarAlojamiento(btn) {
+async function eliminarEstadia(btn) {
     const row = btn.closest('tr');
     const id = row.dataset.id;
 
-    if (!confirm('¿Eliminar este alojamiento?')) return;
+    if (!confirm('¿Eliminar esta estadía?')) return;
 
     try {
-        const resp = await fetch(`${API_ALOJAMIENTOS}/${id}`, { method: 'DELETE' });
+        const resp = await fetch(`${API_ESTADIAS}/${id}`, { method: 'DELETE' });
         if (resp.ok) {
             row.remove();
-            mostrarMensaje('Alojamiento eliminado');
+            mostrarMensaje('Estadía eliminada');
         } else {
-            mostrarError('No se pudo eliminar el alojamiento');
+            mostrarError('No se pudo eliminar la estadía');
         }
     } catch (err) {
         console.error(err);
         mostrarError('Error de conexión con el servidor');
     }
 }
+
+
+
+
 
 </script>
 

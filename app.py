@@ -11,7 +11,7 @@ from flask_mail import Mail
 from routes.user_route import user_bp
 from routes.flight_route import flight_bp
 from routes.stadium_routes import stadium_bp
-from routes.stays_routes import estadia_bp
+from routes.stays_routes import stays_bp
 from routes.team_routes import team_bp
 
 from flask import Flask, render_template, session, redirect, url_for
@@ -48,7 +48,7 @@ login_manager.init_app(app)
 app.register_blueprint(user_bp)
 app.register_blueprint(flight_bp)
 app.register_blueprint(stadium_bp)
-app.register_blueprint(estadia_bp)
+app.register_blueprint(stays_bp)
 app.register_blueprint(team_bp)
 
 #Verificacion de base de datos
