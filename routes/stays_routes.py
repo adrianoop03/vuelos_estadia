@@ -25,7 +25,7 @@ def obtener_stay(id_stay):
 @stays_bp.route('/stays', methods=['POST'])
 @login_required
 def crear_stay():
-    if current_user.admin():
+    if current_user.admin:
         data = request.get_json()
         if not data:
             return jsonify({'message': 'Datos inválidos'}), 400
@@ -50,7 +50,7 @@ def crear_stay():
 @stays_bp.route('/stays/<int:id_stay>', methods=['PUT'])
 @login_required
 def actualizar_stay(id_stay):
-    if current_user.admin():
+    if current_user.admin:
         data = request.get_json()
         if not data:
             return jsonify({'message': 'Datos inválidos'}), 400
@@ -74,7 +74,7 @@ def actualizar_stay(id_stay):
 @login_required
 
 def eliminar_stay(id_stay):
-    if current_user.admin():
+    if current_user.admin:
         ok = borrar_stay(id_stay)
         if ok:
             return jsonify({'message': 'Estadía eliminada correctamente'})

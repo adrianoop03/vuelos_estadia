@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from controllers.flight_controllers import FlightController
-from flask_login import login_required
+from flask_login import login_required, current_user
 from controllers.team_controller import get_all_teams
 
 flight_bp = Blueprint('flight_bp', __name__)
@@ -39,6 +39,8 @@ def get_flight(id_flight):
 @flight_bp.route('/flights', methods=['POST'])
 @login_required
 def create_flight():
-    data = request.get_json()
-    result, status = FlightController.crear_vuelo(data)
-    return jsonify(result), status
+    if current_user.admin:
+        data = request.get_json()
+        result, status = FlightController.crear_vuelo(data)
+        return jsonify(result), status
+    return jsonify("No eres admin"), 400
