@@ -8,7 +8,7 @@
     <title>Administrador Mundial 2026</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/users.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
 </head>
 
 <body>
@@ -16,23 +16,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
 
+        <!-- Logo -->
         <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
             <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
                  alt="FIFA"
                  class="logo-mundial">
-            Menu Usuario
+            TeamTransit
         </a>
 
-        <!-- BOTÓN HAMBURGUESA -->
+        <!-- Botón hamburguesa -->
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Opciones -->
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
                 <li class="nav-item">
                     <button class="nav-link btn btn-link text-white"
@@ -41,20 +47,29 @@
                     </button>
                 </li>
 
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link text-white"
+                            onclick="mostrarSeccion('vuelos')">
+                        Vuelos
+                    </button>
+                </li>
+
             </ul>
 
-            
-            <span class="text-white me-3 d-none d-lg-inline">
+            <!-- Usuario -->
+            <span class="text-white ms-lg-3 me-lg-3 d-none d-lg-inline">
                 Hola, {{ current_user.name }}
             </span>
 
-            <a href="/logout" class="btn btn-outline-light">
+            <!-- Cerrar sesión -->
+            <a href="/logout" class="btn btn-outline-light mt-2 mt-lg-0">
                 Cerrar Sesión
             </a>
 
         </div>
 
     </div>
+
 </nav>
 
 <div class="container py-5">
