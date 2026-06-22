@@ -40,6 +40,7 @@ MYSQL_PORT=<puerto_mysql>
 MYSQL_HOST=<host_mysql>
 MAIL_USERNAME = <Email>
 MAIL_PASSWORD = <contraseña>
+SECRET_KEY = <usualmente, contraseña de 32 digitos>
 ```
 
 ---
