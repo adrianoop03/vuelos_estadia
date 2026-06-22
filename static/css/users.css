@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background: url(../img/mundial-2026.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    
+}
+.logo-mundial{
+             height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+main{
+    flex:1 0 auto;
+}
+
+/* ---------- Navbar (igual a index) ---------- */
+
+.navbar{
+
+    background-color: #0a4f9e;
+
+}
+
+.navbar-brand{
+
+    color:white !important;
+    font-size:30px;
+    font-weight:bold;
+
+}
+
+.nav-link{
+
+    color:white !important;
+    margin-right:20px;
+    font-weight:bold;
+    font-size:18px;
+
+}
+
+.btn-outline-light{
+
+    font-weight:bold;
+    font-size:18px;
+
+}
+.bt1{
+     font-weight:bold;
+    font-size:18px;
+    margin: 10px;
+}
+.btn2{
+    font-weight:bold;
+    font-size:18px;
+    margin: 10px;
+}
+.logo-mundial{
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* ---------- Cards ---------- */
+
+.glass-card{
+    background:rgba(0,0,0,.78);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:18px;
+    color:white;
+}
+
+.section-title{
+    color:white;
+    font-weight:bold;
+}
+
+/* ---------- Formularios ---------- */
+
+.form-control,
+.form-select {
+    background-color: transparent !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-select option {
+    background-color: #0f172a !important;
+    color: white !important;
+}
+
+.form-select:focus {
+    background-color: transparent !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+label {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+/* ---------- Tablas ---------- */
+
+.table{
+    --bs-table-bg: transparent;
+    --bs-table-color: white;
+    --bs-table-border-color: rgba(255,255,255,.2);
+}
+
+.table th,
+.table td{
+    background: transparent !important;
+    color: white !important;
+}
+
+/* ---------- Footer (igual a index) ---------- */
+
+.footer-mundial{
+
+    background:#073a78;
+    color:white;
+    padding:50px 0 20px 0;
+    flex-shrink:0;
+
+}
+
+.footer-mundial h5{
+
+    font-weight:bold;
+    margin-bottom:15px;
+
+}
+
+.footer-text{
+
+    color:rgba(255,255,255,.85);
+    font-size:15px;
+
+}
+
+.footer-social{
+
+    color:white;
+    font-size:22px;
+    margin-right:15px;
+    display:inline-block;
+    transition:color .2s;
+
+}
+
+.footer-social:hover{
+
+    color:#85B7EB;
+
+}
+
+.footer-divider{
+
+    border-color:rgba(255,255,255,.15);
+    margin:30px 0 20px 0;
+
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Selección</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/users.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
+                 alt="FIFA"
+                 class="logo-mundial">
+            TeamTransit
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MENU COLAPSABLE -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div class="ms-auto d-flex flex-column flex-lg-row gap-2">
+                 <a href="/users" class="btn btn-outline-light">
+                    Inicio
+                </a>
+                <a href="/flights" class="btn btn-outline-light">
+                    Vuelos
+                </a>
+
+                <a href="/stays" class="btn btn-outline-light">
+                    Estadias
+                </a>
+
+                <a href="/logout" class="btn btn-outline-light">
+                    Cerrar Sesión
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<main class="container my-5 flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+    
+    
+<section class="section_inicio">
+    <div class="rounded-3 overflow-hidden border shadow-sm d-flex align-items-center bg-light" style="width: 100%; max-width: 500px; margin: 0 auto;">
+        <img src="{{ url_for('static', filename='img/Argentina.jpg') }}" 
+             alt="Selección Argentina con la Copa" 
+             class="img-fluid w-100" 
+             style="object-fit: cover; min-height: 250px; display: block;">
+    </div>
+</section>
+</main>
+
+<footer class="footer-mundial" id="contacto">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Mundial 2026</h5>
+                <p class="footer-text">
+                    Organizá tu viaje al mundial: vuelos, alojamientos y partidos en un solo lugar.
+                </p>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contacto</h5>
+                <p class="footer-text mb-1">
+                    <i class="bi bi-envelope-fill me-2"></i>toniniyasociados@gmail.com
+                </p>
+                <p class="footer-text">
+                    <i class="bi bi-telephone-fill me-2"></i>+54 261 123-4567
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Seguinos</h5>
+                <a href="#" class="footer-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="footer-social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="text-center footer-text mb-0">
+            &copy; 2026 Tonini y asociados. Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
+    
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

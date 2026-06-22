@@ -1,0 +1,338 @@
+[
+  {
+    "team": "Estados Unidos",
+    "ciudad": "Irvine",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "Great Park Sports Complex"
+  },
+  {
+    "team": "Argelia",
+    "ciudad": "Lawrence",
+    "estado": "Kansas",
+    "pais": "Estados Unidos",
+    "name_stays": "University of Kansas"
+  },
+  {
+    "team": "Argentina",
+    "ciudad": "Kansas City",
+    "estado": "Kansas",
+    "pais": "Estados Unidos",
+    "name_stays": "Sporting KC Training Center"
+  },
+  {
+    "team": "Australia",
+    "ciudad": "Alameda",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "Oakland Roots/Soul Training Facility"
+  },
+  {
+    "team": "Austria",
+    "ciudad": "Santa Barbara",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "UC Santa Barbara - Harder Stadium"
+  },
+  {
+    "team": "Bélgica",
+    "ciudad": "Renton",
+    "estado": "Washington",
+    "pais": "Estados Unidos",
+    "name_stays": "Seattle Sounders FC Performance Centre and Clubhouse"
+  },
+  {
+    "team": "Bosnia y Herzegovina",
+    "ciudad": "Sandy",
+    "estado": "Utah",
+    "pais": "Estados Unidos",
+    "name_stays": "RSL Stadium"
+  },
+  {
+    "team": "Brasil",
+    "ciudad": "Morristown",
+    "estado": "Nueva Jersey",
+    "pais": "Estados Unidos",
+    "name_stays": "Columbia Park Training Facility"
+  },
+  {
+    "team": "Cabo Verde",
+    "ciudad": "Tampa",
+    "estado": "Florida",
+    "pais": "Estados Unidos",
+    "name_stays": "Waters Sportsplex"
+  },
+  {
+    "team": "Canadá",
+    "ciudad": "Vancouver",
+    "estado": "Columbia Británica",
+    "pais": "Canadá",
+    "name_stays": "National Soccer Development Centre"
+  },
+  {
+    "team": "Colombia",
+    "ciudad": "Zapopan",
+    "estado": "Jalisco",
+    "pais": "México",
+    "name_stays": "Academia Atlas FC"
+  },
+  {
+    "team": "RD Congo",
+    "ciudad": "Houston",
+    "estado": "Texas",
+    "pais": "Estados Unidos",
+    "name_stays": "Houston Sports Park"
+  },
+  {
+    "team": "Costa de Marfil",
+    "ciudad": "Chester",
+    "estado": "Pensilvania",
+    "pais": "Estados Unidos",
+    "name_stays": "Philadelphia Union Stadium"
+  },
+  {
+    "team": "Croacia",
+    "ciudad": "Alexandria",
+    "estado": "Virginia",
+    "pais": "Estados Unidos",
+    "name_stays": "Episcopal High School"
+  },
+  {
+    "team": "Curazao",
+    "ciudad": "Boca Raton",
+    "estado": "Florida",
+    "pais": "Estados Unidos",
+    "name_stays": "Florida Atlantic University"
+  },
+  {
+    "team": "República Checa",
+    "ciudad": "Mansfield",
+    "estado": "Texas",
+    "pais": "Estados Unidos",
+    "name_stays": "Mansfield Multipurpose Stadium"
+  },
+  {
+    "team": "Ecuador",
+    "ciudad": "Columbus",
+    "estado": "Ohio",
+    "pais": "Estados Unidos",
+    "name_stays": "Columbus Crew Performance Center"
+  },
+  {
+    "team": "Inglaterra",
+    "ciudad": "Kansas City",
+    "estado": "Misuri",
+    "pais": "Estados Unidos",
+    "name_stays": "Swope Soccer Village"
+  },
+  {
+    "team": "Egipto",
+    "ciudad": "Spokane",
+    "estado": "Washington",
+    "pais": "Estados Unidos",
+    "name_stays": "Gonzaga University"
+  },
+  {
+    "team": "Francia",
+    "ciudad": "Waltham",
+    "estado": "Massachusetts",
+    "pais": "Estados Unidos",
+    "name_stays": "Bentley University"
+  },
+  {
+    "team": "Alemania",
+    "ciudad": "Winston-Salem",
+    "estado": "Carolina del Norte",
+    "pais": "Estados Unidos",
+    "name_stays": "Wake Forest University"
+  },
+  {
+    "team": "Ghana",
+    "ciudad": "Smithfield",
+    "estado": "Rhode Island",
+    "pais": "Estados Unidos",
+    "name_stays": "Bryant University"
+  },
+  {
+    "team": "Haití",
+    "ciudad": "Galloway Township",
+    "estado": "Nueva Jersey",
+    "pais": "Estados Unidos",
+    "name_stays": "Stockton University"
+  },
+  {
+    "team": "RI de Irán",
+    "ciudad": "Tijuana",
+    "estado": "Baja California",
+    "pais": "México",
+    "name_stays": "Centro Xoloitzcuintle"
+  },
+  {
+    "team": "Irak",
+    "ciudad": "White Sulphur Springs",
+    "estado": "Virginia Occidental",
+    "pais": "Estados Unidos",
+    "name_stays": "The Greenbrier Sports Performance Center"
+  },
+  {
+    "team": "Japón",
+    "ciudad": "Nashville",
+    "estado": "Tennessee",
+    "pais": "Estados Unidos",
+    "name_stays": "Nashville SC Training Center"
+  },
+  {
+    "team": "Jordania",
+    "ciudad": "Portland",
+    "estado": "Oregón",
+    "pais": "Estados Unidos",
+    "name_stays": "University of Portland"
+  },
+  {
+    "team": "República de Corea",
+    "ciudad": "Zapopan",
+    "estado": "Jalisco",
+    "pais": "México",
+    "name_stays": "Chivas Verde Valle"
+  },
+  {
+    "team": "México",
+    "ciudad": "Ciudad de México",
+    "estado": "Ciudad de México",
+    "pais": "México",
+    "name_stays": "Centro de Alto Rendimiento (CAR)"
+  },
+  {
+    "team": "Marruecos",
+    "ciudad": "Basking Ridge",
+    "estado": "Nueva Jersey",
+    "pais": "Estados Unidos",
+    "name_stays": "The Pingry School"
+  },
+  {
+    "team": "Países Bajos",
+    "ciudad": "Riverside",
+    "estado": "Misuri",
+    "pais": "Estados Unidos",
+    "name_stays": "KC Current Training Facility"
+  },
+  {
+    "team": "Nueva Zelanda",
+    "ciudad": "San Diego",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "University of San Diego - Torero Stadium"
+  },
+  {
+    "team": "Noruega",
+    "ciudad": "Greensboro",
+    "estado": "Carolina del Norte",
+    "pais": "Estados Unidos",
+    "name_stays": "UNC Greensboro"
+  },
+  {
+    "team": "Panamá",
+    "ciudad": "New Tecumseth",
+    "estado": "Ontario",
+    "pais": "Canadá",
+    "name_stays": "Nottawasaga Training Site"
+  },
+  {
+    "team": "Paraguay",
+    "ciudad": "San Jose",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "Spartan Soccer Complex"
+  },
+  {
+    "team": "Portugal",
+    "ciudad": "Palm Beach Gardens",
+    "estado": "Florida",
+    "pais": "Estados Unidos",
+    "name_stays": "Gardens North County District Park"
+  },
+  {
+    "team": "Catar",
+    "ciudad": "Santa Barbara",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "Westmont College"
+  },
+  {
+    "team": "Arabia Saudí",
+    "ciudad": "Austin",
+    "estado": "Texas",
+    "pais": "Estados Unidos",
+    "name_stays": "Austin FC Stadium"
+  },
+  {
+    "team": "Escocia",
+    "ciudad": "Charlotte",
+    "estado": "Carolina del Norte",
+    "pais": "Estados Unidos",
+    "name_stays": "Charlotte FC Training Center"
+  },
+  {
+    "team": "Senegal",
+    "ciudad": "Piscataway",
+    "estado": "Nueva Jersey",
+    "pais": "Estados Unidos",
+    "name_stays": "Rutgers University"
+  },
+  {
+    "team": "Sudáfrica",
+    "ciudad": "San Agustín Tlaxiaca",
+    "estado": "Hidalgo",
+    "pais": "México",
+    "name_stays": "CF Pachuca - Universidad Del Futbol"
+  },
+  {
+    "team": "España",
+    "ciudad": "Chattanooga",
+    "estado": "Tennessee",
+    "pais": "Estados Unidos",
+    "name_stays": "Baylor School"
+  },
+  {
+    "team": "Suecia",
+    "ciudad": "Frisco",
+    "estado": "Texas",
+    "pais": "Estados Unidos",
+    "name_stays": "FC Dallas Stadium"
+  },
+  {
+    "team": "Suiza",
+    "ciudad": "San Diego",
+    "estado": "California",
+    "pais": "Estados Unidos",
+    "name_stays": "SDJA"
+  },
+  {
+    "team": "Túnez",
+    "ciudad": "Santiago",
+    "estado": "Nuevo León",
+    "pais": "México",
+    "name_stays": "Rayados Training Center"
+  },
+  {
+    "team": "Turquía",
+    "ciudad": "Mesa",
+    "estado": "Arizona",
+    "pais": "Estados Unidos",
+    "name_stays": "Arizona Athletic Grounds"
+  },
+  {
+    "team": "Uruguay",
+    "ciudad": "Playa del Carmen",
+    "estado": "Quintana Roo",
+    "pais": "México",
+    "name_stays": "Mayakoba Training Center Cancun"
+  },
+  {
+    "team": "Uzbekistán",
+    "ciudad": "Marietta",
+    "estado": "Georgia",
+    "pais": "Estados Unidos",
+    "name_stays": "Atlanta United Training Center"
+  }
+]

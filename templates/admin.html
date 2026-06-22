@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charse="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrador Mundial 2026</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
+                 alt="FIFA"
+                 class="logo-mundial">
+            TeamTransit
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Opciones -->
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link text-white"
+                            onclick="mostrarSeccion('estadias')">
+                        Estadías
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link text-white"
+                            onclick="mostrarSeccion('vuelos')">
+                        Vuelos
+                    </button>
+                </li>
+
+            </ul>
+
+            <!-- Usuario -->
+            <span class="text-white ms-lg-3 me-lg-3 d-none d-lg-inline">
+                Hola, {{ current_user.name }}
+            </span>
+
+            <!-- Cerrar sesión -->
+            <a href="/logout" class="btn btn-outline-light mt-2 mt-lg-0">
+                Cerrar Sesión
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="container py-5">
+
+    <div id="mensaje"
+         class="alert alert-success d-none mb-4">
+        Datos actualizados correctamente
+    </div>
+
+    <div id="mensajeError"
+         class="alert alert-danger d-none mb-4">
+    </div>
+
+    <!-- VUELOS -->
+
+    <div id="vuelos">
+
+        <div class="card glass-card mb-4">
+
+            <div class="card-body">
+
+                <h2 class="mb-4" id="tituloFormVuelo">
+                    Gestión de Vuelos
+                </h2>
+
+                {# TODO: ajustá API_VUELOS (definida en el <script> al final) a la URL real de tu endpoint REST #}
+                <form id="formVuelo">   <!-- sin onsubmit -->
+
+                    <input type="hidden" id="vueloEditId" value="">
+                    <input type="hidden" name="origin_city" id="originCityHidden">
+                    <input type="hidden" name="destination_city" id="destinationCityHidden">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Número de Vuelo</label>
+                            <input type="text" name="flight_number" class="form-control" placeholder="AR2026" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>Selección</label>
+                            <select name="id_team" class="form-select" id="selectTeam" required>
+                                <option value="" disabled selected>Elegí una selección</option>
+                                {% for team in teams %}
+                                <option value="{{ team.id_team }}" data-name="{{ team.name }}">
+                                    {{ team.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <small id="ciudadOrigenBadge" class="text-white-50 mt-1 d-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Estadio Destino</label>
+                            <select name="id_stadium" class="form-select" id="selectStadium" required>
+                                <option value="" disabled selected>Elegí un estadio</option>
+                                {% for stadium in stadiums %}
+                                <option value="{{ stadium.id_stadium }}" data-city="{{ stadium.city }}">
+                                    {{ stadium.name }} — {{ stadium.city }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <small id="ciudadDestinoBadge" class="text-black-50 mt-1 d-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Fecha/Hora Salida</label>
+                            <input type="datetime-local" name="departure_datetime" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Fecha/Hora Llegada</label>
+                            <input type="datetime-local" name="arrival_datetime" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar Vuelo</button>
+                    <button type="button" class="btn btn-outline-light" onclick="resetFormVuelo()">Cancelar edición</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ESTADÍAS -->
+
+    <div id="estadias" style="display:none;">
+
+        <div class="card glass-card mb-4">
+
+            <div class="card-body">
+
+                <h2 class="mb-4" id="tituloFormEstadia">
+                    Gestión de Estadías
+                </h2>
+
+                <form id="formEstadia">
+
+                    <input type="hidden" id="estadiaEditId" value="">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Selección</label>
+                            <select name="team" class="form-select" id="selectTeamEstadia" required>
+                                <option value="" disabled selected>Elegí una selección</option>
+                                {% for team in teams %}
+                                <option value="{{ team.name }}" data-name="{{ team.name }}">
+                                    {{ team.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>Nombre del alojamiento</label>
+                            <input type="text"
+                                   name="name_stays"
+                                   class="form-control"
+                                   placeholder="Hotel Gran Buenos Aires"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>País</label>
+                            <input type="text"
+                                   name="pais"
+                                   class="form-control"
+                                   placeholder="Argentina"
+                                   required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Estado / Provincia</label>
+                            <input type="text"
+                                   name="estado"
+                                   class="form-control"
+                                   placeholder="Buenos Aires"
+                                   required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Ciudad</label>
+                            <input type="text"
+                                   name="ciudad"
+                                   class="form-control"
+                                   placeholder="La Plata"
+                                   required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Guardar Estadía</button>
+                    <button type="button" class="btn btn-outline-light" onclick="resetFormEstadia()">Cancelar edición</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="card glass-card">
+
+            <div class="card-body">
+
+                <h4 class="mb-3">Estadías registradas</h4>
+
+                <div class="table-responsive">
+                    <table class="table table-hover text-white align-middle">
+                        <thead>
+                            <tr>
+                                <th>Selección</th>
+                                <th>Alojamiento</th>
+                                <th>País</th>
+                                <th>Estado</th>
+                                <th>Ciudad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for estadia in stays %}
+                            <tr data-id="{{ estadia.id_stays }}"
+                                data-team="{{ estadia.team }}"
+                                data-name-stays="{{ estadia.name_stays }}"
+                                data-pais="{{ estadia.pais }}"
+                                data-estado="{{ estadia.estado }}"
+                                data-ciudad="{{ estadia.ciudad }}">
+                                <td>{{ estadia.team }}</td>
+                                <td>{{ estadia.name_stays }}</td>
+                                <td>{{ estadia.pais }}</td>
+                                <td>{{ estadia.estado }}</td>
+                                <td>{{ estadia.ciudad }}</td>
+                                <td class="text-end">
+                                    <button type="button" class="btn btn-sm btn-outline-light" onclick="editarEstadia(this)">Editar</button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="eliminarEstadia(this)">Eliminar</button>
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr><td colspan="6" class="text-center text-white-50">No hay estadías registradas todavía.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script>
+    const staysData = {{ stays | tojson | safe }};
+</script>
+
+<script>
+
+const API_VUELOS = '/flights';
+
+const API_ESTADIAS = '/stays';
+
+
+
+// ---------- SECCIONES ----------
+function mostrarSeccion(seccion) {
+    document.getElementById("vuelos").style.display = "none";
+
+    document.getElementById("estadias").style.display = "none";
+    document.getElementById(seccion).style.display = "block";
+}
+
+function mostrarMensaje(texto) {
+    const el = document.getElementById("mensaje");
+    el.textContent = texto;
+    el.classList.remove("d-none");
+    setTimeout(() => el.classList.add("d-none"), 2500);
+}
+
+function mostrarError(texto) {
+    const el = document.getElementById("mensajeError");
+    el.textContent = texto;
+    el.classList.remove("d-none");
+    setTimeout(() => el.classList.add("d-none"), 4000);
+}
+
+// ---------- AUTOCOMPLETAR CIUDAD ORIGEN ----------
+document.addEventListener('DOMContentLoaded', () => {
+    // Ya no hace falta cargarStays(), staysData viene de Jinja
+
+    document.getElementById('selectTeam').addEventListener('change', function () {
+        const teamName = this.options[this.selectedIndex].dataset.name || '';
+
+        const stay = staysData.find(
+            s => s.team.toLowerCase() === teamName.toLowerCase()
+        );
+
+        document.getElementById('originCityHidden').value = stay ? stay.ciudad : '';
+
+        let badge = document.getElementById('ciudadOrigenBadge');
+        if (!badge) {
+            badge = document.createElement('small');
+            badge.id = 'ciudadOrigenBadge';
+            badge.className = 'text-white-50 mt-1 d-block';
+            this.parentElement.appendChild(badge);
+        }
+        badge.textContent = stay
+            ? `📍 Ciudad de origen: ${stay.ciudad}`
+            : teamName
+                ? '⚠️ Sin estadía registrada para este equipo'
+                : '';
+    });
+
+    document.getElementById('formVuelo').addEventListener('submit', guardarVuelo);
+
+    document.getElementById('formEstadia').addEventListener('submit', guardarEstadia);
+});
+// ---------- VUELOS ----------
+async function guardarVuelo(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const id = document.getElementById("vueloEditId").value;
+
+    const originCity = document.getElementById('originCityHidden').value;
+    const destCity = form.destination_city.value.trim();
+    const departure = form.departure_datetime.value;
+    const arrival = form.arrival_datetime.value;
+
+    if (!originCity) {
+        mostrarError('Seleccioná una selección con estadía registrada para autocompletar la ciudad de origen');
+        return;
+    }
+
+    if (originCity === destCity) {
+        mostrarError('La ciudad de origen y destino no pueden ser iguales');
+        return;
+    }
+
+    if (new Date(departure) >= new Date(arrival)) {
+        mostrarError('La fecha de llegada debe ser posterior a la salida');
+        return;
+    }
+
+    const payload = {
+        flight_number: form.flight_number.value.trim(),
+        id_team: parseInt(form.id_team.value),
+        id_stadium: parseInt(form.id_stadium.value),
+        origin_city: document.getElementById('originCityHidden').value,
+        destination_city: form.destination_city.value.trim(),
+        departure_datetime: form.departure_datetime.value,
+        arrival_datetime: form.arrival_datetime.value
+    };
+
+    const url = id ? `${API_VUELOS}/${id}` : API_VUELOS;
+    const method = id ? 'PUT' : 'POST';
+
+    try {
+        const resp = await fetch(url, {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (resp.ok) {
+            mostrarMensaje(id ? 'Vuelo actualizado correctamente' : 'Vuelo creado correctamente');
+            setTimeout(() => location.reload(), 600);
+        } else {
+            const data = await resp.json().catch(() => ({}));
+            mostrarError(data.message || 'No se pudo guardar el vuelo');
+        }
+    } catch (err) {
+        console.error(err);
+        mostrarError('Error de conexión con el servidor');
+    }
+}
+
+function editarVuelo(btn) {
+    const row = btn.closest('tr');
+    const form = document.getElementById('formVuelo');
+
+    document.getElementById('vueloEditId').value = row.dataset.id;
+    form.flight_number.value = row.dataset.flightNumber;
+    form.id_team.value = row.dataset.team;
+    document.getElementById('originCityHidden').value = row.dataset.origin;
+    form.destination_city.value = row.dataset.destination;
+    form.departure_datetime.value = row.dataset.departure;
+    form.arrival_datetime.value = row.dataset.arrival;
+
+    // Mostrar badge con la ciudad guardada
+    let badge = document.getElementById('ciudadOrigenBadge');
+    if (!badge) {
+        badge = document.createElement('small');
+        badge.id = 'ciudadOrigenBadge';
+        badge.className = 'text-white-50 mt-1 d-block';
+        document.getElementById('selectTeam').parentElement.appendChild(badge);
+    }
+    badge.textContent = row.dataset.origin ? `📍 Ciudad de origen: ${row.dataset.origin}` : '';
+
+    document.getElementById('tituloFormVuelo').textContent = `Editando vuelo ${row.dataset.flightNumber}`;
+    mostrarSeccion('vuelos');
+    form.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetFormVuelo() {
+    document.getElementById('formVuelo').reset();
+    document.getElementById('vueloEditId').value = '';
+    document.getElementById('originCityHidden').value = '';
+    document.getElementById('tituloFormVuelo').textContent = 'Gestión de Vuelos';
+    const badge = document.getElementById('ciudadOrigenBadge');
+    if (badge) badge.textContent = '';
+}
+
+async function eliminarVuelo(btn) {
+    const row = btn.closest('tr');
+    const id = row.dataset.id;
+
+    if (!confirm('¿Eliminar este vuelo?')) return;
+
+    try {
+        const resp = await fetch(`${API_VUELOS}/${id}`, { method: 'DELETE' });
+        if (resp.ok) {
+            row.remove();
+            mostrarMensaje('Vuelo eliminado');
+        } else {
+            mostrarError('No se pudo eliminar el vuelo');
+        }
+    } catch (err) {
+        console.error(err);
+        mostrarError('Error de conexión con el servidor');
+    }
+}
+
+// ---------- ESTADÍAS ----------
+async function guardarEstadia(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const id = document.getElementById('estadiaEditId').value;
+
+    const payload = {
+        team: form.team.value,
+        name_stays: form.name_stays.value.trim(),
+        pais: form.pais.value.trim(),
+        estado: form.estado.value.trim(),
+        ciudad: form.ciudad.value.trim()
+    };
+
+    const url = id ? `${API_ESTADIAS}/${id}` : API_ESTADIAS;
+    const method = id ? 'PUT' : 'POST';
+
+    try {
+        const resp = await fetch(url, {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (resp.ok) {
+            mostrarMensaje(id ? 'Estadía actualizada correctamente' : 'Estadía creada correctamente');
+            setTimeout(() => location.reload(), 600);
+        } else {
+            const data = await resp.json().catch(() => ({}));
+            mostrarError(data.message || 'No se pudo guardar la estadía');
+        }
+    } catch (err) {
+        console.error(err);
+        mostrarError('Error de conexión con el servidor');
+    }
+}
+
+function editarEstadia(btn) {
+    const row = btn.closest('tr');
+    const form = document.getElementById('formEstadia');
+
+    document.getElementById('estadiaEditId').value = row.dataset.id;
+    form.team.value = row.dataset.team;
+    form.name_stays.value = row.dataset.nameStays;
+    form.pais.value = row.dataset.pais;
+    form.estado.value = row.dataset.estado;
+    form.ciudad.value = row.dataset.ciudad;
+
+    document.getElementById('tituloFormEstadia').textContent = `Editando estadía de ${row.dataset.team}`;
+    mostrarSeccion('estadias');
+    form.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetFormEstadia() {
+    document.getElementById('formEstadia').reset();
+    document.getElementById('estadiaEditId').value = '';
+    document.getElementById('tituloFormEstadia').textContent = 'Gestión de Estadías';
+}
+
+async function eliminarEstadia(btn) {
+    const row = btn.closest('tr');
+    const id = row.dataset.id;
+
+    if (!confirm('¿Eliminar esta estadía?')) return;
+
+    try {
+        const resp = await fetch(`${API_ESTADIAS}/${id}`, { method: 'DELETE' });
+        if (resp.ok) {
+            row.remove();
+            mostrarMensaje('Estadía eliminada');
+        } else {
+            mostrarError('No se pudo eliminar la estadía');
+        }
+    } catch (err) {
+        console.error(err);
+        mostrarError('Error de conexión con el servidor');
+    }
+}
+
+
+
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="footer-mundial" id="contacto">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Mundial 2026</h5>
+                <p class="footer-text">
+                    Organizá tu viaje al mundial: vuelos, alojamientos y partidos en un solo lugar.
+                </p>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contacto</h5>
+                <p class="footer-text mb-1">
+                    <i class="bi bi-envelope-fill me-2"></i>toniniyasociados@gmail.com
+                </p>
+                <p class="footer-text">
+                    <i class="bi bi-telephone-fill me-2"></i>+54 261 123-4567
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Seguinos</h5>
+                <a href="#" class="footer-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="footer-social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="text-center footer-text mb-0">
+            &copy; 2026 Tonini y asociados. Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
+</body>
+</html>

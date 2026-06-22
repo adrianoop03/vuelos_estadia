@@ -1,0 +1,161 @@
+::root {
+    --primary:     #2563eb;
+    --secondary:   #0f172a;
+    --bg-body:     #f1f5f9;
+    --card-bg:     #ffffff;
+    --text-muted:  #64748b;
+    --text-light:  #cbd5e1;
+}
+
+/* ---------- Estilos Generales ---------- */
+body {
+    background: url(../img/mundial-2026.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--bg-body);
+
+    min-height: 100vh;
+    color: #333333; 
+
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título principal con contraste oscuro para que se lea sobre el fondo claro */
+h1 { 
+    color: var(--secondary) !important; 
+    font-weight: 800;
+}
+
+/* ---------- Navbar y Menú Hamburguesa ---------- */
+.navbar {
+    background-color: #0a4f9e !important;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Corregido: Asegura que los enlaces y botones se lean perfectamente sobre el azul de la barra */
+.navbar .btn-outline-light, 
+.navbar .nav-link {
+    color: white !important;
+    font-weight: bold;
+    font-size: 16px;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: white !important;
+    color: #0a4f9e !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.logo-mundial {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+
+/* div section y card*/
+.section1 {
+    color: #ffffff;
+    background-color: #0a4f9e;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85%;
+    border-radius: 20px;
+    padding: 40px;
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+}
+
+
+.stats-card-box {
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
+/* Animación por si pasan el mouse por encima */
+.stats-card-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Espaciado del texto */
+.tracking-wider {
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+/* Tabla de Estadías  */
+.table-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+table tbody tr:hover {
+    background-color: #f8fafc !important;
+}
+
+/*  Footer Oficial Corregido */
+.footer-mundial {
+    background-color: #073a78 !important; 
+    color: #ffffff !important;
+    padding: 50px 0 20px 0;
+    margin-top: auto; 
+    width: 100%; 
+}
+
+.footer-mundial h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff !important;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.85) !important; 
+    font-size: 15px;
+}
+
+.footer-social {
+    color: #ffffff !important;
+    font-size: 22px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: color .2s, transform 0.2s;
+}
+
+.footer-social:hover {
+    color: #85B7EB !important;
+    transform: translateY(-2px);
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    margin: 30px 0 20px 0;
+    opacity: 1; 
+}

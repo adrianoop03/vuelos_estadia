@@ -1,0 +1,114 @@
+[
+  {
+    "id_stadium": 1,
+    "name": "Estadio Ciudad de México",
+    "ubication": "Av. Insurgentes Sur 3695, Tlalpan",
+    "city": "Ciudad de México",
+    "country": "México"
+  },
+  {
+    "id_stadium": 2,
+    "name": "Estadio Guadalajara",
+    "ubication": "Av. Dr. R. Michel 2500, Guadalajara",
+    "city": "Guadalajara",
+    "country": "México"
+  },
+  {
+    "id_stadium": 3,
+    "name": "Estadio Monterrey",
+    "ubication": "Av. Manuel L. Barragán S/N, Monterrey",
+    "city": "Monterrey",
+    "country": "México"
+  },
+  {
+    "id_stadium": 4,
+    "name": "Estadio Toronto",
+    "ubication": "1 BMO Field, Toronto, Ontario",
+    "city": "Toronto",
+    "country": "Canadá"
+  },
+  {
+    "id_stadium": 5,
+    "name": "Estadio BC Place Vancouver",
+    "ubication": "777 Pacific Blvd, Vancouver, BC",
+    "city": "Vancouver",
+    "country": "Canadá"
+  },
+  {
+    "id_stadium": 6,
+    "name": "Estadio Los Ángeles",
+    "ubication": "1000 S figueroa St, Los Ángeles, CA",
+    "city": "Los Ángeles",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 7,
+    "name": "Estadio Bahía de San Francisco",
+    "ubication": "4900 Marie P DeBartolo Way, Santa Clara, CA",
+    "city": "San Francisco",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 8,
+    "name": "Estadio Seattle",
+    "ubication": "800 Occidental Ave S, Seattle, WA",
+    "city": "Seattle",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 9,
+    "name": "Estadio Houston",
+    "ubication": "One NRG Park, Houston, TX",
+    "city": "Houston",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 10,
+    "name": "Estadio Dallas",
+    "ubication": "One AT&T Way, Arlington, TX",
+    "city": "Dallas",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 11,
+    "name": "Estadio Kansas City",
+    "ubication": "One Arrowhead Dr, Kansas City, MO",
+    "city": "Kansas City",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 12,
+    "name": "Estadio Nueva York Nueva Jersey",
+    "ubication": "1 MetLife Stadium Dr, East Rutherford, NJ",
+    "city": "Nueva York / Nueva Jersey",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 13,
+    "name": "Estadio Boston",
+    "ubication": "1 Patriot Place, Foxborough, MA",
+    "city": "Boston",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 14,
+    "name": "Estadio Filadelfia",
+    "ubication": "1 Lincoln Financial Field Way, Filadelfia, PA",
+    "city": "Filadelfia",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 15,
+    "name": "Estadio Atlanta",
+    "ubication": "1 AMB Dr NW, Atlanta, GA",
+    "city": "Atlanta",
+    "country": "Estados Unidos"
+  },
+  {
+    "id_stadium": 16,
+    "name": "Estadio Miami",
+    "ubication": "347 Don Shula Dr, Miami Gardens, FL",
+    "city": "Miami",
+    "country": "Estados Unidos"
+  }
+]
