@@ -21,8 +21,8 @@ from extensions import mail, login_manager
 
 app = Flask(__name__)
 
-
 #Configuracion de mail automatizado
+
 
 app.config['MAIL_SERVER'] = mail_server
 app.config['MAIL_PORT'] = mail_port
@@ -39,15 +39,19 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 #Configuracion del sistema de login
 
-app.config['SECRET_KEY'] = 'tu_clave_super_secreta'
+app.config['SECRET_KEY'] = secret_key
 
 login_manager.init_app(app)
+
+#Rutas de cada clase
 
 app.register_blueprint(user_bp)
 app.register_blueprint(flight_bp)
 app.register_blueprint(stadium_bp)
 app.register_blueprint(estadia_bp)
 app.register_blueprint(team_bp)
+
+#Verificacion de base de datos
 
 try:
     if not database_exists(DATABASE_CONNECTION_URI):
@@ -86,6 +90,10 @@ def load_user(user_id):
 
 with app.app_context():
     from models.user import User
+    from models.flight import Flight
+    from models.team import Team
+    from models.stays import stays
+    from models.stadium import Stadium
     # db.drop_all()
     db.create_all()
     
