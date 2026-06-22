@@ -18,16 +18,17 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+ <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
 
         <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
             <img src="{{ url_for('static', filename='img/fifalogo.svg') }}"
                  alt="FIFA"
                  class="logo-mundial">
-            TeamTransit
+            Menu Usuario
         </a>
 
+        <!-- BOTÓN HAMBURGUESA -->
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
@@ -38,14 +39,24 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- MENU COLAPSABLE -->
         <div class="collapse navbar-collapse" id="navbarNav">
 
             <div class="ms-auto d-flex flex-column flex-lg-row gap-2">
+                <a href="/users" class="btn btn-outline-light">
+                    Inicio
+                </a>
+                <a href="/flights" class="btn btn-outline-light">
+                    Vuelos
+                </a>
 
-                <a href="/users" class="btn btn-outline-light">Inicio</a>
-                <a href="/flights" class="btn btn-outline-light">Vuelos</a>
-                <a href="/stays" class="btn btn-outline-light">Estadias</a>
-                <a href="/logout" class="btn btn-outline-light">Cerrar Sesión</a>
+                <a href="/stays" class="btn btn-outline-light">
+                    Estadias
+                </a>
+
+                <a href="/logout" class="btn btn-outline-light">
+                    Cerrar Sesión
+                </a>
 
             </div>
 
