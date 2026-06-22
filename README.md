@@ -38,6 +38,8 @@ MYSQL_PASSWORD=<tu_contraseña>
 MYSQL_DATABASE=<nombre_de_la_base>
 MYSQL_PORT=<puerto_mysql>
 MYSQL_HOST=<host_mysql>
+MAIL_USERNAME = <Email>
+MAIL_PASSWORD = <contraseña>
 ```
 
 ---
@@ -195,6 +197,7 @@ GET /team/<int:id_team>
 * BootStrap 5
 * Git
 * GitHub
+* Github Copilot
 * ChatGPT
 * Claude code
 
