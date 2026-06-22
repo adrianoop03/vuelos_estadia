@@ -39,7 +39,7 @@ MYSQL_DATABASE=<nombre_de_la_base>
 MYSQL_PORT=<puerto_mysql>
 MYSQL_HOST=<host_mysql>
 MAIL_USERNAME = <Email>
-MAIL_PASSWORD = <contraseña>
+MAIL_PASSWORD = <contraseña (app password)>
 SECRET_KEY = <usualmente, contraseña de 32 digitos>
 ```
 
@@ -57,21 +57,30 @@ git clone https://github.com/adrianoop03/vuelos_estadia.git
 
 ```bash
 cd vuelos_estadia
-code .
+```
+### 3. Crear Entorno virtual y activarlo
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-### 3. Instalar dependencias
+### 4. Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Ejecutar la aplicación
+### 5. Ejecutar la aplicación
 
 ```bash
 python app.py
 ```
+### 6. Ejecutar la seed
 
+```bash
+python seed.py
+```
 ---
 
 ## Endpoints Implementados
@@ -80,22 +89,33 @@ python app.py
 
 ```http
 GET    /stays
-GET    /stays/<str:pais>
-GET    /stays/<str:ciudad>
 GET    /stays/<int:id_stays>
 POST   /stays
+PUT    /stays/<int:id_stays>
 DELETE /stays/<int:id_stays>
 ```
+### User
 
+```http
+GET    /user/register
+POST   /user/register
+GET    /user/verif/<Token>
+GET    /user/login
+POST   /user/login
+GET    /user/index
+GET    /user/admin
+GET    /user/users
+GET    /user/logout
+GET    /user/reset-password
+POST   /user/reset-password
+GET,POST /user/reset/<token>
+```
 ### Flights
 
 ```http
 GET    /flights
 GET    /flights/<int:id_flight>
 POST   /flights
-PUT    /flights/<int:id_flight>
-PATCH  /flights/<int:id_flight>
-DELETE /flights/<int:id_flight>
 ```
 
 ### Stadiums
@@ -123,10 +143,11 @@ GET /team/<int:id_team>
 * Desarrollo de rutas para usuarios y sistema de carga de usuarios.
 * Desarrollo de controladores de usuarios.
 * Implementación del sistema de recuperación de contraseña.
-* Creación de `forgot_password.html`.
+* Creación de `forgot_password.html`,`reset_password.html`.
 * Edición y corrección de:
 
   * `login.html`
+  * `register.html`
   * `flight.html`
   * `login.css`
   * `flight.css`
@@ -155,11 +176,11 @@ GET /team/<int:id_team>
 * Desarrollo del controlador de Flight.
 * Creación de:
 
-  * `admin.html`
-  * `index.html`
-  * `login.html`
-  * `stays.html`
-  * `users.html`
+  * `admin.html` `admin.css`
+  * `index.html` `index.css` 
+  * `login.html` `login.css`
+  * `stays.html` `stays.css`
+  * `users.html` `users.css`
 * Modificación y adaptación de controladores y rutas para los archivos HTML mencionados.
 * Búsqueda e inserción de imágenes de fondo en `static/img`.
 
@@ -172,7 +193,7 @@ GET /team/<int:id_team>
 
   * `admin.html`
   * `admin.css`
-* Edición y corrección de `admin.html` y `admin.css`.
+* Edición y corrección de `stays.html`,`admin.html`,`stays.css` y `admin.css`.
 
 ---
 
